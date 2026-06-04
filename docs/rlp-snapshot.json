@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T04:24:09.483Z",
+  "updatedAt": "2026-06-04T04:56:37.780Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -14,7 +14,7 @@
     "monthsStock": null
   },
   "productionStatus": {
-    "generatedAt": "2026-06-04T04:24:09.483Z",
+    "generatedAt": "2026-06-04T04:56:37.780Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "green",
@@ -38,7 +38,7 @@
       "quarantinedRows": 76284,
       "trusted": false
     },
-    "hoursSinceCurrent": 1.3,
+    "hoursSinceCurrent": 1.8,
     "activeFresh": 11402,
     "activeTotal": 11402,
     "activeFreshPct": 1,
