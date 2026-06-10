@@ -1,0 +1,109 @@
+name: RLP External Snapshot Watchdog
+
+on:
+  schedule:
+    # 14:30 AEST daily. The production run starts at 01:15 AEST and can run long;
+    # the 26h freshness gate should not false-alarm on a late-but-successful run.
+    - cron: "30 4 * * *"
+  workflow_dispatch:
+    inputs:
+      force_fail:
+        description: "Force an alert for proof testing"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot-watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check live snapshot and alert on failure
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RLP_ALERT_TO: james.dibble@grangedevelopment.com
+          RLP_ALERT_FROM: RLP Dashboard <onboarding@resend.dev>
+          SNAPSHOT_URL: https://rlp.grangedevelopment.com/rlp-snapshot.json
+          MAX_AGE_HOURS: "26"
+          FORCE_FAIL: ${{ inputs.force_fail || 'false' }}
+        run: |
+          node <<'NODE'
+          const snapshotUrl = process.env.SNAPSHOT_URL;
+          const maxAgeHours = Number(process.env.MAX_AGE_HOURS || 26);
+          const forceFail = String(process.env.FORCE_FAIL || '').toLowerCase() === 'true';
+          const cacheUrl = `${snapshotUrl}?external_watchdog=${encodeURIComponent(new Date().toISOString())}`;
+
+          async function sendAlert(reason, details) {
+            if (!process.env.RESEND_API_KEY) {
+              throw new Error('RESEND_API_KEY secret is not configured');
+            }
+            const subject = `[RLP ALERT] external-watchdog: ${reason}`;
+            const text = [
+              subject,
+              '',
+              `Time: ${new Date().toISOString()}`,
+              `Source: GitHub Actions external watcher`,
+              `Snapshot URL: ${snapshotUrl}`,
+              `Reason: ${reason}`,
+              '',
+              JSON.stringify(details, null, 2),
+            ].join('\n');
+            const response = await fetch('https://api.resend.com/emails', {
+              method: 'POST',
+              headers: {
+                Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+                'Content-Type': 'application/json',
+                'User-Agent': 'rlp-external-snapshot-watchdog/1.0',
+              },
+              body: JSON.stringify({
+                from: process.env.RLP_ALERT_FROM || 'RLP Dashboard <onboarding@resend.dev>',
+                to: [process.env.RLP_ALERT_TO || 'james.dibble@grangedevelopment.com'],
+                subject,
+                text,
+              }),
+            });
+            const body = await response.text();
+            if (!response.ok) throw new Error(`Resend ${response.status}: ${body}`);
+            console.log(`Alert sent: ${body}`);
+          }
+
+          const response = await fetch(cacheUrl, {
+            headers: { 'User-Agent': 'rlp-external-snapshot-watchdog/1.0' },
+          });
+          if (!response.ok) {
+            const reason = `snapshot fetch failed HTTP ${response.status}`;
+            await sendAlert(reason, { status: response.status });
+            throw new Error(reason);
+          }
+
+          const snapshot = await response.json();
+          const updatedAt = snapshot.updatedAt || snapshot.productionStatus?.generatedAt || '';
+          const trustStatus = String(snapshot.productionStatus?.trustStatus || snapshot.trustStatus || '').toLowerCase();
+          const updatedMs = Date.parse(updatedAt);
+          const ageHours = Number.isFinite(updatedMs) ? (Date.now() - updatedMs) / 36e5 : Infinity;
+          const details = {
+            updatedAt,
+            ageHours: Number.isFinite(ageHours) ? Number(ageHours.toFixed(2)) : null,
+            maxAgeHours,
+            trustStatus,
+            activeFreshPct: snapshot.productionStatus?.activeFreshPct,
+            activeFresh: snapshot.productionStatus?.activeFresh,
+            activeTotal: snapshot.productionStatus?.activeTotal,
+            forceFail,
+          };
+
+          let reason = '';
+          if (!Number.isFinite(ageHours)) reason = `snapshot timestamp is missing or invalid (${updatedAt || 'empty'})`;
+          else if (ageHours > maxAgeHours) reason = `snapshot is stale: ${ageHours.toFixed(2)}h old > ${maxAgeHours}h`;
+          else if (trustStatus !== 'green') reason = `trustStatus is ${trustStatus || 'missing'}, expected green`;
+          else if (forceFail) reason = 'forced external watchdog failure test';
+
+          console.log(JSON.stringify(details, null, 2));
+          if (reason) {
+            await sendAlert(reason, details);
+            throw new Error(reason);
+          }
+          console.log('External snapshot watchdog passed');
+          NODE
