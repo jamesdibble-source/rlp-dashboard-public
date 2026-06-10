@@ -1,6 +1,9 @@
 name: RLP External Snapshot Watchdog
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # 14:30 AEST daily. The production run starts at 01:15 AEST and can run long;
     # the 26h freshness gate should not false-alarm on a late-but-successful run.
@@ -30,7 +33,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           SNAPSHOT_URL: https://rlp.grangedevelopment.com/rlp-snapshot.json
           MAX_AGE_HOURS: "26"
-          FORCE_FAIL: ${{ inputs.force_fail || 'false' }}
+          FORCE_FAIL: ${{ ((github.event_name == 'workflow_dispatch' && inputs.force_fail == 'true') || contains(github.event.head_commit.message, 'watchdog-proof')) && 'true' || 'false' }}
         run: |
           node <<'NODE'
           const snapshotUrl = process.env.SNAPSHOT_URL;
