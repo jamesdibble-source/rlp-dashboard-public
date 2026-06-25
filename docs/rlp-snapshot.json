@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-06-25T09:41:36.772Z",
+  "updatedAt": "2026-06-25T16:10:58.885Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
   "metrics": {
-    "totalLots": 89844,
+    "totalLots": 89900,
     "medianAsking": 429000,
     "medianPsm": 884,
-    "activeListings": 11537,
-    "pricedActiveListings": 9739,
-    "averageLotSize": 600,
+    "activeListings": 11532,
+    "pricedActiveListings": 9734,
+    "averageLotSize": 601,
     "medianLotSize": 504,
     "monthsStock": 13.4
   },
   "productionStatus": {
-    "generatedAt": "2026-06-25T09:41:36.772Z",
+    "generatedAt": "2026-06-25T16:10:58.884Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "green",
@@ -27,21 +27,21 @@
     },
     "lastCurrentSuccess": "2026-06-24T23:30:01.981Z",
     "lastCurrentAttempt": "2026-06-24T23:45:19.208Z",
-    "lastSoldBackfill": "2026-06-24T12:35:19.189Z",
-    "lastSoldTransition": "2026-06-22T00:53:47.289Z",
+    "lastSoldBackfill": "2026-06-25T12:29:11.720Z",
+    "lastSoldTransition": "2026-06-25T16:03:02.234Z",
     "soldAnalytics": {
       "mode": "certified_backfill_only",
       "certifiedSuburbs": 948,
       "minCertifiedSuburbs": 948,
-      "visibleRows": 78137,
-      "rawRows": 78137,
+      "visibleRows": 78200,
+      "rawRows": 78200,
       "quarantinedRows": 0,
       "trusted": true
     },
-    "hoursSinceCurrent": 10.2,
-    "activeFresh": 11450,
-    "activeTotal": 11684,
-    "activeFreshPct": 0.98,
+    "hoursSinceCurrent": 16.7,
+    "activeFresh": 11417,
+    "activeTotal": 11679,
+    "activeFreshPct": 0.9776,
     "suburbCount": 948,
     "freshSuburbs": 924,
     "staleSuburbs": 24,
@@ -155,7 +155,7 @@
       "lots": 26,
       "medianPsm": 1204,
       "medianSize": 600,
-      "totalLots": 460,
+      "totalLots": 461,
       "activeListings": 27,
       "monthsStock": 3.5
     },
@@ -165,7 +165,7 @@
       "lots": 2040,
       "medianPsm": 1552,
       "medianSize": 450,
-      "totalLots": 22805,
+      "totalLots": 22818,
       "activeListings": 3128,
       "monthsStock": 16.2
     },
@@ -175,9 +175,9 @@
       "lots": 9,
       "medianPsm": 570,
       "medianSize": 546.5,
-      "totalLots": 347,
+      "totalLots": 345,
       "activeListings": 10,
-      "monthsStock": 2
+      "monthsStock": 2.1
     },
     {
       "state": "QLD",
@@ -185,18 +185,18 @@
       "lots": 549,
       "medianPsm": 1018,
       "medianSize": 600,
-      "totalLots": 13231,
+      "totalLots": 13245,
       "activeListings": 725,
       "monthsStock": 7.7
     },
     {
       "state": "SA",
       "medianAsking": 425000,
-      "lots": 410,
+      "lots": 409,
       "medianPsm": 755,
-      "medianSize": 567,
+      "medianSize": 566.5,
       "totalLots": 7890,
-      "activeListings": 494,
+      "activeListings": 493,
       "monthsStock": 6.3
     },
     {
@@ -212,12 +212,12 @@
     {
       "state": "VIC",
       "medianAsking": 391000,
-      "lots": 6135,
+      "lots": 6131,
       "medianPsm": 839,
       "medianSize": 512,
-      "totalLots": 33107,
-      "activeListings": 6414,
-      "monthsStock": 16.6
+      "totalLots": 33120,
+      "activeListings": 6410,
+      "monthsStock": 16.5
     },
     {
       "state": "WA",
@@ -225,7 +225,7 @@
       "lots": 388,
       "medianPsm": 1005,
       "medianSize": 450,
-      "totalLots": 9679,
+      "totalLots": 9696,
       "activeListings": 552,
       "monthsStock": 7
     }
