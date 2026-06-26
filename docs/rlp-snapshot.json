@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T16:10:58.885Z",
+  "updatedAt": "2026-06-26T00:28:13.420Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -14,7 +14,7 @@
     "monthsStock": 13.4
   },
   "productionStatus": {
-    "generatedAt": "2026-06-25T16:10:58.884Z",
+    "generatedAt": "2026-06-26T00:28:13.420Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "green",
@@ -38,23 +38,71 @@
       "quarantinedRows": 0,
       "trusted": true
     },
-    "hoursSinceCurrent": 16.7,
-    "activeFresh": 11417,
+    "hoursSinceCurrent": 25,
+    "activeFresh": 11142,
     "activeTotal": 11679,
-    "activeFreshPct": 0.9776,
+    "activeFreshPct": 0.954,
     "suburbCount": 948,
-    "freshSuburbs": 924,
-    "staleSuburbs": 24,
-    "freshSuburbPct": 0.9747,
+    "freshSuburbs": 882,
+    "staleSuburbs": 66,
+    "freshSuburbPct": 0.9304,
     "activeUnresolvedQa": 0,
     "sourceMissing": 0,
     "blockedSuburbs": 76,
     "staleSamples": [
       {
+        "suburb": "Williams Landing",
+        "state": "VIC",
+        "activeRows": 1,
+        "lastEvidenceAt": "2026-06-23T23:41:47.164Z",
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
+        "suburb": "Whittlesea",
+        "state": "VIC",
+        "activeRows": 2,
+        "lastEvidenceAt": "2026-06-23T23:39:59.480Z",
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
+        "suburb": "Yamanto",
+        "state": "QLD",
+        "activeRows": 1,
+        "lastEvidenceAt": "2026-06-23T23:58:47.368Z",
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
         "suburb": "Willunga",
         "state": "SA",
         "activeRows": 0,
         "lastEvidenceAt": null,
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
+        "suburb": "Woodside",
+        "state": "SA",
+        "activeRows": 1,
+        "lastEvidenceAt": "2026-06-23T23:50:46.311Z",
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
+        "suburb": "Yanchep",
+        "state": "WA",
+        "activeRows": 26,
+        "lastEvidenceAt": "2026-06-23T23:59:53.157Z",
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
+        "suburb": "Wellard",
+        "state": "WA",
+        "activeRows": 2,
+        "lastEvidenceAt": "2026-06-23T23:34:09.164Z",
         "lastStatus": "partial",
         "blockedReason": "proxy_error"
       },
@@ -67,6 +115,14 @@
         "blockedReason": null
       },
       {
+        "suburb": "Wodonga",
+        "state": "VIC",
+        "activeRows": 11,
+        "lastEvidenceAt": "2026-06-23T23:46:43.789Z",
+        "lastStatus": "partial",
+        "blockedReason": "proxy_error"
+      },
+      {
         "suburb": "Cairns",
         "state": "QLD",
         "activeRows": 0,
@@ -75,74 +131,18 @@
         "blockedReason": null
       },
       {
-        "suburb": "Mildura South",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Wirlinga",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
+        "suburb": "Whyalla",
+        "state": "SA",
+        "activeRows": 7,
+        "lastEvidenceAt": "2026-06-23T23:40:20.487Z",
         "lastStatus": "partial",
         "blockedReason": "proxy_error"
       },
       {
-        "suburb": "Yellow Rock",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Yerrinbool",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Warilla",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "West Gosford",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Worrigee",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Yenda",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Woree",
-        "state": "QLD",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
+        "suburb": "Wandina",
+        "state": "WA",
+        "activeRows": 11,
+        "lastEvidenceAt": "2026-06-23T23:23:40.422Z",
         "lastStatus": "partial",
         "blockedReason": "proxy_error"
       }
@@ -167,7 +167,7 @@
       "medianSize": 450,
       "totalLots": 22818,
       "activeListings": 3128,
-      "monthsStock": 16.2
+      "monthsStock": 16.3
     },
     {
       "state": "NT",
@@ -217,7 +217,7 @@
       "medianSize": 512,
       "totalLots": 33120,
       "activeListings": 6410,
-      "monthsStock": 16.5
+      "monthsStock": 16.6
     },
     {
       "state": "WA",
