@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T18:11:53.947Z",
+  "updatedAt": "2026-07-07T00:42:20.044Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -8,13 +8,13 @@
     "medianAsking": 430000,
     "medianPsm": 891,
     "activeListings": 11497,
-    "pricedActiveListings": 9731,
+    "pricedActiveListings": 9730,
     "averageLotSize": 600,
     "medianLotSize": 504,
     "monthsStock": 13.7
   },
   "productionStatus": {
-    "generatedAt": "2026-07-06T18:11:53.946Z",
+    "generatedAt": "2026-07-07T00:42:20.044Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "green",
@@ -25,20 +25,20 @@
       "qaClean": true,
       "sourceIdsClean": true
     },
-    "lastCurrentSuccess": "2026-07-06T16:49:57.703Z",
-    "lastCurrentAttempt": "2026-07-06T16:52:00.043Z",
+    "lastCurrentSuccess": "2026-07-06T18:29:59.418Z",
+    "lastCurrentAttempt": "2026-07-06T18:29:59.420Z",
     "lastSoldBackfill": "2026-06-29T12:32:59.065Z",
     "lastSoldTransition": "2026-06-29T16:02:25.217Z",
     "soldAnalytics": {
       "mode": "certified_backfill_only",
       "certifiedSuburbs": 948,
       "minCertifiedSuburbs": 948,
-      "visibleRows": 78290,
-      "rawRows": 78290,
+      "visibleRows": 78291,
+      "rawRows": 78291,
       "quarantinedRows": 0,
       "trusted": true
     },
-    "hoursSinceCurrent": 1.4,
+    "hoursSinceCurrent": 6.2,
     "activeFresh": 11144,
     "activeTotal": 11647,
     "activeFreshPct": 0.9568,
@@ -115,7 +115,7 @@
     {
       "state": "VIC",
       "medianAsking": 390000,
-      "lots": 6078,
+      "lots": 6077,
       "medianPsm": 843,
       "medianSize": 512,
       "totalLots": 33095,
