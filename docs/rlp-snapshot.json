@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T15:50:29.476Z",
+  "updatedAt": "2026-07-08T02:09:29.624Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -14,7 +14,7 @@
     "monthsStock": 14.5
   },
   "productionStatus": {
-    "generatedAt": "2026-07-07T15:50:29.475Z",
+    "generatedAt": "2026-07-08T02:09:29.623Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "green",
@@ -38,18 +38,115 @@
       "quarantinedRows": 8618,
       "trusted": true
     },
-    "hoursSinceCurrent": 12.9,
-    "activeFresh": 12021,
+    "hoursSinceCurrent": 23.2,
+    "activeFresh": 11966,
     "activeTotal": 12524,
-    "activeFreshPct": 0.9598,
+    "activeFreshPct": 0.9554,
     "suburbCount": 1022,
-    "freshSuburbs": 1022,
-    "staleSuburbs": 0,
-    "freshSuburbPct": 1,
+    "freshSuburbs": 1004,
+    "staleSuburbs": 18,
+    "freshSuburbPct": 0.9824,
     "activeUnresolvedQa": 0,
     "sourceMissing": 0,
     "blockedSuburbs": 9,
-    "staleSamples": []
+    "staleSamples": [
+      {
+        "suburb": "Appin",
+        "state": "NSW",
+        "activeRows": 18,
+        "lastEvidenceAt": "2026-07-06T02:01:31.100Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Augustine Heights",
+        "state": "QLD",
+        "activeRows": 0,
+        "lastEvidenceAt": "2026-07-06T02:06:34.515Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Aura",
+        "state": "QLD",
+        "activeRows": 0,
+        "lastEvidenceAt": "2026-07-06T02:06:48.080Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Andrews Farm",
+        "state": "SA",
+        "activeRows": 6,
+        "lastEvidenceAt": "2026-07-06T01:59:59.276Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Aldinga",
+        "state": "SA",
+        "activeRows": 0,
+        "lastEvidenceAt": "2026-07-06T01:53:27.038Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Aldinga Beach",
+        "state": "SA",
+        "activeRows": 3,
+        "lastEvidenceAt": "2026-07-06T01:54:04.761Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Alkimos",
+        "state": "WA",
+        "activeRows": 9,
+        "lastEvidenceAt": "2026-07-06T01:56:04.208Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Alfredton",
+        "state": "VIC",
+        "activeRows": 9,
+        "lastEvidenceAt": "2026-07-06T01:54:23.749Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Aberglasslyn",
+        "state": "NSW",
+        "activeRows": 0,
+        "lastEvidenceAt": "2026-07-06T01:51:01.920Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Albion Park",
+        "state": "NSW",
+        "activeRows": 1,
+        "lastEvidenceAt": "2026-07-06T01:53:03.518Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Ashtonfield",
+        "state": "NSW",
+        "activeRows": 0,
+        "lastEvidenceAt": "2026-07-06T02:06:20.204Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Alstonville",
+        "state": "NSW",
+        "activeRows": 1,
+        "lastEvidenceAt": "2026-07-06T01:57:25.196Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      }
+    ]
   },
   "states": [
     {
@@ -110,7 +207,7 @@
       "medianSize": 694,
       "totalLots": 2328,
       "activeListings": 188,
-      "monthsStock": 10.6
+      "monthsStock": 10.7
     },
     {
       "state": "VIC",
@@ -120,7 +217,7 @@
       "medianSize": 512,
       "totalLots": 33445,
       "activeListings": 6573,
-      "monthsStock": 17.3
+      "monthsStock": 17.4
     },
     {
       "state": "WA",
@@ -130,7 +227,7 @@
       "medianSize": 450,
       "totalLots": 9876,
       "activeListings": 732,
-      "monthsStock": 9.7
+      "monthsStock": 9.9
     }
   ],
   "build": {
