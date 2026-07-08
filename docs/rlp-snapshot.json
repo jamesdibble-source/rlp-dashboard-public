@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T10:16:19.614Z",
+  "updatedAt": "2026-07-08T10:54:13.581Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -14,14 +14,14 @@
     "monthsStock": 13.9
   },
   "productionStatus": {
-    "generatedAt": "2026-07-08T10:16:19.614Z",
+    "generatedAt": "2026-07-08T10:54:13.580Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
-    "trustStatus": "amber",
+    "trustStatus": "green",
     "checks": {
       "currentAnalysisFresh": true,
-      "activeRowsFresh": false,
-      "suburbCoverageFresh": false,
+      "activeRowsFresh": true,
+      "suburbCoverageFresh": true,
       "qaClean": true,
       "sourceIdsClean": true
     },
@@ -38,115 +38,18 @@
       "quarantinedRows": 4890,
       "trusted": true
     },
-    "hoursSinceCurrent": 31.3,
-    "activeFresh": 9342,
+    "hoursSinceCurrent": 32,
+    "activeFresh": 12018,
     "activeTotal": 12521,
-    "activeFreshPct": 0.7461,
-    "suburbCount": 1022,
-    "freshSuburbs": 351,
-    "staleSuburbs": 671,
-    "freshSuburbPct": 0.3434,
+    "activeFreshPct": 0.9598,
+    "suburbCount": 1021,
+    "freshSuburbs": 1021,
+    "staleSuburbs": 0,
+    "freshSuburbPct": 1,
     "activeUnresolvedQa": 0,
     "sourceMissing": 0,
     "blockedSuburbs": 9,
-    "staleSamples": [
-      {
-        "suburb": "Manor Lakes",
-        "state": "VIC",
-        "activeRows": 19,
-        "lastEvidenceAt": "2026-07-06T07:13:19.518Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Sanctuary Lakes",
-        "state": "VIC",
-        "activeRows": 3,
-        "lastEvidenceAt": "2026-07-06T09:06:37.669Z",
-        "lastStatus": "ok",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Craigieburn",
-        "state": "VIC",
-        "activeRows": 19,
-        "lastEvidenceAt": "2026-07-06T04:10:56.923Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Epping",
-        "state": "VIC",
-        "activeRows": 4,
-        "lastEvidenceAt": "2026-07-06T04:57:41.892Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Mernda",
-        "state": "VIC",
-        "activeRows": 13,
-        "lastEvidenceAt": "2026-07-06T07:27:23.431Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Doreen",
-        "state": "VIC",
-        "activeRows": 9,
-        "lastEvidenceAt": "2026-07-06T04:37:02.398Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Cranbourne East",
-        "state": "VIC",
-        "activeRows": 19,
-        "lastEvidenceAt": "2026-07-06T04:13:50.013Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Cranbourne North",
-        "state": "VIC",
-        "activeRows": 3,
-        "lastEvidenceAt": "2026-07-06T04:14:40.398Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Officer South",
-        "state": "VIC",
-        "activeRows": 1,
-        "lastEvidenceAt": "2026-07-06T08:21:26.340Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Pakenham South",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": "2026-07-06T08:28:11.996Z",
-        "lastStatus": "ok",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Berwick",
-        "state": "VIC",
-        "activeRows": 12,
-        "lastEvidenceAt": "2026-07-06T02:40:23.925Z",
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Botanic Ridge",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": "2026-07-06T02:55:26.778Z",
-        "lastStatus": "ok",
-        "blockedReason": null
-      }
-    ]
+    "staleSamples": []
   },
   "states": [
     {
