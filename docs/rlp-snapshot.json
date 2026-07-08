@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T10:03:29.412Z",
+  "updatedAt": "2026-07-08T10:16:19.614Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -14,12 +14,12 @@
     "monthsStock": 13.9
   },
   "productionStatus": {
-    "generatedAt": "2026-07-08T10:03:29.412Z",
+    "generatedAt": "2026-07-08T10:16:19.614Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
-    "trustStatus": "red",
+    "trustStatus": "amber",
     "checks": {
-      "currentAnalysisFresh": false,
+      "currentAnalysisFresh": true,
       "activeRowsFresh": false,
       "suburbCoverageFresh": false,
       "qaClean": true,
@@ -38,14 +38,14 @@
       "quarantinedRows": 4890,
       "trusted": true
     },
-    "hoursSinceCurrent": 31.1,
-    "activeFresh": 9428,
+    "hoursSinceCurrent": 31.3,
+    "activeFresh": 9342,
     "activeTotal": 12521,
-    "activeFreshPct": 0.753,
+    "activeFreshPct": 0.7461,
     "suburbCount": 1022,
-    "freshSuburbs": 370,
-    "staleSuburbs": 652,
-    "freshSuburbPct": 0.362,
+    "freshSuburbs": 351,
+    "staleSuburbs": 671,
+    "freshSuburbPct": 0.3434,
     "activeUnresolvedQa": 0,
     "sourceMissing": 0,
     "blockedSuburbs": 9,
