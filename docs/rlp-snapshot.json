@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T15:46:21.819Z",
+  "updatedAt": "2026-07-14T00:08:18.038Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
@@ -14,7 +14,7 @@
     "monthsStock": 13.9
   },
   "productionStatus": {
-    "generatedAt": "2026-07-13T15:46:21.816Z",
+    "generatedAt": "2026-07-14T00:08:18.037Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "green",
@@ -22,6 +22,7 @@
       "currentAnalysisFresh": true,
       "activeRowsFresh": true,
       "suburbCoverageFresh": true,
+      "currentCoverageComplete": true,
       "qaClean": true,
       "sourceIdsClean": true
     },
@@ -31,14 +32,17 @@
     "lastSoldTransition": "2026-07-13T15:34:22.524Z",
     "soldAnalytics": {
       "mode": "certified_backfill_only",
-      "certifiedSuburbs": 1016,
-      "minCertifiedSuburbs": 948,
+      "certifiedSuburbs": 997,
+      "totalSuburbs": 1021,
+      "uncertifiedSuburbs": 24,
+      "coveragePct": 0.9765,
+      "minCertifiedSuburbs": 970,
       "visibleRows": 82698,
       "rawRows": 88147,
       "quarantinedRows": 5449,
       "trusted": true
     },
-    "hoursSinceCurrent": 24,
+    "hoursSinceCurrent": 32.3,
     "activeFresh": 12539,
     "activeTotal": 12539,
     "activeFreshPct": 1,
@@ -46,6 +50,10 @@
     "freshSuburbs": 1021,
     "staleSuburbs": 0,
     "freshSuburbPct": 1,
+    "currentOkSuburbs": 1021,
+    "currentPartialSuburbs": 0,
+    "currentMissingStatusSuburbs": 0,
+    "currentOkPct": 1,
     "activeUnresolvedQa": 0,
     "sourceMissing": 0,
     "blockedSuburbs": 0,
