@@ -1,0 +1,37 @@
+name: RLP stale-site watchdog
+on:
+  schedule:
+    - cron: '30 4 * * *'
+  workflow_dispatch: {}
+permissions:
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live snapshot freshness
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = 'https://rlp.grangedevelopment.com/rlp-snapshot.json?cb=' + Date.now();
+            let ageHours = null, error = null;
+            try {
+              const res = await fetch(url);
+              if (!res.ok) throw new Error('HTTP ' + res.status);
+              const j = await res.json();
+              ageHours = (Date.now() - Date.parse(j.updatedAt)) / 36e5;
+              if (!Number.isFinite(ageHours)) throw new Error('unparseable updatedAt');
+            } catch (e) { error = e.message; }
+            const stale = error !== null || ageHours >= 30;
+            core.info(error ? ('fetch failed: ' + error) : ('snapshot age: ' + ageHours.toFixed(1) + 'h'));
+            if (!stale) return;
+            const open = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'rlp-watchdog' });
+            if (open.data.length) { core.info('watchdog issue already open'); return; }
+            const title = error
+              ? 'RLP watchdog: live snapshot unreachable'
+              : 'RLP watchdog: live site is stale (' + ageHours.toFixed(1) + 'h)';
+            const body = (error
+              ? 'Snapshot fetch failed: ' + error
+              : 'Snapshot updatedAt is ' + ageHours.toFixed(1) + ' hours old (threshold 30h).')
+              + '\n\nThis is the off-Mac watchdog: it runs on GitHub infrastructure and fires even if the production Mac is dead. Check the Mac and tmp/logs/ for the failing run.';
+            await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, labels: ['rlp-watchdog'], body });
