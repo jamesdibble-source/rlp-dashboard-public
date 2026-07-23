@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-07-22T00:36:34.388Z",
+  "updatedAt": "2026-07-23T06:02:40.384Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
   "metrics": {
-    "totalLots": 95916,
+    "totalLots": 95923,
     "medianAsking": 435000,
-    "medianPsm": 889,
-    "activeListings": 12651,
-    "pricedActiveListings": 10696,
-    "averageLotSize": 600,
+    "medianPsm": 894,
+    "activeListings": 12638,
+    "pricedActiveListings": 10684,
+    "averageLotSize": 599,
     "medianLotSize": 504,
     "monthsStock": 14.4
   },
   "productionStatus": {
-    "generatedAt": "2026-07-22T00:36:34.386Z",
+    "generatedAt": "2026-07-23T06:02:40.382Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "amber",
@@ -26,10 +26,10 @@
       "qaClean": true,
       "sourceIdsClean": true
     },
-    "lastCurrentSuccess": "2026-07-21T23:39:13.826Z",
-    "lastCurrentAttempt": "2026-07-21T23:38:08.313Z",
-    "lastSoldBackfill": "2026-07-21T12:30:40.370Z",
-    "lastSoldTransition": "2026-07-22T00:17:09.246Z",
+    "lastCurrentSuccess": "2026-07-23T05:01:30.380Z",
+    "lastCurrentAttempt": "2026-07-23T04:59:52.981Z",
+    "lastSoldBackfill": "2026-07-22T12:35:36.282Z",
+    "lastSoldTransition": "2026-07-23T05:42:32.606Z",
     "soldAnalytics": {
       "mode": "certified_backfill_only",
       "certifiedSuburbs": 997,
@@ -37,124 +37,27 @@
       "uncertifiedSuburbs": 24,
       "coveragePct": 0.9765,
       "minCertifiedSuburbs": 970,
-      "visibleRows": 82896,
-      "rawRows": 88343,
-      "quarantinedRows": 5447,
+      "visibleRows": 82911,
+      "rawRows": 88360,
+      "quarantinedRows": 5449,
       "trusted": true
     },
     "hoursSinceCurrent": 1,
-    "activeFresh": 12584,
-    "activeTotal": 12845,
-    "activeFreshPct": 0.9797,
+    "activeFresh": 12730,
+    "activeTotal": 12832,
+    "activeFreshPct": 0.9921,
     "suburbCount": 1021,
-    "freshSuburbs": 992,
-    "staleSuburbs": 29,
-    "freshSuburbPct": 0.9716,
-    "currentOkSuburbs": 624,
-    "currentPartialSuburbs": 397,
+    "freshSuburbs": 1021,
+    "staleSuburbs": 0,
+    "freshSuburbPct": 1,
+    "currentOkSuburbs": 798,
+    "currentPartialSuburbs": 223,
     "currentMissingStatusSuburbs": 0,
-    "currentOkPct": 0.6112,
-    "activeUnresolvedQa": 1,
+    "currentOkPct": 0.7816,
+    "activeUnresolvedQa": 0,
     "sourceMissing": 0,
-    "blockedSuburbs": 97,
-    "staleSamples": [
-      {
-        "suburb": "Coldstream",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Caloundra West",
-        "state": "QLD",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Concordia",
-        "state": "SA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Butler",
-        "state": "WA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Casuarina",
-        "state": "WA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Ballarat",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "discovery_partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Cairns",
-        "state": "QLD",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Callington",
-        "state": "SA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Cessnock",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Corrimal",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Charlestown",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      },
-      {
-        "suburb": "Cliftleigh",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": "proxy_error"
-      }
-    ]
+    "blockedSuburbs": 46,
+    "staleSamples": []
   },
   "states": [
     {
@@ -169,12 +72,12 @@
     },
     {
       "state": "NSW",
-      "medianAsking": 699000,
-      "lots": 2262,
-      "medianPsm": 1597,
+      "medianAsking": 697500,
+      "lots": 2259,
+      "medianPsm": 1581,
       "medianSize": 450,
-      "totalLots": 24008,
-      "activeListings": 3377,
+      "totalLots": 24000,
+      "activeListings": 3365,
       "monthsStock": 17.5
     },
     {
@@ -189,53 +92,53 @@
     },
     {
       "state": "QLD",
-      "medianAsking": 476000,
-      "lots": 854,
-      "medianPsm": 736,
+      "medianAsking": 478000,
+      "lots": 860,
+      "medianPsm": 747,
       "medianSize": 600,
-      "totalLots": 15233,
-      "activeListings": 1086,
-      "monthsStock": 9.6
+      "totalLots": 15232,
+      "activeListings": 1087,
+      "monthsStock": 9.7
     },
     {
       "state": "SA",
-      "medianAsking": 415950,
-      "lots": 482,
-      "medianPsm": 783,
+      "medianAsking": 412000,
+      "lots": 476,
+      "medianPsm": 778,
       "medianSize": 540,
-      "totalLots": 8563,
-      "activeListings": 595,
-      "monthsStock": 7.5
+      "totalLots": 8556,
+      "activeListings": 585,
+      "monthsStock": 7.4
     },
     {
       "state": "TAS",
       "medianAsking": 294000,
-      "lots": 180,
-      "medianPsm": 459,
-      "medianSize": 693,
-      "totalLots": 2525,
-      "activeListings": 185,
-      "monthsStock": 9.6
+      "lots": 179,
+      "medianPsm": 458,
+      "medianSize": 694,
+      "totalLots": 2524,
+      "activeListings": 184,
+      "monthsStock": 9.5
     },
     {
       "state": "VIC",
       "medianAsking": 395000,
-      "lots": 6352,
-      "medianPsm": 839,
+      "lots": 6340,
+      "medianPsm": 848,
       "medianSize": 512,
-      "totalLots": 34228,
-      "activeListings": 6627,
-      "monthsStock": 17.3
+      "totalLots": 34241,
+      "activeListings": 6631,
+      "monthsStock": 17.4
     },
     {
       "state": "WA",
-      "medianAsking": 465000,
-      "lots": 531,
-      "medianPsm": 1037,
+      "medianAsking": 463000,
+      "lots": 535,
+      "medianPsm": 1038,
       "medianSize": 450,
-      "totalLots": 10556,
-      "activeListings": 744,
-      "monthsStock": 9.1
+      "totalLots": 10567,
+      "activeListings": 749,
+      "monthsStock": 9.3
     }
   ],
   "build": {
