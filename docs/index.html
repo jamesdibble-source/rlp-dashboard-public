@@ -753,11 +753,12 @@ function renderProductionStatus(){
   if(!el)return;
   const builtStatus=(s.trustStatus||'red').toLowerCase();
   const ageH=liveDataAgeHours(s);
-  // Cadence is ~3x/week, so data reaching ~48h old between scrapes is normal.
-  // Only amber past 50h, red past 96h (a genuinely missed cycle).
+  // Full scans run every 3rd night (publish itself is nightly), so current
+  // data reaching ~83h old just before the next scan is normal. Amber past
+  // 90h, red past 180h (a genuinely missed scan cycle).
   let status=builtStatus;
-  if(ageH!=null&&ageH>96)status='red';
-  else if(ageH!=null&&ageH>50&&status==='green')status='amber';
+  if(ageH!=null&&ageH>180)status='red';
+  else if(ageH!=null&&ageH>90&&status==='green')status='amber';
   const aged=status!==builtStatus;
   const palette=status==='green'
     ?{bg:'#edf6ef',bd:'#486456',fg:'#284335',dot:'#486456',label:'Fresh'}
@@ -807,7 +808,7 @@ function renderProductionStatus(){
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dataset start</div><div class="prod-status-value">${fmtDateTime(s.datasetStartAt)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dashboard built</div><div class="prod-status-value">${fmtDateTime(R.built)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current analysis</div><div class="prod-status-value">${fmtDateTime(s.lastCurrentSuccess)} · ${hours}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Next update</div><div class="prod-status-value">${nextRun}</div><div class="prod-status-detail">Runs nightly · full national scan every second day · new data live by late morning</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Next update</div><div class="prod-status-value">${nextRun}</div><div class="prod-status-detail">Site updates nightly · full national scan every 3rd night · scan-day data live by late morning</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${(s.checks&&s.checks.activeRowsFresh===false)?'below freshness target':(aged?'as at last verified analysis':'freshness target met')}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} scanned ok · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Sold history</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} suburbs certified · ${soldStatus.visibleRows.toLocaleString()} rows</div><div class="prod-status-detail">Certified suburbs only · ${soldStatus.uncertifiedSuburbs.toLocaleString()} gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}</div></div>
