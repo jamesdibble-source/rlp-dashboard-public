@@ -774,8 +774,19 @@ function renderProductionStatus(){
   const asOf=fmtDateTime(s.lastCurrentSuccess||s.generatedAt||R.built);
   const gateNames={currentAnalysisFresh:'the current analysis is out of date',activeRowsFresh:'too many listings have not been re-checked recently',suburbCoverageFresh:'too many suburbs are missing recent data',currentCoverageComplete:'too many suburbs failed their last scan',qaClean:'some listings are still awaiting quality review',sourceIdsClean:'some listings failed an integrity check'};
   const failingGates=s.checks?Object.keys(gateNames).filter(k=>s.checks[k]===false).map(k=>gateNames[k]):[];
+  // Next scheduled pipeline run: nightly 01:15 Australia/Sydney (launchd
+  // StartCalendarInterval). Computed client-side so an open tab stays correct;
+  // the 5-minute re-render keeps it rolling over automatically.
+  const nextRun=(()=>{try{
+    const tz='Australia/Sydney';
+    const hm=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hourCycle:'h23',hour:'2-digit',minute:'2-digit'}).format(new Date());
+    const base=new Date(Date.now()+((hm>='01:15')?86400000:0));
+    const dstr=new Intl.DateTimeFormat('en-AU',{timeZone:tz,day:'numeric',month:'short'}).format(base);
+    const tzn=new Intl.DateTimeFormat('en-AU',{timeZone:tz,timeZoneName:'short'}).formatToParts(base).find(p=>p.type==='timeZoneName');
+    return dstr+', 1:15 am '+(tzn?tzn.value:'AEST');
+  }catch(e){return 'nightly, 1:15 am AEST';}})();
   const note=status==='green'
-    ?'Current market data is inside the production freshness window (refreshed about three times a week).'
+    ?'Current market data is inside the production freshness window (updated nightly).'
     :status==='amber'
       ?(aged
         ?('Data is aging (last verified '+hours+'). Showing the most recent verified analysis while the next update runs.')
@@ -796,6 +807,7 @@ function renderProductionStatus(){
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dataset start</div><div class="prod-status-value">${fmtDateTime(s.datasetStartAt)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dashboard built</div><div class="prod-status-value">${fmtDateTime(R.built)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current analysis</div><div class="prod-status-value">${fmtDateTime(s.lastCurrentSuccess)} · ${hours}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Next update</div><div class="prod-status-value">${nextRun}</div><div class="prod-status-detail">Runs nightly · full national scan every second day · new data live by late morning</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${(s.checks&&s.checks.activeRowsFresh===false)?'below freshness target':(aged?'as at last verified analysis':'freshness target met')}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} scanned ok · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Sold history</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} suburbs certified · ${soldStatus.visibleRows.toLocaleString()} rows</div><div class="prod-status-detail">Certified suburbs only · ${soldStatus.uncertifiedSuburbs.toLocaleString()} gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}</div></div>
