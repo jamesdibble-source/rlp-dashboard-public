@@ -772,12 +772,14 @@ function renderProductionStatus(){
   const soldStatus=soldAnalyticsStatus();
   const hours=fmtAge(ageH);
   const asOf=fmtDateTime(s.lastCurrentSuccess||s.generatedAt||R.built);
+  const gateNames={currentAnalysisFresh:'the current analysis is out of date',activeRowsFresh:'too many listings have not been re-checked recently',suburbCoverageFresh:'too many suburbs are missing recent data',currentCoverageComplete:'too many suburbs failed their last scan',qaClean:'some listings are still awaiting quality review',sourceIdsClean:'some listings failed an integrity check'};
+  const failingGates=s.checks?Object.keys(gateNames).filter(k=>s.checks[k]===false).map(k=>gateNames[k]):[];
   const note=status==='green'
     ?'Current market data is inside the production freshness window (refreshed about three times a week).'
     :status==='amber'
       ?(aged
         ?('Data is aging (last verified '+hours+'). Showing the most recent verified analysis while the next update runs.')
-        :'Some coverage is stale. Treat market totals as directional until reconcile finishes.')
+        :(failingGates.length?('Attention: '+failingGates.join('; ')+'. Headline totals remain reliable; the affected slice may lag until the next update completes.'):'One production check has not passed. Headline totals remain reliable; the affected slice may lag until the next update completes.'))
       :(aged
         ?('Showing last verified data as of '+asOf+'. A newer update has not published yet — treat pricing as historical until this banner returns to green.')
         :'Do not rely on current pricing as fully fresh until the current analysis/reconcile completes.');
@@ -794,8 +796,8 @@ function renderProductionStatus(){
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dataset start</div><div class="prod-status-value">${fmtDateTime(s.datasetStartAt)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dashboard built</div><div class="prod-status-value">${fmtDateTime(R.built)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current analysis</div><div class="prod-status-value">${fmtDateTime(s.lastCurrentSuccess)} · ${hours}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${status==='green'?'freshness gate passed':(aged?'as at last verified analysis':'freshness gate not fully met')}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} complete · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${(s.checks&&s.checks.activeRowsFresh===false)?'below freshness target':(aged?'as at last verified analysis':'freshness target met')}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} scanned ok · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Sold history</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} suburbs certified · ${soldStatus.visibleRows.toLocaleString()} rows</div><div class="prod-status-detail">Certified suburbs only · ${soldStatus.uncertifiedSuburbs.toLocaleString()} gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}</div></div>
       </div>
     </div>`;
