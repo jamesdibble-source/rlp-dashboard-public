@@ -6033,7 +6033,53 @@ function moverCard(e,kind,rank){
     <div>${charts}</div>
   </div>`;
 }
+// ──── Protected sections: Market Movers + Insights (Aug 2026) ────
+// Data arrives encrypted (AES-256-GCM); nothing renders until the password
+// decrypts it. sessionStorage keeps the tab unlocked; closing the tab re-locks.
+const PROT=R.protectedSections||null;
+let protUnlocked=!PROT;
+let protError='';
+function protLockScreen(){
+  return `<div style="max-width:440px;margin:80px auto;text-align:center;padding:36px 30px;border:1px solid #d8d2c6;border-radius:14px;background:rgba(255,255,255,.55)">
+    <span class="material-symbols-outlined" style="font-size:42px;opacity:.55">lock</span>
+    <h2 style="margin:12px 0 6px">Restricted section</h2>
+    <p style="font-size:13px;opacity:.7;margin:0 0 18px;line-height:1.5">Market Movers and Insights are password-protected. Enter the access password to unlock them for this browser tab.</p>
+    <form onsubmit="return protSubmit(event)" style="display:flex;gap:8px;justify-content:center">
+      <input id="protPw" type="password" placeholder="Password" autocomplete="current-password" style="padding:9px 12px;border:1px solid #c9c2b4;border-radius:8px;font-size:14px;width:190px" />
+      <button type="submit" style="padding:9px 16px;border:none;border-radius:8px;background:#284335;color:#fff;font-size:14px;cursor:pointer">Unlock</button>
+    </form>
+    ${protError?`<p style="color:#9f3c35;font-size:12.5px;margin:12px 0 0">${protError}</p>`:``}
+  </div>`;
+}
+async function protTryUnlock(pw){
+  if(!PROT||!pw)return false;
+  try{
+    const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+    const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+    const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b(PROT.salt),iterations:PROT.iter||310000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+    const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b(PROT.iv)},key,b(PROT.data));
+    const payload=JSON.parse(new TextDecoder().decode(pt));
+    if(payload.insights)R.insights=payload.insights;
+    if(payload.movers)R.movers=payload.movers;
+    protUnlocked=true;
+    try{sessionStorage.setItem('rlpSectionsPw',pw);}catch(e){}
+    return true;
+  }catch(e){return false;}
+}
+async function protSubmit(ev){
+  ev.preventDefault();
+  const pw=(document.getElementById('protPw')||{}).value||'';
+  protError=(await protTryUnlock(pw))?'':'Incorrect password.';
+  render();
+  return false;
+}
+if(PROT){(async()=>{try{
+  const pw=sessionStorage.getItem('rlpSectionsPw');
+  if(pw&&await protTryUnlock(pw)&&typeof render==='function')render();
+}catch(e){}})();}
+
 function renderMovers(){
+  if(PROT&&!protUnlocked)return protLockScreen();
   const M=R.movers||null;
   if(!M||(!M.rocketships&&!M.fallenAngels))return `<div style="padding:40px;opacity:.6">Movers data will appear after the next nightly build.</div>`;
   const section=(title,dot,items,kind,intro)=>`
@@ -6061,6 +6107,7 @@ function renderMovers(){
   </div>`;
 }
 function renderInsights(){
+  if(PROT&&!protUnlocked)return protLockScreen();
   const d=D();
   const ts=TS();
   const stateFullNames={ACT:'Australian Capital Territory',NSW:'New South Wales',NT:'Northern Territory',QLD:'Queensland',SA:'South Australia',TAS:'Tasmania',VIC:'Victoria',WA:'Western Australia'};
