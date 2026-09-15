@@ -4,7 +4,7 @@
   else root.RlpBenchmark = api;
 })(typeof globalThis === 'object' ? globalThis : this, function () {
   'use strict';
-  const VERSION = '2026-09-15.1';
+  const VERSION = '2026-09-15.2';
   const CURRENT = new Set(['listing', 'under_contract', 'contact_agent']);
   function median(values) {
     const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
@@ -51,16 +51,23 @@
     });
     const prices = rows.map(priceOf), areas = rows.map(l => Number(l.lot_size)), rates = rows.map(rateOf);
     const sum = values => values.reduce((a, b) => a + b, 0);
-    const enough = rows.length >= minSample;
+    const assessmentScope = current.filter(l => !(Number(l.lot_size)>0) || (Number(l.lot_size)>=180 && Number(l.lot_size)<=1000));
+    const pendingCount = assessmentScope.filter(l=>l.assessment?.processing !== 'assessed').length;
+    const reviewCount = assessmentScope.filter(l=>l.assessment?.processing === 'assessed' && l.assessment.decision === 'review').length;
+    const assessmentComplete = pendingCount === 0;
+    const ready = !options.requireAssessment || (assessmentComplete && reviewCount === 0);
+    const enough = rows.length >= minSample && ready;
     const quoteDates = rows.map(l => l.quote_observed_at).filter(Boolean).sort();
     return {
       version: VERSION, minSize, maxSize, minSample, currentCount: current.length,
       selectedCount: selected.length, sampleCount: rows.length,
+      assessmentCount: assessmentScope.length-pendingCount, assessmentScopeCount:assessmentScope.length,
+      pendingCount, reviewCount, assessmentComplete, benchmarkReady:enough,
       unclassifiedCount: current.filter(l => !l.comparability || l.comparability.category === 'unclassified').length,
       pricedCoverage: selected.length ? rows.length / selected.length : null,
       rangeCount: rows.filter(l => l.quote && l.quote.kind === 'range').length,
       qualifiedCount: rows.filter(l => l.quote && !['exact', 'range'].includes(l.quote.kind)).length,
-      status: enough ? 'sample_available' : rows.length ? 'limited_sample' : 'no_comparables',
+      status: !ready ? (pendingCount ? 'assessment_pending' : 'evidence_review_required') : enough ? 'sample_available' : rows.length ? 'limited_sample' : 'no_comparables',
       oldestQuote: quoteDates[0] || null, newestQuote: quoteDates[quoteDates.length - 1] || null,
       priceLow: enough ? median(rows.map(l => l.quote?.low > 0 ? l.quote.low - (l.cash_rebate || 0) : priceOf(l))) : null,
       priceHigh: enough ? median(rows.map(l => l.quote?.high > 0 ? l.quote.high - (l.cash_rebate || 0) : priceOf(l))) : null,
@@ -77,7 +84,18 @@
   function greenfieldOptions({ band = 'all', maxSize = 1000, asOf } = {}) {
     const bounds = { all: [180, maxSize], townhouse: [180, 300], standard: [280, 700] }[band] || [180, maxSize];
     return { minSize: bounds[0], maxSize: Math.min(bounds[1], maxSize), minSample: 5, greenfieldOnly: true,
-      availableOnly: true, exactOrRangeOnly: true, requireQuoteDate: true, maxAgeDays: 30, asOf };
+      availableOnly: true, exactOrRangeOnly: true, requireQuoteDate: true, requireAssessment:true, maxAgeDays: 30, asOf };
   }
-  return { VERSION, median, priceOf, rateOf, isUsableCurrent, summarize, greenfieldOptions };
+  function projectSummaries(input, options = {}) {
+    const groups = new Map();
+    for (const lot of input) {
+      if (!CURRENT.has(lot.status) || !lot.comparability?.project || lot.assessment?.decision !== 'include') continue;
+      const key=[lot.state,lot.suburb,lot.comparability.project].join('|');
+      if (!groups.has(key)) groups.set(key,[]);
+      groups.get(key).push(lot);
+    }
+    return [...groups.values()].map(lots=>({project:lots[0].comparability.project,state:lots[0].state,suburb:lots[0].suburb,
+      basis:'Checked, explicitly identified project members; not a complete project inventory',summary:summarize(lots,options)}));
+  }
+  return { VERSION, median, priceOf, rateOf, isUsableCurrent, summarize, greenfieldOptions, projectSummaries };
 });
