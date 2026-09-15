@@ -706,7 +706,7 @@ document.addEventListener('click',e=>{
 });
 
 </script>
-<script src="assets/core.js"></script><script src="assets/lots.js"></script><script src="assets/registry.js"></script>
+<script src="assets/benchmark.js"></script><script src="assets/benchmark-ui.js"></script><script src="assets/core.js"></script><script src="assets/lots.js"></script><script src="assets/registry.js"></script>
 <script>
 const R=window.__RLP_DATA__;
 function fmtDateTime(iso){
@@ -773,7 +773,7 @@ function renderProductionStatus(){
   const soldStatus=soldAnalyticsStatus();
   const hours=fmtAge(ageH);
   const asOf=fmtDateTime(s.lastCurrentSuccess||s.generatedAt||R.built);
-  const gateNames={currentAnalysisFresh:'the current analysis is out of date',activeRowsFresh:'too many listings have not been re-checked recently',suburbCoverageFresh:'too many suburbs are missing recent data',currentCoverageComplete:'too many suburbs failed their last scan',qaClean:'some listings are still awaiting quality review',sourceIdsClean:'some listings failed an integrity check'};
+  const gateNames={currentAnalysisFresh:'the current analysis is out of date',activeRowsFresh:'too many listings have not been re-checked recently',suburbCoverageFresh:'too many suburbs are missing recent data',currentCoverageComplete:'some suburb scans have incomplete or unverified coverage',qaClean:'some listings are still awaiting quality review',sourceIdsClean:'some listings failed an integrity check'};
   const failingGates=s.checks?Object.keys(gateNames).filter(k=>s.checks[k]===false).map(k=>gateNames[k]):[];
   // Next scheduled pipeline run: nightly 01:15 Australia/Sydney (launchd
   // StartCalendarInterval). Computed client-side so an open tab stays correct;
@@ -787,11 +787,11 @@ function renderProductionStatus(){
     return dstr+', 1:15 am '+(tzn?tzn.value:'AEST');
   }catch(e){return 'nightly, 1:15 am AEST';}})();
   const note=status==='green'
-    ?'Current market data is inside the production freshness window (updated nightly).'
+    ?'Pipeline observations are recent. Completeness and suitability depend on the selected comparable sample.'
     :status==='amber'
       ?(aged
         ?('Data is aging (last verified '+hours+'). Showing the most recent verified analysis while the next update runs.')
-        :(failingGates.length?('Attention: '+failingGates.join('; ')+'. Headline totals remain reliable; the affected slice may lag until the next update completes.'):'One production check has not passed. Headline totals remain reliable; the affected slice may lag until the next update completes.'))
+        :(failingGates.length?('Attention: '+failingGates.join('; ')+'. Check comparable counts and quote dates before using a pricing assumption.'):'One production check has not passed. Check comparable counts and quote dates before using a pricing assumption.'))
       :(aged
         ?('Showing last verified data as of '+asOf+'. A newer update has not published yet — treat pricing as historical until this banner returns to green.')
         :'Do not rely on current pricing as fully fresh until the current analysis/reconcile completes.');
@@ -810,7 +810,7 @@ function renderProductionStatus(){
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current analysis</div><div class="prod-status-value">${fmtDateTime(s.lastCurrentSuccess)} · ${hours}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Next update</div><div class="prod-status-value">${nextRun}</div><div class="prod-status-detail">Site updates nightly · full national scan every 3rd night · scan-day data live by late morning</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${(s.checks&&s.checks.activeRowsFresh===false)?'below freshness target':(aged?'as at last verified analysis':'freshness target met')}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} scanned ok · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} complete latest scans · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Sold history</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} suburbs certified · ${soldStatus.visibleRows.toLocaleString()} rows</div><div class="prod-status-detail">Certified suburbs only · ${soldStatus.uncertifiedSuburbs.toLocaleString()} gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}</div></div>
       </div>
     </div>`;
@@ -1708,7 +1708,7 @@ function isCurrentLot(l){return !!(l&&CURRENT_LOT_STATUSES.has(l.status));}
 function isMarketLot(l){return !!(l&&(l.status==='sold'||isCurrentLot(l)));}
 function hasUsablePrice(l){return !!(l&&Number(l.price)>0);}
 function hasUsableRate(l){return !!(l&&Number(l.rate)>0&&Number(l.price)>0);}
-function isPricedCurrentLot(l){return isCurrentLot(l)&&hasUsablePrice(l);}
+function isPricedCurrentLot(l){return !!l&&RlpBenchmark.isUsableCurrent(l);}
 function filterLots(lots){const src=(lots||[]).filter(isMarketLot);if(viewMode==='both')return src;if(viewMode==='sold')return src.filter(l=>l.status==='sold');return src.filter(isCurrentLot);}
 const MIN_TREND_SALES=5;
 function analysisDate(){
@@ -1738,6 +1738,8 @@ function trendGateMessage(noun){
 }
 function registryLotToStandard(l){
   return {
+    quote:l.quote, quote_observed_at:l.quote_observed_at, status_verified_at:l.status_verified_at,
+    detail_checked_at:l.detail_checked_at, comparability:l.comparability, cash_rebate:l.cash_rebate,
     id:l.id,
     address:l.addr||'',
     suburb:l.sub||'',
@@ -2002,12 +2004,10 @@ function isRecentSoldLot(l,days=90){
 // market is asking today and the right number for headline price metrics.
 // Sold medians lag actual sales by 6–9 months due to off-the-plan settlement.
 function listedMedianBy(filterFn){
-  const lots=(R.lots||[]).filter(l=>isPricedCurrentLot(l)&&filterFn(l));
-  return medOf(lots.map(l=>l.price));
+  return RlpBenchmark.summarize((R.lots||[]).filter(filterFn)).medianPrice||0;
 }
 function listedMedianRateBy(filterFn){
-  const lots=(R.lots||[]).filter(l=>isCurrentLot(l)&&hasUsableRate(l)&&filterFn(l));
-  return Math.round(medOf(lots.map(l=>l.rate)));
+  return Math.round(RlpBenchmark.summarize((R.lots||[]).filter(filterFn)).medianRate||0);
 }
 function sold90MedianBy(filterFn){
   const iso90=recentSoldCutoffISO(90);
@@ -2020,8 +2020,7 @@ function sold90MedianRateBy(filterFn){
   return Math.round(medOf(lots.map(l=>l.rate)));
 }
 function listedMedianSizeBy(filterFn){
-  const lots=(R.lots||[]).filter(l=>isCurrentLot(l)&&l.lot_size>0&&filterFn(l));
-  return Math.round(medOf(lots.map(l=>l.lot_size)));
+  return Math.round(RlpBenchmark.summarize((R.lots||[]).filter(filterFn)).medianSize||0);
 }
 
 // State colours for All-states stacked volume mode (Fix 2)
@@ -3128,8 +3127,8 @@ function renderOverview(){
   // the three most notable prices — cheapest, middle, premium.
   const priceDensityChart = () => {
     const currentLots = (R.scatterLots || R.lots || []).filter(l => isCurrentLot(l) && (!cState || l.state === cState));
-    const listedLots = currentLots.filter(hasUsablePrice);
-    const unpricedCount = currentLots.length - listedLots.length;
+    const listedLots = currentLots.filter(isPricedCurrentLot);
+    const unpricedCount = currentLots.filter(l=>!hasUsablePrice(l)).length;
     if (listedLots.length < 10) return '';
     const prices = listedLots.map(l => l.price).sort((a,b)=>a-b);
     const range = focusedNumericRange(prices,{low:0.01,high:0.95});
@@ -4318,7 +4317,7 @@ function renderVelocity(){
         ${metric('Active Listings',fN(currentLots.length),'current supply')}
         ${metric('Priced Listings',fN(pricedLots.length),currentLots.length?Math.round(pricedLots.length/currentLots.length*100)+'% priced':'coverage')}
         ${metric('POA / Contact Agent',fN(unpricedLots),'tracked but excluded from price medians')}
-        ${metric('Median Asking',pricedLots.length?fK(Math.round(medOf(pricedLots.map(l=>l.price)))):'-','priced current listings')}
+        ${metric('Median Asking',RlpBenchmark.summarize(currentLots).medianPrice?fK(RlpBenchmark.summarize(currentLots).medianPrice):'-','paired current sample')}
       </div>
       <div class="grid grid-cols-2 gap-8">
         <div class="v5-card">
@@ -5095,7 +5094,7 @@ function renderHealth(){
         ${metric('Active Listings',fN(currentLots.length),'current supply')}
         ${metric('Priced Coverage',currentLots.length?Math.round(pricedLots.length/currentLots.length*100)+'%':'-','usable public prices')}
         ${metric('POA / Contact Agent',fN(unpricedLots),'tracked separately')}
-        ${metric('Median Asking',pricedLots.length?fK(Math.round(medOf(pricedLots.map(l=>l.price)))):'-','priced current listings')}
+        ${metric('Median Asking',RlpBenchmark.summarize(currentLots).medianPrice?fK(RlpBenchmark.summarize(currentLots).medianPrice):'-','paired current sample')}
         ${metric('Median $/m2',rateLots.length?'$'+Math.round(medOf(rateLots.map(l=>l.rate))):'-','priced current listings')}
       </div>
       <div class="grid grid-cols-2 gap-8">
@@ -5633,7 +5632,7 @@ function renderSuburb(){
   const subUnpricedLots=subLots.filter(l=>isCurrentLot(l)&&!hasUsablePrice(l));
   // Neighbour comparison uses CURRENT listed $/m² per suburb, not the stale
   // SQL s.avg_rate that blended 17 years of sold history (Fix — Apr 2026).
-  const stateFilterCur=cState||(R.stateList&&R.stateList.length===1?R.stateList[0]:null);
+  const stateFilterCur=subStateScope;
   const listedRateForSub=name=>listedMedianRateBy(l=>(l.suburb||'').toLowerCase().trim()===(name||'').toLowerCase().trim()&&(!stateFilterCur||l.state===stateFilterCur));
   const currentListedRate=listedRateForSub(current.suburb);
   // Fix 2 (Apr 2026): neighbour selection is now geographic-ish instead of
@@ -5752,6 +5751,8 @@ function renderSuburb(){
       <span class="text-[9px] text-[#1b1c17]/30 uppercase tracking-wider">${current.corridor||''} · ${current.lga||''} · ${current.state||''}</span>
     </div>
 
+    ${retailBenchmarkPanel((R.lots||[]).filter(subFilterAll),current.suburb,subStateScope)}
+    <p style="font-size:11px;margin-bottom:8px">All captured land · broader market context · ${RlpBenchmark.summarize((R.lots||[]).filter(subFilterAll)).sampleCount} priced lots in the paired median sample. Pipeline freshness does not certify complete listing coverage.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(156px,1fr));gap:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:24px 0;margin-bottom:var(--gap-xl)">
       ${metric('Listed Median',heroListedMedPrice>0?fK(heroListedMedPrice):'—','current asking')}
       ${metric('Listed $/m²',heroListedMedRate>0?'$'+heroListedMedRate:'—','current asking')}
@@ -5879,7 +5880,7 @@ function renderSuburb(){
 
     ${(()=>{
       // Fix 9: independent inventory toggle (separate from header toggle)
-      const allInvLots=inventoryLots().filter(l=>(l.suburb||'').toLowerCase().trim()===curName&&(!cState||l.state===cState));
+      const allInvLots=inventoryLots().filter(l=>(l.suburb||'').toLowerCase().trim()===curName&&(!subStateScope||l.state===subStateScope));
       const invLots=suburbInventoryFilter==='sold'?allInvLots.filter(l=>l.status==='sold')
         :suburbInventoryFilter==='listing'?allInvLots.filter(isCurrentLot):allInvLots.filter(l=>isCurrentLot(l)||isRecentSoldLot(l,90));
       const invLabel=suburbInventoryFilter==='sold'?'sold transactions only':suburbInventoryFilter==='listing'?'active listings only':'active + sold last 90d';
@@ -5895,15 +5896,15 @@ function renderSuburb(){
       const invSorted=[...invLots].sort((a,b)=>invDate(b).localeCompare(invDate(a)));
       const invRows=invSorted.map(l=>{
         const isSold=l.status==='sold';
-        const badgeLabel=isSold?'Sold':'Listing';
+        const badgeLabel=isSold?'Sold':l.status==='under_contract'?'Under contract':'Listing';
         const badgeCls=isSold?'text-[#486456] bg-[#486456]/10 border-[#486456]/25':'text-[#61323a] bg-[#61323a]/10 border-[#61323a]/25';
         const url=l.source_url||'';
         const linkCell=url?('<a href="'+attrEscape(url)+'" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6a4c7a] hover:text-[#513561] hover:underline" title="Open source listing in new tab"><span class="material-symbols-outlined" style="font-size:13px">open_in_new</span>View</a>'):'<span class="text-[10px] text-[#1b1c17]/25">—</span>';
         const addrText=l.address||titleCase(l.suburb||'');
         return '<tr class="dr border-b border-[var(--rule)]/40 hover:bg-[var(--rule-soft)]/60">'
-          +'<td class="py-2.5 px-3 text-[11px] font-medium text-[#1b1c17]">'+addrText+'</td>'
+          +'<td class="py-2.5 px-3 text-[11px] font-medium text-[#1b1c17]">'+attrEscape(addrText)+'<div style="font-size:10px;opacity:.65">'+attrEscape((l.comparability?.category||'unclassified').replace(/_/g,' '))+' · quote '+attrEscape((l.quote_observed_at||'date unknown').slice(0,10))+'</div></td>'
           +'<td class="py-2.5 px-3 text-[11px] text-[#1b1c17]/70 tabular-nums whitespace-nowrap" title="'+(isSold?'sold date':'listed date')+'">'+invDateLabel(invDate(l))+'</td>'
-          +'<td class="py-2.5 px-3 text-[11px] text-right tabular-nums">'+fmt(l.price)+'</td>'
+          +'<td class="py-2.5 px-3 text-[11px] text-right tabular-nums">'+quoteLabel(l)+'</td>'
           +'<td class="py-2.5 px-3 text-[11px] text-right tabular-nums">'+fN(l.lot_size)+'</td>'
 	          +'<td class="py-2.5 px-3 text-[11px] text-right font-semibold text-[#513561] tabular-nums">'+(hasUsableRate(l)?'$'+Math.round(l.rate||0).toLocaleString():'—')+'</td>'
           +'<td class="py-2.5 px-3 text-center"><span class="inline-block px-2 py-0.5 text-[9px] uppercase tracking-wider font-bold border rounded '+badgeCls+'">'+badgeLabel+'</span></td>'
