@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-29T19:45:39.402Z",
+  "updatedAt": "2026-09-30T15:33:27.703Z",
   "source": "Retail Lot Price Dashboard",
   "scope": "National",
   "url": "https://rlp.grangedevelopment.com/",
   "metrics": {
-    "totalLots": 98683,
+    "totalLots": 98631,
     "medianAsking": 435000,
     "medianPsm": 902,
     "activeListings": 12954,
@@ -13,45 +13,45 @@
     "averageLotPrice": 484420.78572811774,
     "aggregateAskingPsm": 793.4349773487705,
     "medianLotSize": 515,
-    "monthsStock": 16.3
+    "monthsStock": 16.4
   },
   "productionStatus": {
-    "generatedAt": "2026-09-29T19:55:40.655Z",
+    "generatedAt": "2026-09-30T15:43:27.755Z",
     "datasetStartAt": "2026-04-16T07:22:49.717Z",
     "statusTable": true,
     "trustStatus": "amber",
     "checks": {
       "currentAnalysisFresh": true,
-      "activeRowsFresh": true,
-      "suburbCoverageFresh": true,
+      "activeRowsFresh": false,
+      "suburbCoverageFresh": false,
       "currentCoverageComplete": false,
       "qaClean": true,
       "sourceIdsClean": true
     },
     "lastCurrentSuccess": "2026-09-29T07:10:48.240Z",
     "lastCurrentAttempt": "2026-09-29T07:11:47.427Z",
-    "lastSoldBackfill": "2026-09-29T13:15:30.586Z",
+    "lastSoldBackfill": "2026-09-30T13:14:00.411Z",
     "lastSoldTransition": "2026-09-29T19:33:07.181Z",
     "soldAnalytics": {
       "mode": "certified_backfill_only",
-      "certifiedSuburbs": 1004,
+      "certifiedSuburbs": 1002,
       "totalSuburbs": 1021,
-      "uncertifiedSuburbs": 17,
-      "coveragePct": 0.9833,
+      "uncertifiedSuburbs": 19,
+      "coveragePct": 0.9814,
       "minCertifiedSuburbs": 970,
-      "visibleRows": 85089,
-      "rawRows": 89649,
-      "quarantinedRows": 4560,
+      "visibleRows": 85056,
+      "rawRows": 89650,
+      "quarantinedRows": 4594,
       "trusted": true
     },
-    "hoursSinceCurrent": 12.7,
-    "activeFresh": 12009,
+    "hoursSinceCurrent": 32.5,
+    "activeFresh": 8866,
     "activeTotal": 13324,
-    "activeFreshPct": 0.9013,
+    "activeFreshPct": 0.6654,
     "suburbCount": 1021,
-    "freshSuburbs": 960,
-    "staleSuburbs": 61,
-    "freshSuburbPct": 0.9403,
+    "freshSuburbs": 492,
+    "staleSuburbs": 529,
+    "freshSuburbPct": 0.4819,
     "currentOkSuburbs": 557,
     "currentPartialSuburbs": 464,
     "currentMissingStatusSuburbs": 0,
@@ -61,99 +61,99 @@
     "blockedSuburbs": 6,
     "staleSamples": [
       {
-        "suburb": "Officer South",
+        "suburb": "Melton",
         "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Pakenham South",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Coldstream",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Grovedale",
-        "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Maraylya",
-        "state": "NSW",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Ningi",
-        "state": "QLD",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Two Wells",
-        "state": "SA",
         "activeRows": 1,
-        "lastEvidenceAt": "2026-09-20T02:03:58.470Z",
-        "lastStatus": "partial",
+        "lastEvidenceAt": "2026-09-25T22:15:21.125Z",
+        "lastStatus": "discovery_partial",
         "blockedReason": null
       },
       {
-        "suburb": "Kudla",
-        "state": "SA",
-        "activeRows": 1,
-        "lastEvidenceAt": "2026-09-19T22:08:53.899Z",
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Lobethal",
-        "state": "SA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "The Vines",
-        "state": "WA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Serpentine",
-        "state": "WA",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
-        "blockedReason": null
-      },
-      {
-        "suburb": "Inverleigh",
+        "suburb": "Melton West",
         "state": "VIC",
-        "activeRows": 0,
-        "lastEvidenceAt": null,
-        "lastStatus": "partial",
+        "activeRows": 2,
+        "lastEvidenceAt": "2026-09-25T22:16:26.210Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Tarneit",
+        "state": "VIC",
+        "activeRows": 232,
+        "lastEvidenceAt": "2026-09-26T01:55:40.223Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Truganina",
+        "state": "VIC",
+        "activeRows": 94,
+        "lastEvidenceAt": "2026-09-26T02:28:17.672Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Wyndham Vale",
+        "state": "VIC",
+        "activeRows": 183,
+        "lastEvidenceAt": "2026-09-26T03:41:29.400Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Manor Lakes",
+        "state": "VIC",
+        "activeRows": 22,
+        "lastEvidenceAt": "2026-09-25T22:06:16.861Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Werribee",
+        "state": "VIC",
+        "activeRows": 69,
+        "lastEvidenceAt": "2026-09-26T03:12:05.727Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Williams Landing",
+        "state": "VIC",
+        "activeRows": 2,
+        "lastEvidenceAt": "2026-09-26T03:19:21.937Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Sanctuary Lakes",
+        "state": "VIC",
+        "activeRows": 3,
+        "lastEvidenceAt": "2026-09-26T01:00:25.529Z",
+        "lastStatus": "ok",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Wollert",
+        "state": "VIC",
+        "activeRows": 146,
+        "lastEvidenceAt": "2026-09-26T03:28:58.409Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Mernda",
+        "state": "VIC",
+        "activeRows": 12,
+        "lastEvidenceAt": "2026-09-25T22:22:20.977Z",
+        "lastStatus": "discovery_partial",
+        "blockedReason": null
+      },
+      {
+        "suburb": "Whittlesea",
+        "state": "VIC",
+        "activeRows": 3,
+        "lastEvidenceAt": "2026-09-26T03:17:14.529Z",
+        "lastStatus": "ok",
         "blockedReason": null
       }
     ]
@@ -2197,7 +2197,7 @@
       "medianSize": 517,
       "totalLots": 24692,
       "activeListings": 3345,
-      "monthsStock": 19.2
+      "monthsStock": 19.3
     },
     {
       "state": "NT",
@@ -3318,9 +3318,9 @@
       },
       "medianPsm": 831,
       "medianSize": 581,
-      "totalLots": 15458,
+      "totalLots": 15426,
       "activeListings": 1333,
-      "monthsStock": 14.9
+      "monthsStock": 15.2
     },
     {
       "state": "SA",
@@ -10111,9 +10111,9 @@
       },
       "medianPsm": 856,
       "medianSize": 512,
-      "totalLots": 34826,
+      "totalLots": 34806,
       "activeListings": 6426,
-      "monthsStock": 18.7
+      "monthsStock": 18.9
     },
     {
       "state": "WA",
@@ -10837,7 +10837,7 @@
       "medianSize": 450,
       "totalLots": 11256,
       "activeListings": 1034,
-      "monthsStock": 13.7
+      "monthsStock": 13.8
     }
   ],
   "benchmarkDefinition": {
