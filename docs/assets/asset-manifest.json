@@ -1,0 +1,1169 @@
+{
+  "inputFingerprint": "210973baee9e6c776a5d2359f4303555b6cc1ba41105c59ce240b1dc38df4537",
+  "encoding": "rlp-market-wire-v1",
+  "byteBinding": {
+    "version": 1,
+    "html": {
+      "name": "index.html",
+      "bytes": 790143,
+      "sha256": "025c487e95cbc2eb824005b7ea9c210d1478e13c88ab23ec8eb5471ca9889a61"
+    },
+    "snapshot": {
+      "name": "rlp-snapshot.json",
+      "bytes": 4119781,
+      "sha256": "176c6c80b70bb1112093150256af98fe195b1819d209f3bb3595ccea2a1e9a3c"
+    },
+    "files": {
+      "core.js": {
+        "bytes": 18020741,
+        "sha256": "867a8a1766b8e6ad7bec444e5e0da8c41a1fb2de5f0026bfa781e0cbc373d4d9"
+      },
+      "lots-1.js": {
+        "bytes": 8388506,
+        "sha256": "6798a1fd852d98936d30150db011e5abb7cab4802ec326be5b72f12703084453"
+      },
+      "lots-2.js": {
+        "bytes": 8388187,
+        "sha256": "829f583425726799a63bd5e54aacba83e3455a202a613739fbbc07577edf07e1"
+      },
+      "lots-3.js": {
+        "bytes": 8388673,
+        "sha256": "dffad29a1167060cb2e2bda4f5a9c056e823709c55aeeaca6b595511aa28f9a8"
+      },
+      "lots-4.js": {
+        "bytes": 8388121,
+        "sha256": "55b367a88330717fc23c4fd8eb9fdd2b91018703feace326b05aae79d8729dce"
+      },
+      "lots-5.js": {
+        "bytes": 8388342,
+        "sha256": "3c627db85787fe9ca14912ebd1ce308063d5fe1b497f884129e12bcf8907ff34"
+      },
+      "lots-6.js": {
+        "bytes": 8388575,
+        "sha256": "8a05b64fd3b6306f5268fdcad1478ed262eaede85365c8a54097e911302ead3f"
+      },
+      "lots-7.js": {
+        "bytes": 8388208,
+        "sha256": "55d3b04e86f1602faecf95f9a8075997309dc8401f6b65954c54119c0b80306b"
+      },
+      "lots-8.js": {
+        "bytes": 2380457,
+        "sha256": "c77240d902e9ae776e4bd10dd2e514f1345b956c6579df88c04be976fd254cd9"
+      },
+      "lots.js": {
+        "bytes": 64,
+        "sha256": "111e1473e579978a0092d0846ec3b5535b1314391d3268374514d4a4c8693af7"
+      },
+      "market-cohorts-1.js": {
+        "bytes": 11791061,
+        "sha256": "370ac4a680ae6a407c7dff2f0b3fdb53e842423eaefde6c6d5644e132b924ae8"
+      },
+      "market-cohorts-10.js": {
+        "bytes": 5168560,
+        "sha256": "e3f2d4676d4d275ef381c2ab85d880e308fa7a62531ac0c9643a550249a75d44"
+      },
+      "market-cohorts-11.js": {
+        "bytes": 8373652,
+        "sha256": "23329c433ac44aef778af7f2177c9964463027e2616ab29cb09ca4ee23bc395d"
+      },
+      "market-cohorts-12.js": {
+        "bytes": 8367781,
+        "sha256": "3e59288a7b6f389824d8cd1674867c6bd2b90423e9fd8cea101cb711399bb87f"
+      },
+      "market-cohorts-13.js": {
+        "bytes": 7976157,
+        "sha256": "8cb636c3b129d11e0981415ea6180f50eb7eb366808a038cc69b90aa789a1339"
+      },
+      "market-cohorts-14.js": {
+        "bytes": 8230497,
+        "sha256": "de77331102f027df7840e569588ce321b680710e54a3d08dfdaf6ab6fa947fdb"
+      },
+      "market-cohorts-15.js": {
+        "bytes": 7920489,
+        "sha256": "54d5c6cc9f6e00a75533b9ac0646790b5f089f1d1133ba8e2fe55d140d602aca"
+      },
+      "market-cohorts-16.js": {
+        "bytes": 7949020,
+        "sha256": "15c80d2aaf3c4c805eafa8e0ae12fb16da5a6ced4c1716dae1d917506b715676"
+      },
+      "market-cohorts-17.js": {
+        "bytes": 8249823,
+        "sha256": "b663d3066a2c00264ccc221f930e1c8ec657226ac40a1a609f3937f374d367ef"
+      },
+      "market-cohorts-18.js": {
+        "bytes": 8335360,
+        "sha256": "eb69d39a49dfc74e7536e97fc0e2e8bc4ef91599b5091fb46552b9eb5836cfee"
+      },
+      "market-cohorts-19.js": {
+        "bytes": 8283146,
+        "sha256": "6a5b80eaf5782ea4e55d10d5e1e11798c64b6ae5a3c95c8752a52b83db269835"
+      },
+      "market-cohorts-2.js": {
+        "bytes": 11621090,
+        "sha256": "b0838179ffa0c2ee3d44ce7878ad3e11e95d0af5122588f32ca0328ccb71a8bf"
+      },
+      "market-cohorts-20.js": {
+        "bytes": 8352597,
+        "sha256": "6c4b6b9033f2a54043cbce1bd8501646aac313f33c7380392932ad9df0159c96"
+      },
+      "market-cohorts-21.js": {
+        "bytes": 8362240,
+        "sha256": "058e6703e9f9b071a472b344cc004655c55f54744098cb440e42eca23f9340d9"
+      },
+      "market-cohorts-22.js": {
+        "bytes": 8330489,
+        "sha256": "d8de02935ba8bf3c069d17be6eb4e7e9ae3cb16ccd9bc88968d42d3c812979c8"
+      },
+      "market-cohorts-23.js": {
+        "bytes": 8348268,
+        "sha256": "543b0ddadeebe1d9353a9191b33190b150bcf2de79bee5f34e76bdf46767d8cf"
+      },
+      "market-cohorts-24.js": {
+        "bytes": 8345325,
+        "sha256": "7c12253256a60ca254a734f505ba2f44e55e842e0ff45cc7288b2862383c41b5"
+      },
+      "market-cohorts-25.js": {
+        "bytes": 8224130,
+        "sha256": "7220a9aaeb7a88ad12c9666b4bb3ed7ab9c7ab1079c0b224c3eab313cefe286f"
+      },
+      "market-cohorts-26.js": {
+        "bytes": 8162474,
+        "sha256": "ccba6cb270ba551f48152e4c63ee57a30cc1e4e727b1a3fa6aa34f248312f0ec"
+      },
+      "market-cohorts-27.js": {
+        "bytes": 8202455,
+        "sha256": "46c70b9d9f1bd56d6e038e5ef1173da01071a5c8e876962156e18a936d36cffa"
+      },
+      "market-cohorts-28.js": {
+        "bytes": 8259957,
+        "sha256": "6e3cdbb03c55f2fd48c63d6e6e985171184ac4e1a0f3ce792575fdb867c61e05"
+      },
+      "market-cohorts-29.js": {
+        "bytes": 8275013,
+        "sha256": "5f065d0daa3ec0bd4b117245567ae461f43be9474c84f379e91b0fa9f2fade19"
+      },
+      "market-cohorts-3.js": {
+        "bytes": 7119587,
+        "sha256": "30a3bd443ca705837fbc144b56a46c90dc0c2c6110530537f84497b979ca962d"
+      },
+      "market-cohorts-30.js": {
+        "bytes": 8297918,
+        "sha256": "9acf8d34201ceead0fddfc9f5bf0fe0e79b72747e4e6b471156ca466571f78ad"
+      },
+      "market-cohorts-31.js": {
+        "bytes": 8215702,
+        "sha256": "1919688d6c00909b04020f849e465bddb62c95589849e1760c26c0549784f8fd"
+      },
+      "market-cohorts-32.js": {
+        "bytes": 8344268,
+        "sha256": "b7c548734a4c75f3241fa447fb85b1237aa5903c1a6ca56cccc27db8b169f974"
+      },
+      "market-cohorts-33.js": {
+        "bytes": 8345443,
+        "sha256": "536e6a8a4ce44938fb0c04cd719abdfed4aaee149be6a72ddc4f3ccc88e0f7b3"
+      },
+      "market-cohorts-34.js": {
+        "bytes": 8376031,
+        "sha256": "84a4b86059cafa559cfeaa31d38bfeec719d489957f7c8ff8ac20e04c4e4d418"
+      },
+      "market-cohorts-35.js": {
+        "bytes": 8315172,
+        "sha256": "11fdc65e8a73c6ebacde1d69fb4695ccbe6dc21eca46062a13f41577507bdb40"
+      },
+      "market-cohorts-36.js": {
+        "bytes": 8336578,
+        "sha256": "452aea47b4f4b570d829b3fb4d2df7af92ff77509146bde1e396e9fd8337da31"
+      },
+      "market-cohorts-37.js": {
+        "bytes": 8364049,
+        "sha256": "ecca02203ec90ebb4b799cb9914a0316251a5e18389eb60f6a2c66bdb4c3324d"
+      },
+      "market-cohorts-38.js": {
+        "bytes": 8282937,
+        "sha256": "577abd5bba7550692ee7d2791ea26b85d39f98f96dbb18a0406a9383de59dc59"
+      },
+      "market-cohorts-39.js": {
+        "bytes": 8367120,
+        "sha256": "94b8007be6a3550b206bb5da40b6984bf358d6ae1bf37e83602c96db82da06f4"
+      },
+      "market-cohorts-4.js": {
+        "bytes": 5437588,
+        "sha256": "8ba213b444d7694cdf77eb90068b954902cce08a166167e640a9560c130e9897"
+      },
+      "market-cohorts-40.js": {
+        "bytes": 8364387,
+        "sha256": "2de8cbc6324a81f887f0fa844c747b022c8e441cdfa1259b83f6b1c0d43ba643"
+      },
+      "market-cohorts-41.js": {
+        "bytes": 8283175,
+        "sha256": "ce445affe1b16374e58cf6cb80fa971e83e4a5c0eea27ea624b8451ffeaade7c"
+      },
+      "market-cohorts-42.js": {
+        "bytes": 8346900,
+        "sha256": "59c34a873528e261e29d5f2d9ca7a6d2c905fb99315b6b981f1341b70f45aa57"
+      },
+      "market-cohorts-43.js": {
+        "bytes": 8359127,
+        "sha256": "ad80b1f6ab08f509986f414b76384f1bd106ef728d6ce81ba426730fdd793743"
+      },
+      "market-cohorts-44.js": {
+        "bytes": 8347606,
+        "sha256": "12fd8b95609be75aff3f9ec0806d4cf03aed31791ae187d61cd9fe4a4ddee1f1"
+      },
+      "market-cohorts-45.js": {
+        "bytes": 8348610,
+        "sha256": "9d58c61d521081914adedc1ce22d43d3e094c513ebfb316de52cffc953dd8c92"
+      },
+      "market-cohorts-46.js": {
+        "bytes": 8377148,
+        "sha256": "fece24418de37dc758cab35ca437d785ad790712d1b79984bd07b18d7c616f70"
+      },
+      "market-cohorts-47.js": {
+        "bytes": 8333922,
+        "sha256": "370acb522d928a068369e4dfc3dcc3ceba5f58bd99cc86523933f3321de1ee16"
+      },
+      "market-cohorts-48.js": {
+        "bytes": 8305009,
+        "sha256": "77b7a766efbd3f49904616c5885f944aa79c0be9326a11ad4fcdb09dcfe4c56f"
+      },
+      "market-cohorts-49.js": {
+        "bytes": 8357180,
+        "sha256": "f3eca79faac6e17fc8ff1cb5b7599c4ba4443155edd98e228e514a30b482392a"
+      },
+      "market-cohorts-5.js": {
+        "bytes": 7583171,
+        "sha256": "757af5683912be893ce6285e82e9942c3a380a85934be62e193d277f717e7bd8"
+      },
+      "market-cohorts-50.js": {
+        "bytes": 8373694,
+        "sha256": "1bee61422f209966588c20be5dc3cdb84098119bf94d6d4aeef0ffa54c390e33"
+      },
+      "market-cohorts-51.js": {
+        "bytes": 8372864,
+        "sha256": "0387db9e176b4adb80e5d33218c7161f158b3876fa6fed428b857b9b41058d04"
+      },
+      "market-cohorts-52.js": {
+        "bytes": 8380890,
+        "sha256": "57fee86c6a5d596dcc56477b0f7caac41f5aacc7e14bcc7f02bcbf57b6f1836e"
+      },
+      "market-cohorts-53.js": {
+        "bytes": 8344133,
+        "sha256": "de33374c226ec509089709028f448f66a1d9f3895447e2a00689b498234200fa"
+      },
+      "market-cohorts-54.js": {
+        "bytes": 8320644,
+        "sha256": "932ef3899d767d40888fd7d226e827ce62c937744fbefed1adb364f3b34e1606"
+      },
+      "market-cohorts-55.js": {
+        "bytes": 8359330,
+        "sha256": "da9f4fe7ef8a12deedbccdd4b272a0f6a0e7b3366af0cf8d8db95797df966420"
+      },
+      "market-cohorts-56.js": {
+        "bytes": 8317658,
+        "sha256": "77c7de8214b7500b2629249c4882faef2a39890094db9a02b919eafac1fa787b"
+      },
+      "market-cohorts-57.js": {
+        "bytes": 8344411,
+        "sha256": "f132fc2d237ca10b65a5206254020b00ff28b50bc196f6abafc87874392a400c"
+      },
+      "market-cohorts-58.js": {
+        "bytes": 8333446,
+        "sha256": "8a332db7f0dee23ca0151a771701ee6d52322ac481ea292962dc61f30bf28d77"
+      },
+      "market-cohorts-59.js": {
+        "bytes": 8316958,
+        "sha256": "936865224d119c64016fe8a663157c4bd52b6ee2f48bcf312b8d7573255cdc9c"
+      },
+      "market-cohorts-6.js": {
+        "bytes": 8248822,
+        "sha256": "104a409822a9c8ba006b9465e56f7ec8df38b7fb564a0c66c5f75e8c90d7781b"
+      },
+      "market-cohorts-60.js": {
+        "bytes": 8353049,
+        "sha256": "7defa2c448ec94e7a300215cc2779d3507a8c665aef1cd88a2b83383ac51b298"
+      },
+      "market-cohorts-61.js": {
+        "bytes": 8388337,
+        "sha256": "613945c77b606f5bf9b34ce91266f0775f8933bf61a663cdf2d55d85d8a93f38"
+      },
+      "market-cohorts-62.js": {
+        "bytes": 8359373,
+        "sha256": "6c5e6c51b2c1f59b63711685704e746c69fd3f4c0992bb6316292efcfc415c35"
+      },
+      "market-cohorts-63.js": {
+        "bytes": 7225787,
+        "sha256": "6acf972249e54e195ed7181fe6955cae409691d56c3ffd338826813b51ef0e2f"
+      },
+      "market-cohorts-7.js": {
+        "bytes": 8254950,
+        "sha256": "9bdb4417133deb20f9ebf19ec8d97d102add1e254174be013b222d5ea8a236a7"
+      },
+      "market-cohorts-8.js": {
+        "bytes": 8386946,
+        "sha256": "ae67dbf13a4df1714d18172b3a2e3bca8de3f3bdfd79c29a0b38389ff42bb2a3"
+      },
+      "market-cohorts-9.js": {
+        "bytes": 7723415,
+        "sha256": "f20c087643af6d2adf22436bff86506aed93dd65d0ecbc2a28f4b13f3fa4b6aa"
+      },
+      "market-comparison-1.js": {
+        "bytes": 8386847,
+        "sha256": "19747a381bbdebde394d4bf10d955cd3a0cf11f4f491e12c8b8a5d24c02d0e97"
+      },
+      "market-comparison-10.js": {
+        "bytes": 8354962,
+        "sha256": "4b6a096e8775143c1de754f6c4b34ef4d3035bf25379e81e3a948217a85e13bf"
+      },
+      "market-comparison-11.js": {
+        "bytes": 8349291,
+        "sha256": "032cd9fd7a75731e071e27a59c58db24209f2611782a9bb9ef66a4cf2567e9cf"
+      },
+      "market-comparison-12.js": {
+        "bytes": 8341442,
+        "sha256": "9caea7f77e9943654ccd889b5bf837249187cc4c698e2e695b3e8828b85db2e4"
+      },
+      "market-comparison-13.js": {
+        "bytes": 8313368,
+        "sha256": "91371779c3caed0ccb23ad30881c47325234aaacf23e775451f3d728e5fe9a51"
+      },
+      "market-comparison-14.js": {
+        "bytes": 8319419,
+        "sha256": "e753af94291cfd8982d4079a8c446b831308d94b2eb0a8b8c38b1fdeb587b2b7"
+      },
+      "market-comparison-15.js": {
+        "bytes": 8371708,
+        "sha256": "c78ed127825fa8ecfb741976ee19f20d00f2af731481c792df4b0edc9aa53b0f"
+      },
+      "market-comparison-16.js": {
+        "bytes": 8364037,
+        "sha256": "bb23876c559fbe2a54cd82c62c20a902bc0b195c708c56fafa4bc6f0ab5955af"
+      },
+      "market-comparison-17.js": {
+        "bytes": 8363047,
+        "sha256": "5b0fcaebb496a57318553f0bce70c9ed31be912babc86273a781d93d7f25a33e"
+      },
+      "market-comparison-18.js": {
+        "bytes": 8376192,
+        "sha256": "b2c65a2410095117a9f1885f9632a34d04bb857287373975e402e1246c144ebd"
+      },
+      "market-comparison-19.js": {
+        "bytes": 8386143,
+        "sha256": "051de71328602661cb13925f243dd652fbf12ca5b61e9e8f6f049a29f4d8195b"
+      },
+      "market-comparison-2.js": {
+        "bytes": 8371310,
+        "sha256": "0afbd99bbe59da73d13d936b544b5e9674fb507c547c900d7a0ef21b9af8479a"
+      },
+      "market-comparison-20.js": {
+        "bytes": 8373924,
+        "sha256": "0338c9c118454f5c34f8ebaaf14dc7798a656f5e4896cda6a541e318a2477c12"
+      },
+      "market-comparison-21.js": {
+        "bytes": 8356581,
+        "sha256": "faaa26ee0514a393a3245db420c5e2548d3acb25f276df12b7d08875cb9ad951"
+      },
+      "market-comparison-22.js": {
+        "bytes": 8383259,
+        "sha256": "452f68a12e21b159b4e360379d6732d1b8f68181a8dfa3ed49e7e9e115578c2a"
+      },
+      "market-comparison-23.js": {
+        "bytes": 8388151,
+        "sha256": "9791092acd94e5445a39db54ea4a67501d47a3ccb3d810e677a4aaa41a3cc2c8"
+      },
+      "market-comparison-24.js": {
+        "bytes": 8383457,
+        "sha256": "8c985fb4bb9185644ebbbd5c90f6a8476e18dac603d1ea83ebf612937305a33e"
+      },
+      "market-comparison-25.js": {
+        "bytes": 526510,
+        "sha256": "729ce13275c572a332bbc5a1e431d61fc46c9a52a5cd3dac3d38172dc230c134"
+      },
+      "market-comparison-3.js": {
+        "bytes": 8347956,
+        "sha256": "c04437227808ffe56aa8765e9a9167751870050667b1371635bedb86b447295a"
+      },
+      "market-comparison-4.js": {
+        "bytes": 8252803,
+        "sha256": "1603838f6db6b2e1943c05ae0e63732062972ed2fc701c1304dec8f454e98a17"
+      },
+      "market-comparison-5.js": {
+        "bytes": 8345658,
+        "sha256": "f6006b6b8d2c3da0b5cbb289a892ae777c05924c201511d403b5ebf304e82d38"
+      },
+      "market-comparison-6.js": {
+        "bytes": 8358101,
+        "sha256": "b78ec890f44a55d512f2690a47964e77b7a1d8b0332ac17a1e7b6086366594fc"
+      },
+      "market-comparison-7.js": {
+        "bytes": 8291444,
+        "sha256": "395960acd71278849d95f2ea046c3b3630b89504bfb1b218a85fded2a4244784"
+      },
+      "market-comparison-8.js": {
+        "bytes": 8320063,
+        "sha256": "23e87efb3793e8d02dbf97b0adaa34bf8895069d11a99cf26d157a92e9ee2dca"
+      },
+      "market-comparison-9.js": {
+        "bytes": 8259388,
+        "sha256": "2f50e7571bc59266e3f9d5f86153dac1c26e98ee6e43a4d2900a50baed873df3"
+      },
+      "market-index.js": {
+        "bytes": 638350,
+        "sha256": "ad0148fc9cffaa8dd0993872e13e1a16315f2c70c4c79a0feff0b9cb3aa5e0c9"
+      },
+      "market-points-1.js": {
+        "bytes": 8388492,
+        "sha256": "0a4b7cc791a262aaff9bf86e87fa9dda7a55e98e1ee8a98bef2f3424689a59c5"
+      },
+      "market-points-2.js": {
+        "bytes": 8388481,
+        "sha256": "888c4c29e9cddbc785a480c6cc0e9010c7e78dd3f425c3d8cd6892d573a2400c"
+      },
+      "market-points-3.js": {
+        "bytes": 8388427,
+        "sha256": "89cac6f676a11020b718059fd41c48b792d230eb0521206d4cb02a3a008dac02"
+      },
+      "market-points-4.js": {
+        "bytes": 8388275,
+        "sha256": "bd924e95430657c9f5ba2a0cc5302be2a41deeb85e28f2570df908c51da4d8c5"
+      },
+      "market-points-5.js": {
+        "bytes": 8388412,
+        "sha256": "fe4357dc073d3f73c56a51ed8ce315bb2dd6a5b7a0345ceefc6f78353ac89810"
+      },
+      "market-points-6.js": {
+        "bytes": 2702031,
+        "sha256": "5cd736476c1f1dce63f2469b8e6ecc8572d3fb8d97ed87ff15731ae4b08876de"
+      },
+      "market-series-1.js": {
+        "bytes": 7761917,
+        "sha256": "29de36383c6fed3ca0d20eefa6a637ee185bdf6dc1097ad8011521b715ae4e7c"
+      },
+      "market-wire.js": {
+        "bytes": 7151,
+        "sha256": "241ccf3a22e28c40e2c4a88bbd1ebf27cab11d522a5ce8efc905fb57489ad9fd"
+      },
+      "registry-1.js": {
+        "bytes": 8388393,
+        "sha256": "4fac58c757051d4d8223bfd031dfd6d9c2480f86c032ce754fb2e0bf14b42a78"
+      },
+      "registry-2.js": {
+        "bytes": 8388443,
+        "sha256": "ef005fb802fbda454b17961263e5a9564daf0f5a632ee67e3589ee0ac683b3a2"
+      },
+      "registry-3.js": {
+        "bytes": 8388370,
+        "sha256": "4529f8d7499231fd355b8dc6e7888fbd82d11e0fde34ebe60f508f3808c57a87"
+      },
+      "registry-4.js": {
+        "bytes": 8388662,
+        "sha256": "e557e35ea7bdebf97391728744eeb788370d8291850e47b25b644a6b0a2a2d1e"
+      },
+      "registry-5.js": {
+        "bytes": 6550577,
+        "sha256": "da3e27828f49bb6aa62f6b731d42e109f6c56e80eb4fde554bf2ccde064e40c0"
+      },
+      "registry.js": {
+        "bytes": 37,
+        "sha256": "0b8c1d56de322e1eb5fc8eb988c36049412dd5c12ffe43239375b223b6f2201b"
+      },
+      "scatter-1.js": {
+        "bytes": 7469611,
+        "sha256": "fbc1c32b5c97e947142c835342ce3ccbe284335ee386ee5a27920113007ba295"
+      }
+    }
+  },
+  "cohortCount": 4402,
+  "scopeCount": 8092,
+  "pointCount": 65217,
+  "seriesCount": 15234,
+  "assets": [
+    {
+      "name": "core.js",
+      "bytes": 18020741,
+      "gzipBytes": 4779848,
+      "brotliBytes": 4514151
+    },
+    {
+      "name": "market-index.js",
+      "bytes": 638350,
+      "gzipBytes": 79206,
+      "brotliBytes": 72934
+    },
+    {
+      "name": "market-points-1.js",
+      "bytes": 8388492,
+      "gzipBytes": 340891,
+      "brotliBytes": 277501
+    },
+    {
+      "name": "market-points-2.js",
+      "bytes": 8388481,
+      "gzipBytes": 382349,
+      "brotliBytes": 303526
+    },
+    {
+      "name": "market-points-3.js",
+      "bytes": 8388427,
+      "gzipBytes": 332345,
+      "brotliBytes": 257889
+    },
+    {
+      "name": "market-points-4.js",
+      "bytes": 8388275,
+      "gzipBytes": 287551,
+      "brotliBytes": 220425
+    },
+    {
+      "name": "market-points-5.js",
+      "bytes": 8388412,
+      "gzipBytes": 260652,
+      "brotliBytes": 202528
+    },
+    {
+      "name": "market-points-6.js",
+      "bytes": 2702031,
+      "gzipBytes": 76522,
+      "brotliBytes": 59967
+    },
+    {
+      "name": "market-series-1.js",
+      "bytes": 7761917,
+      "gzipBytes": 1017178,
+      "brotliBytes": 555104
+    },
+    {
+      "name": "market-cohorts-1.js",
+      "bytes": 11791061,
+      "gzipBytes": 731301,
+      "brotliBytes": 365109
+    },
+    {
+      "name": "market-cohorts-2.js",
+      "bytes": 11621090,
+      "gzipBytes": 698661,
+      "brotliBytes": 346494
+    },
+    {
+      "name": "market-cohorts-3.js",
+      "bytes": 7119587,
+      "gzipBytes": 320747,
+      "brotliBytes": 146941
+    },
+    {
+      "name": "market-cohorts-4.js",
+      "bytes": 5437588,
+      "gzipBytes": 271175,
+      "brotliBytes": 84032
+    },
+    {
+      "name": "market-cohorts-5.js",
+      "bytes": 7583171,
+      "gzipBytes": 458342,
+      "brotliBytes": 149432
+    },
+    {
+      "name": "market-cohorts-6.js",
+      "bytes": 8248822,
+      "gzipBytes": 468583,
+      "brotliBytes": 71930
+    },
+    {
+      "name": "market-cohorts-7.js",
+      "bytes": 8254950,
+      "gzipBytes": 451743,
+      "brotliBytes": 98426
+    },
+    {
+      "name": "market-cohorts-8.js",
+      "bytes": 8386946,
+      "gzipBytes": 415936,
+      "brotliBytes": 63963
+    },
+    {
+      "name": "market-cohorts-9.js",
+      "bytes": 7723415,
+      "gzipBytes": 395930,
+      "brotliBytes": 64783
+    },
+    {
+      "name": "market-cohorts-10.js",
+      "bytes": 5168560,
+      "gzipBytes": 264936,
+      "brotliBytes": 44324
+    },
+    {
+      "name": "market-cohorts-11.js",
+      "bytes": 8373652,
+      "gzipBytes": 470063,
+      "brotliBytes": 179270
+    },
+    {
+      "name": "market-cohorts-12.js",
+      "bytes": 8367781,
+      "gzipBytes": 433065,
+      "brotliBytes": 56812
+    },
+    {
+      "name": "market-cohorts-13.js",
+      "bytes": 7976157,
+      "gzipBytes": 419935,
+      "brotliBytes": 51592
+    },
+    {
+      "name": "market-cohorts-14.js",
+      "bytes": 8230497,
+      "gzipBytes": 433273,
+      "brotliBytes": 71402
+    },
+    {
+      "name": "market-cohorts-15.js",
+      "bytes": 7920489,
+      "gzipBytes": 394928,
+      "brotliBytes": 68706
+    },
+    {
+      "name": "market-cohorts-16.js",
+      "bytes": 7949020,
+      "gzipBytes": 462788,
+      "brotliBytes": 112623
+    },
+    {
+      "name": "market-cohorts-17.js",
+      "bytes": 8249823,
+      "gzipBytes": 453950,
+      "brotliBytes": 65067
+    },
+    {
+      "name": "market-cohorts-18.js",
+      "bytes": 8335360,
+      "gzipBytes": 436359,
+      "brotliBytes": 78533
+    },
+    {
+      "name": "market-cohorts-19.js",
+      "bytes": 8283146,
+      "gzipBytes": 399804,
+      "brotliBytes": 72031
+    },
+    {
+      "name": "market-cohorts-20.js",
+      "bytes": 8352597,
+      "gzipBytes": 415585,
+      "brotliBytes": 70055
+    },
+    {
+      "name": "market-cohorts-21.js",
+      "bytes": 8362240,
+      "gzipBytes": 424661,
+      "brotliBytes": 71637
+    },
+    {
+      "name": "market-cohorts-22.js",
+      "bytes": 8330489,
+      "gzipBytes": 428374,
+      "brotliBytes": 63889
+    },
+    {
+      "name": "market-cohorts-23.js",
+      "bytes": 8348268,
+      "gzipBytes": 421211,
+      "brotliBytes": 61899
+    },
+    {
+      "name": "market-cohorts-24.js",
+      "bytes": 8345325,
+      "gzipBytes": 420834,
+      "brotliBytes": 71062
+    },
+    {
+      "name": "market-cohorts-25.js",
+      "bytes": 8224130,
+      "gzipBytes": 411799,
+      "brotliBytes": 75381
+    },
+    {
+      "name": "market-cohorts-26.js",
+      "bytes": 8162474,
+      "gzipBytes": 390072,
+      "brotliBytes": 75093
+    },
+    {
+      "name": "market-cohorts-27.js",
+      "bytes": 8202455,
+      "gzipBytes": 411029,
+      "brotliBytes": 70219
+    },
+    {
+      "name": "market-cohorts-28.js",
+      "bytes": 8259957,
+      "gzipBytes": 416877,
+      "brotliBytes": 80283
+    },
+    {
+      "name": "market-cohorts-29.js",
+      "bytes": 8275013,
+      "gzipBytes": 399651,
+      "brotliBytes": 66418
+    },
+    {
+      "name": "market-cohorts-30.js",
+      "bytes": 8297918,
+      "gzipBytes": 402243,
+      "brotliBytes": 74070
+    },
+    {
+      "name": "market-cohorts-31.js",
+      "bytes": 8215702,
+      "gzipBytes": 393774,
+      "brotliBytes": 70086
+    },
+    {
+      "name": "market-cohorts-32.js",
+      "bytes": 8344268,
+      "gzipBytes": 413816,
+      "brotliBytes": 70429
+    },
+    {
+      "name": "market-cohorts-33.js",
+      "bytes": 8345443,
+      "gzipBytes": 396486,
+      "brotliBytes": 69129
+    },
+    {
+      "name": "market-cohorts-34.js",
+      "bytes": 8376031,
+      "gzipBytes": 417205,
+      "brotliBytes": 74454
+    },
+    {
+      "name": "market-cohorts-35.js",
+      "bytes": 8315172,
+      "gzipBytes": 411530,
+      "brotliBytes": 72782
+    },
+    {
+      "name": "market-cohorts-36.js",
+      "bytes": 8336578,
+      "gzipBytes": 412116,
+      "brotliBytes": 73398
+    },
+    {
+      "name": "market-cohorts-37.js",
+      "bytes": 8364049,
+      "gzipBytes": 402034,
+      "brotliBytes": 67208
+    },
+    {
+      "name": "market-cohorts-38.js",
+      "bytes": 8282937,
+      "gzipBytes": 396816,
+      "brotliBytes": 67916
+    },
+    {
+      "name": "market-cohorts-39.js",
+      "bytes": 8367120,
+      "gzipBytes": 399927,
+      "brotliBytes": 68834
+    },
+    {
+      "name": "market-cohorts-40.js",
+      "bytes": 8364387,
+      "gzipBytes": 398976,
+      "brotliBytes": 66618
+    },
+    {
+      "name": "market-cohorts-41.js",
+      "bytes": 8283175,
+      "gzipBytes": 394079,
+      "brotliBytes": 68580
+    },
+    {
+      "name": "market-cohorts-42.js",
+      "bytes": 8346900,
+      "gzipBytes": 381805,
+      "brotliBytes": 66607
+    },
+    {
+      "name": "market-cohorts-43.js",
+      "bytes": 8359127,
+      "gzipBytes": 400938,
+      "brotliBytes": 70398
+    },
+    {
+      "name": "market-cohorts-44.js",
+      "bytes": 8347606,
+      "gzipBytes": 407967,
+      "brotliBytes": 67998
+    },
+    {
+      "name": "market-cohorts-45.js",
+      "bytes": 8348610,
+      "gzipBytes": 402948,
+      "brotliBytes": 75601
+    },
+    {
+      "name": "market-cohorts-46.js",
+      "bytes": 8377148,
+      "gzipBytes": 396233,
+      "brotliBytes": 66459
+    },
+    {
+      "name": "market-cohorts-47.js",
+      "bytes": 8333922,
+      "gzipBytes": 398933,
+      "brotliBytes": 78363
+    },
+    {
+      "name": "market-cohorts-48.js",
+      "bytes": 8305009,
+      "gzipBytes": 398218,
+      "brotliBytes": 64920
+    },
+    {
+      "name": "market-cohorts-49.js",
+      "bytes": 8357180,
+      "gzipBytes": 407707,
+      "brotliBytes": 78856
+    },
+    {
+      "name": "market-cohorts-50.js",
+      "bytes": 8373694,
+      "gzipBytes": 387821,
+      "brotliBytes": 62083
+    },
+    {
+      "name": "market-cohorts-51.js",
+      "bytes": 8372864,
+      "gzipBytes": 400926,
+      "brotliBytes": 71992
+    },
+    {
+      "name": "market-cohorts-52.js",
+      "bytes": 8380890,
+      "gzipBytes": 393040,
+      "brotliBytes": 63738
+    },
+    {
+      "name": "market-cohorts-53.js",
+      "bytes": 8344133,
+      "gzipBytes": 388763,
+      "brotliBytes": 77222
+    },
+    {
+      "name": "market-cohorts-54.js",
+      "bytes": 8320644,
+      "gzipBytes": 396893,
+      "brotliBytes": 71329
+    },
+    {
+      "name": "market-cohorts-55.js",
+      "bytes": 8359330,
+      "gzipBytes": 385520,
+      "brotliBytes": 67836
+    },
+    {
+      "name": "market-cohorts-56.js",
+      "bytes": 8317658,
+      "gzipBytes": 385474,
+      "brotliBytes": 71142
+    },
+    {
+      "name": "market-cohorts-57.js",
+      "bytes": 8344411,
+      "gzipBytes": 380688,
+      "brotliBytes": 68993
+    },
+    {
+      "name": "market-cohorts-58.js",
+      "bytes": 8333446,
+      "gzipBytes": 372810,
+      "brotliBytes": 61258
+    },
+    {
+      "name": "market-cohorts-59.js",
+      "bytes": 8316958,
+      "gzipBytes": 361085,
+      "brotliBytes": 67662
+    },
+    {
+      "name": "market-cohorts-60.js",
+      "bytes": 8353049,
+      "gzipBytes": 356667,
+      "brotliBytes": 68864
+    },
+    {
+      "name": "market-cohorts-61.js",
+      "bytes": 8388337,
+      "gzipBytes": 361083,
+      "brotliBytes": 64415
+    },
+    {
+      "name": "market-cohorts-62.js",
+      "bytes": 8359373,
+      "gzipBytes": 346599,
+      "brotliBytes": 59558
+    },
+    {
+      "name": "market-cohorts-63.js",
+      "bytes": 7225787,
+      "gzipBytes": 272442,
+      "brotliBytes": 24967
+    },
+    {
+      "name": "market-comparison-1.js",
+      "bytes": 8386847,
+      "gzipBytes": 258228,
+      "brotliBytes": 107960
+    },
+    {
+      "name": "market-comparison-2.js",
+      "bytes": 8371310,
+      "gzipBytes": 259954,
+      "brotliBytes": 90333
+    },
+    {
+      "name": "market-comparison-3.js",
+      "bytes": 8347956,
+      "gzipBytes": 230290,
+      "brotliBytes": 63485
+    },
+    {
+      "name": "market-comparison-4.js",
+      "bytes": 8252803,
+      "gzipBytes": 227257,
+      "brotliBytes": 82926
+    },
+    {
+      "name": "market-comparison-5.js",
+      "bytes": 8345658,
+      "gzipBytes": 208305,
+      "brotliBytes": 61838
+    },
+    {
+      "name": "market-comparison-6.js",
+      "bytes": 8358101,
+      "gzipBytes": 201025,
+      "brotliBytes": 61423
+    },
+    {
+      "name": "market-comparison-7.js",
+      "bytes": 8291444,
+      "gzipBytes": 180547,
+      "brotliBytes": 53497
+    },
+    {
+      "name": "market-comparison-8.js",
+      "bytes": 8320063,
+      "gzipBytes": 189761,
+      "brotliBytes": 59600
+    },
+    {
+      "name": "market-comparison-9.js",
+      "bytes": 8259388,
+      "gzipBytes": 183852,
+      "brotliBytes": 57605
+    },
+    {
+      "name": "market-comparison-10.js",
+      "bytes": 8354962,
+      "gzipBytes": 182763,
+      "brotliBytes": 64244
+    },
+    {
+      "name": "market-comparison-11.js",
+      "bytes": 8349291,
+      "gzipBytes": 159891,
+      "brotliBytes": 52968
+    },
+    {
+      "name": "market-comparison-12.js",
+      "bytes": 8341442,
+      "gzipBytes": 174759,
+      "brotliBytes": 58197
+    },
+    {
+      "name": "market-comparison-13.js",
+      "bytes": 8313368,
+      "gzipBytes": 181407,
+      "brotliBytes": 54326
+    },
+    {
+      "name": "market-comparison-14.js",
+      "bytes": 8319419,
+      "gzipBytes": 169810,
+      "brotliBytes": 54377
+    },
+    {
+      "name": "market-comparison-15.js",
+      "bytes": 8371708,
+      "gzipBytes": 163206,
+      "brotliBytes": 57842
+    },
+    {
+      "name": "market-comparison-16.js",
+      "bytes": 8364037,
+      "gzipBytes": 159220,
+      "brotliBytes": 48480
+    },
+    {
+      "name": "market-comparison-17.js",
+      "bytes": 8363047,
+      "gzipBytes": 159268,
+      "brotliBytes": 56480
+    },
+    {
+      "name": "market-comparison-18.js",
+      "bytes": 8376192,
+      "gzipBytes": 169222,
+      "brotliBytes": 65166
+    },
+    {
+      "name": "market-comparison-19.js",
+      "bytes": 8386143,
+      "gzipBytes": 157344,
+      "brotliBytes": 53061
+    },
+    {
+      "name": "market-comparison-20.js",
+      "bytes": 8373924,
+      "gzipBytes": 149704,
+      "brotliBytes": 58467
+    },
+    {
+      "name": "market-comparison-21.js",
+      "bytes": 8356581,
+      "gzipBytes": 145788,
+      "brotliBytes": 52132
+    },
+    {
+      "name": "market-comparison-22.js",
+      "bytes": 8383259,
+      "gzipBytes": 141257,
+      "brotliBytes": 55014
+    },
+    {
+      "name": "market-comparison-23.js",
+      "bytes": 8388151,
+      "gzipBytes": 134409,
+      "brotliBytes": 60529
+    },
+    {
+      "name": "market-comparison-24.js",
+      "bytes": 8383457,
+      "gzipBytes": 133838,
+      "brotliBytes": 80409
+    },
+    {
+      "name": "market-comparison-25.js",
+      "bytes": 526510,
+      "gzipBytes": 8808,
+      "brotliBytes": 7354
+    },
+    {
+      "name": "market-wire.js",
+      "bytes": 7151,
+      "gzipBytes": 2383,
+      "brotliBytes": 2443
+    },
+    {
+      "name": "lots.js",
+      "bytes": 64,
+      "gzipBytes": 62,
+      "brotliBytes": 53
+    },
+    {
+      "name": "lots-1.js",
+      "bytes": 8388506,
+      "gzipBytes": 1643297,
+      "brotliBytes": 1261245
+    },
+    {
+      "name": "lots-2.js",
+      "bytes": 8388187,
+      "gzipBytes": 1641854,
+      "brotliBytes": 1261770
+    },
+    {
+      "name": "lots-3.js",
+      "bytes": 8388673,
+      "gzipBytes": 1642118,
+      "brotliBytes": 1260582
+    },
+    {
+      "name": "lots-4.js",
+      "bytes": 8388121,
+      "gzipBytes": 1640016,
+      "brotliBytes": 1261430
+    },
+    {
+      "name": "lots-5.js",
+      "bytes": 8388342,
+      "gzipBytes": 1642461,
+      "brotliBytes": 1262173
+    },
+    {
+      "name": "lots-6.js",
+      "bytes": 8388575,
+      "gzipBytes": 1639696,
+      "brotliBytes": 1261132
+    },
+    {
+      "name": "lots-7.js",
+      "bytes": 8388208,
+      "gzipBytes": 1642172,
+      "brotliBytes": 1262361
+    },
+    {
+      "name": "lots-8.js",
+      "bytes": 2380457,
+      "gzipBytes": 466562,
+      "brotliBytes": 377725
+    },
+    {
+      "name": "scatter-1.js",
+      "bytes": 7469611,
+      "gzipBytes": 1387946,
+      "brotliBytes": 1016304
+    },
+    {
+      "name": "registry.js",
+      "bytes": 37,
+      "gzipBytes": 57,
+      "brotliBytes": 41
+    },
+    {
+      "name": "registry-1.js",
+      "bytes": 8388393,
+      "gzipBytes": 817386,
+      "brotliBytes": 776149
+    },
+    {
+      "name": "registry-2.js",
+      "bytes": 8388443,
+      "gzipBytes": 812332,
+      "brotliBytes": 772844
+    },
+    {
+      "name": "registry-3.js",
+      "bytes": 8388370,
+      "gzipBytes": 814192,
+      "brotliBytes": 772505
+    },
+    {
+      "name": "registry-4.js",
+      "bytes": 8388662,
+      "gzipBytes": 789179,
+      "brotliBytes": 751551
+    },
+    {
+      "name": "registry-5.js",
+      "bytes": 6550577,
+      "gzipBytes": 636283,
+      "brotliBytes": 607075
+    }
+  ],
+  "rawBytes": 900973483,
+  "gzipBytes": 54849625,
+  "brotliBytes": 27100292,
+  "brotliQuality": 4
+}

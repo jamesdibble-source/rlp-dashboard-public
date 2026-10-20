@@ -421,6 +421,64 @@ th{cursor:pointer;user-select:none}
 .welcome-actions button{border:none;background:var(--ink);color:var(--bg);font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;border-radius:999px;padding:11px 18px;cursor:pointer}
 .welcome-actions button:hover{opacity:.86}
 @media(max-width:640px){.welcome-modal{padding:14px}.welcome-card{padding:24px 22px;border-radius:8px}.welcome-title{font-size:25px}.welcome-copy{font-size:13px}}
+/* Asking/achieved comparison uses the dashboard palette and aggregate data only. */
+.asking-sold{margin-bottom:var(--gap-xl);padding:24px;border:1px solid var(--rule);border-radius:10px;background:var(--card);color:var(--ink);min-width:0;scroll-margin-top:100px}
+.asking-sold h2{margin:0 0 6px;font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:500}
+.asking-sold p{margin:6px 0;font-size:12px;line-height:1.6;color:var(--ink-soft);overflow-wrap:anywhere}
+.asking-sold-filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(136px,1fr));gap:12px;margin:18px 0}
+.asking-sold-filters label{display:flex;flex-direction:column;gap:6px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;min-width:0}
+.asking-sold-filters select{width:100%;min-width:0;border:1px solid var(--rule);border-radius:6px;padding:9px 8px;background:var(--card-raised);color:var(--ink);font:inherit;font-size:12px;letter-spacing:0;text-transform:none}
+.asking-sold select:focus-visible,.asking-sold summary:focus-visible,.asking-sold [tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.asking-sold-layout{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.6fr);gap:24px;align-items:start}
+.asking-sold-gap{padding:20px;border:1px solid var(--rule);border-radius:8px;background:var(--rule-soft)}
+.asking-sold-gap strong{display:block;font-family:'Fraunces',Georgia,serif;font-size:42px;line-height:1.1;font-weight:500;font-variant-numeric:tabular-nums}
+.asking-sold-gap .asking-sold-gap-label{font-size:12px;font-weight:600;margin-top:7px;color:var(--ink)}
+.asking-sold-rates{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.asking-sold-rates strong{font-size:23px;font-family:inherit}
+.asking-sold-rates span{display:block;font-size:11px;line-height:1.5;color:var(--ink-soft)}
+.asking-sold-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;margin:0 0 10px;color:var(--ink-soft)}
+.asking-sold-legend span{display:inline-flex;align-items:center;gap:6px}
+.asking-sold-legend i{width:20px;border-top:3px solid var(--accent)}
+.asking-sold-legend span:last-child i{border-color:var(--chart-2);border-top-style:dashed}
+.asking-sold-chart{width:100%;height:auto;display:block;overflow:visible;color:var(--ink-soft);scroll-margin-top:100px}
+.asking-sold-chart text{fill:currentColor;font-family:Geist,Arial,sans-serif;font-size:11px}
+.asking-sold-chart .asking-line{stroke:var(--accent);fill:none;stroke-width:2.5}
+.asking-sold-chart .sold-line{stroke:var(--chart-2);fill:none;stroke-width:2.5;stroke-dasharray:6 4}
+.asking-sold-chart .asking-dot{fill:var(--accent)}
+.asking-sold-chart .sold-dot{fill:var(--chart-2)}
+.asking-sold-chart .chart-rule{stroke:var(--rule);stroke-width:1}
+.asking-sold-empty{border:1px dashed var(--rule);border-radius:8px;padding:20px;font-size:12px;line-height:1.6;color:var(--ink-soft)}
+.asking-sold details{margin-top:14px;font-size:11px;color:var(--ink-soft)}
+.asking-sold summary{cursor:pointer;padding:6px 0;color:var(--ink);font-weight:600}
+.asking-sold-table-wrap{max-width:100%;overflow:auto}
+.asking-sold table{border-collapse:collapse;width:100%;font-size:11px;line-height:1.5}
+.asking-sold th,.asking-sold td{text-align:left;border-bottom:1px solid var(--rule);padding:8px;vertical-align:top}
+.asking-sold th{font-weight:600;color:var(--ink)}
+.asking-sold-method{margin-top:18px;padding-top:12px;border-top:1px solid var(--rule)}
+@media(max-width:820px){.asking-sold-layout{grid-template-columns:1fr}.asking-sold-gap strong{font-size:36px}}
+@media(max-width:520px){.asking-sold{padding:16px}.asking-sold h2{font-size:21px}.asking-sold-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.asking-sold-rates strong{font-size:20px}.asking-sold-chart text{font-size:19px}.asking-sold-chart .middle-period-label{display:none}}
+.market-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:20px 0 26px}
+.market-controls label,.market-compare label{display:flex;flex-direction:column;gap:6px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.market-controls select,.market-card select,.market-card input{max-width:100%;min-width:0;padding:9px;border:1px solid var(--rule);border-radius:5px;background:var(--card);color:var(--ink);font-size:12px;letter-spacing:0;text-transform:none}
+.market-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin:20px 0 28px}
+.market-stat{padding:14px 0;border-bottom:1px solid var(--rule);min-width:0}
+.market-stat span,.market-stat small{display:block;font-size:11px;line-height:1.5;color:var(--ink-soft);overflow-wrap:anywhere}
+.market-stat strong{display:block;font:500 28px/1.3 'Fraunces',Georgia,serif;color:var(--ink);margin:8px 0;font-variant-numeric:tabular-nums}
+.market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap,24px)}
+.market-card{padding:22px;margin-bottom:24px;min-width:0;overflow-wrap:anywhere;scroll-margin-top:100px}
+.market-card p,.market-basis{font-size:12px;line-height:1.65;color:var(--ink-soft)}
+.market-card h3{font-size:16px;margin:8px 0 16px}
+.market-chart{position:relative;height:300px;min-width:0}
+.market-chart:focus-visible,.market-card button:focus-visible,.market-card summary:focus-visible,.market-controls select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.market-chart-values{margin-top:12px;font-size:11px}.market-chart-values summary{cursor:pointer;padding:6px 0}
+.market-table-wrap{max-width:100%;overflow:auto}.market-card table{border-collapse:collapse;min-width:500px;width:100%;font-size:11px;line-height:1.5;text-align:left}
+.market-card th,.market-card td{padding:9px 8px;border-bottom:1px solid var(--rule);vertical-align:top}.market-card th{text-align:left}
+.market-card button,.market-actions button{border:1px solid var(--rule);border-radius:5px;background:var(--card-raised);color:var(--ink);padding:6px 9px;font-size:11px;cursor:pointer}
+.market-card button:disabled{opacity:.4;cursor:default}.market-empty{padding:20px;border:1px dashed var(--rule);border-radius:8px;font-size:12px;line-height:1.65;color:var(--ink-soft);margin-bottom:24px}
+.market-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:16px 0}.market-actions a{font-size:12px;text-decoration:underline}
+.market-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.market-compare .market-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.market-compare label{margin:10px 0}
+@media(max-width:900px){.market-grid{grid-template-columns:1fr}.market-card{padding:18px}.market-chart{height:280px}}
+@media(max-width:620px){.market-compare{grid-template-columns:1fr}.market-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.market-stat strong{font-size:23px}.market-chart{height:250px}.asking-sold,.asking-sold-chart,.market-card{scroll-margin-top:174px}}
 </style>
 <script>/*!
  * Chart.js v4.5.1
@@ -706,7 +764,7 @@ document.addEventListener('click',e=>{
 });
 
 </script>
-<script src="assets/benchmark.js"></script><script src="assets/benchmark-ui.js"></script><script src="assets/core.js"></script><script src="assets/lots.js"></script><script src="assets/registry.js"></script>
+<script src="assets/core.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-index.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-points-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-points-2.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-points-3.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-points-4.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-points-5.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-points-6.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-series-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-2.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-3.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-4.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-5.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-6.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-7.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-8.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-9.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-10.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-11.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-12.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-13.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-14.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-15.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-16.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-17.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-18.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-19.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-20.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-21.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-22.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-23.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-24.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-25.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-26.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-27.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-28.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-29.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-30.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-31.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-32.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-33.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-34.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-35.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-36.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-37.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-38.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-39.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-40.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-41.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-42.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-43.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-44.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-45.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-46.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-47.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-48.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-49.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-50.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-51.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-52.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-53.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-54.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-55.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-56.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-57.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-58.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-59.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-60.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-61.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-62.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-cohorts-63.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-2.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-3.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-4.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-5.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-6.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-7.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-8.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-9.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-10.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-11.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-12.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-13.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-14.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-15.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-16.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-17.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-18.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-19.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-20.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-21.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-22.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-23.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-24.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-comparison-25.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/market-wire.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-2.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-3.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-4.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-5.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-6.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-7.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/lots-8.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/scatter-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/registry.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/registry-1.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/registry-2.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/registry-3.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/registry-4.js?v=2026-10-20T05%3A19%3A40.570Z"></script><script src="assets/registry-5.js?v=2026-10-20T05%3A19%3A40.570Z"></script>
 <script>
 const R=window.__RLP_DATA__;
 function fmtDateTime(iso){
@@ -753,12 +811,11 @@ function renderProductionStatus(){
   if(!el)return;
   const builtStatus=(s.trustStatus||'red').toLowerCase();
   const ageH=liveDataAgeHours(s);
-  // Full scans run every 3rd night (publish itself is nightly), so current
-  // data reaching ~83h old just before the next scan is normal. Amber past
-  // 90h, red past 180h (a genuinely missed scan cycle).
+  // Cadence is ~3x/week, so data reaching ~48h old between scrapes is normal.
+  // Only amber past 50h, red past 96h (a genuinely missed cycle).
   let status=builtStatus;
-  if(ageH!=null&&ageH>180)status='red';
-  else if(ageH!=null&&ageH>90&&status==='green')status='amber';
+  if(ageH!=null&&ageH>96)status='red';
+  else if(ageH!=null&&ageH>50&&status==='green')status='amber';
   const aged=status!==builtStatus;
   const palette=status==='green'
     ?{bg:'#edf6ef',bd:'#486456',fg:'#284335',dot:'#486456',label:'Fresh'}
@@ -773,25 +830,12 @@ function renderProductionStatus(){
   const soldStatus=soldAnalyticsStatus();
   const hours=fmtAge(ageH);
   const asOf=fmtDateTime(s.lastCurrentSuccess||s.generatedAt||R.built);
-  const gateNames={currentAnalysisFresh:'the current analysis is out of date',activeRowsFresh:'too many listings have not been re-checked recently',suburbCoverageFresh:'too many suburbs are missing recent data',currentCoverageComplete:'some suburb scans have incomplete or unverified coverage',qaClean:'some listings are still awaiting quality review',sourceIdsClean:'some listings failed an integrity check'};
-  const failingGates=s.checks?Object.keys(gateNames).filter(k=>s.checks[k]===false).map(k=>gateNames[k]):[];
-  // Next scheduled pipeline run: nightly 01:15 Australia/Sydney (launchd
-  // StartCalendarInterval). Computed client-side so an open tab stays correct;
-  // the 5-minute re-render keeps it rolling over automatically.
-  const nextRun=(()=>{try{
-    const tz='Australia/Sydney';
-    const hm=new Intl.DateTimeFormat('en-GB',{timeZone:tz,hourCycle:'h23',hour:'2-digit',minute:'2-digit'}).format(new Date());
-    const base=new Date(Date.now()+((hm>='01:15')?86400000:0));
-    const dstr=new Intl.DateTimeFormat('en-AU',{timeZone:tz,day:'numeric',month:'short'}).format(base);
-    const tzn=new Intl.DateTimeFormat('en-AU',{timeZone:tz,timeZoneName:'short'}).formatToParts(base).find(p=>p.type==='timeZoneName');
-    return dstr+', 1:15 am '+(tzn?tzn.value:'AEST');
-  }catch(e){return 'nightly, 1:15 am AEST';}})();
   const note=status==='green'
-    ?'Pipeline observations are recent. Completeness and suitability depend on the selected comparable sample.'
+    ?'Current market data is inside the production freshness window (refreshed about three times a week).'
     :status==='amber'
       ?(aged
         ?('Data is aging (last verified '+hours+'). Showing the most recent verified analysis while the next update runs.')
-        :(failingGates.length?('Attention: '+failingGates.join('; ')+'. Check comparable counts and quote dates before using a pricing assumption.'):'One production check has not passed. Check comparable counts and quote dates before using a pricing assumption.'))
+        :'Some coverage is stale. Treat market totals as directional until reconcile finishes.')
       :(aged
         ?('Showing last verified data as of '+asOf+'. A newer update has not published yet — treat pricing as historical until this banner returns to green.')
         :'Do not rely on current pricing as fully fresh until the current analysis/reconcile completes.');
@@ -808,10 +852,9 @@ function renderProductionStatus(){
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dataset start</div><div class="prod-status-value">${fmtDateTime(s.datasetStartAt)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Dashboard built</div><div class="prod-status-value">${fmtDateTime(R.built)}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current analysis</div><div class="prod-status-value">${fmtDateTime(s.lastCurrentSuccess)} · ${hours}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Next update</div><div class="prod-status-value">${nextRun}</div><div class="prod-status-detail">Site updates nightly · full national scan every 3rd night · scan-day data live by late morning</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${(s.checks&&s.checks.activeRowsFresh===false)?'below freshness target':(aged?'as at last verified analysis':'freshness target met')}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} complete latest scans · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
-        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Sold history</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} suburbs certified · ${soldStatus.visibleRows.toLocaleString()} rows</div><div class="prod-status-detail">Certified suburbs only · ${soldStatus.uncertifiedSuburbs.toLocaleString()} gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Current data fresh</div><div class="prod-status-value">${fmtPct(s.activeFreshPct)} · ${status==='green'?'freshness gate passed':(aged?'as at last verified analysis':'freshness gate not fully met')}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} complete · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
+        <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Portal sold-source audit</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} portal scopes certified · ${soldStatus.visibleRows.toLocaleString()} portal rows</div><div class="prod-status-detail">${soldStatus.uncertifiedSuburbs.toLocaleString()} portal gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}. This source audit does not certify complete RP Data or combined market coverage.</div></div>
       </div>
     </div>`;
 }
@@ -1253,12 +1296,14 @@ function setStateFromOverview(state){
 }
 
 function D(){
+  if(canonicalMarketEnabled())return marketData(marketCurrentScope());
   // If a suburb is selected, compute metrics from lot data on the fly
   if(activeSub){return computeSuburbData(activeSub);}
   return cState?R.states[cState]:R.all;
 }
 
 function computeSuburbData(subName){
+  if(canonicalMarketEnabled())return marketData(marketResolveScope({...marketFilters(),suburb:subName}));
   // Match suburb name case-insensitively + with trim so DB casing variants
   // (e.g. "MURRAY BRIDGE" vs "Murray Bridge") still resolve to the right
   // suburb instead of falling through to the global fallback (Fix 3, Apr 2026).
@@ -1348,13 +1393,16 @@ function setActiveSuburbName(name,state){
   let canonicalState=state||null;
   if(canonical){
     const want=canonical.toLowerCase().trim();
+    const canonicalSubs=canonicalMarketEnabled()?getSubList().map(s=>({suburb:s.name,state:s.state})):null;
+    const identityRows=canonicalSubs||(R.lots||[]);
     const stateHit=canonicalState
-      ? (R.lots||[]).find(l=>(l.suburb||'').toLowerCase().trim()===want && l.state===canonicalState)
+      ? identityRows.find(l=>(l.suburb||'').toLowerCase().trim()===want && l.state===canonicalState)
       : null;
     const currentStateHit=!stateHit&&cState
-      ? (R.lots||[]).find(l=>(l.suburb||'').toLowerCase().trim()===want && l.state===cState)
+      ? identityRows.find(l=>(l.suburb||'').toLowerCase().trim()===want && l.state===cState)
       : null;
-    const hit=stateHit||currentStateHit||(R.lots||[]).find(l=>(l.suburb||'').toLowerCase().trim()===want);
+    const matches=identityRows.filter(l=>(l.suburb||'').toLowerCase().trim()===want);
+    const hit=stateHit||currentStateHit||(matches.length===1?matches[0]:null);
     if(hit){
       canonical=hit.suburb;
       canonicalState=hit.state||canonicalState;
@@ -1708,7 +1756,7 @@ function isCurrentLot(l){return !!(l&&CURRENT_LOT_STATUSES.has(l.status));}
 function isMarketLot(l){return !!(l&&(l.status==='sold'||isCurrentLot(l)));}
 function hasUsablePrice(l){return !!(l&&Number(l.price)>0);}
 function hasUsableRate(l){return !!(l&&Number(l.rate)>0&&Number(l.price)>0);}
-function isPricedCurrentLot(l){return !!l&&RlpBenchmark.isUsableCurrent(l);}
+function isPricedCurrentLot(l){return isCurrentLot(l)&&hasUsablePrice(l);}
 function filterLots(lots){const src=(lots||[]).filter(isMarketLot);if(viewMode==='both')return src;if(viewMode==='sold')return src.filter(l=>l.status==='sold');return src.filter(isCurrentLot);}
 const MIN_TREND_SALES=5;
 function analysisDate(){
@@ -1738,8 +1786,6 @@ function trendGateMessage(noun){
 }
 function registryLotToStandard(l){
   return {
-    quote:l.quote, quote_observed_at:l.quote_observed_at, status_verified_at:l.status_verified_at,
-    detail_checked_at:l.detail_checked_at, comparability:l.comparability, cash_rebate:l.cash_rebate,
     id:l.id,
     address:l.addr||'',
     suburb:l.sub||'',
@@ -1763,10 +1809,12 @@ function registryLotToStandard(l){
 }
 function inventoryLots(){return (R.registryLots||[]).map(registryLotToStandard);}
 function TS(){
+  if(canonicalMarketEnabled())return marketCurrentScope()?.ts||marketEmptyTS();
   if(activeSub){return computeSuburbTS(activeSub);}
   return cState&&R.stateTS[cState]?R.stateTS[cState]:R.ts;
 }
 function computeSuburbTS(subName){
+  if(canonicalMarketEnabled())return marketResolveScope({...marketFilters(),suburb:subName})?.ts||marketEmptyTS();
   // Build time series from individual lots for this suburb. Don't apply
   // filterLots here — the sold series and listed series both need their own
   // pool, and the default viewMode='listing' would otherwise empty soldByQ.
@@ -2004,10 +2052,12 @@ function isRecentSoldLot(l,days=90){
 // market is asking today and the right number for headline price metrics.
 // Sold medians lag actual sales by 6–9 months due to off-the-plan settlement.
 function listedMedianBy(filterFn){
-  return RlpBenchmark.summarize((R.lots||[]).filter(filterFn)).medianPrice||0;
+  const lots=(R.lots||[]).filter(l=>isPricedCurrentLot(l)&&filterFn(l));
+  return medOf(lots.map(l=>l.price));
 }
 function listedMedianRateBy(filterFn){
-  return Math.round(RlpBenchmark.summarize((R.lots||[]).filter(filterFn)).medianRate||0);
+  const lots=(R.lots||[]).filter(l=>isCurrentLot(l)&&hasUsableRate(l)&&filterFn(l));
+  return Math.round(medOf(lots.map(l=>l.rate)));
 }
 function sold90MedianBy(filterFn){
   const iso90=recentSoldCutoffISO(90);
@@ -2020,7 +2070,8 @@ function sold90MedianRateBy(filterFn){
   return Math.round(medOf(lots.map(l=>l.rate)));
 }
 function listedMedianSizeBy(filterFn){
-  return Math.round(RlpBenchmark.summarize((R.lots||[]).filter(filterFn)).medianSize||0);
+  const lots=(R.lots||[]).filter(l=>isCurrentLot(l)&&l.lot_size>0&&filterFn(l));
+  return Math.round(medOf(lots.map(l=>l.lot_size)));
 }
 
 // State colours for All-states stacked volume mode (Fix 2)
@@ -2085,6 +2136,7 @@ function viewFilteredLotPool(){
 // Sorted descending by total count. Used by Overview donut, Corridor Snapshot
 // grid ordering, and any other chart that wants "corridors in scope now".
 function viewFilteredCorridors(){
+  if(canonicalMarketEnabled())return marketData(marketCurrentScope()).corridors;
   const lots=viewFilteredLotPool();
   const map={};
   const iso12=new Date(Date.now()-365*86400000).toISOString().slice(0,10);
@@ -2117,6 +2169,7 @@ function viewFilteredCorridors(){
 
 // Per-state totals respecting viewMode — used by Cross-Market Snapshot.
 function viewFilteredStateTotals(state){
+  if(canonicalMarketEnabled())return marketData(marketResolveScope({...marketFilters(),state})).totals;
   let lots=(R.lots||[]).filter(l=>l.state===state);
   if(activeSub){
     const a=activeSub.toLowerCase().trim();
@@ -2149,6 +2202,7 @@ let acIdx=-1; // autocomplete highlight index
 // Build suburb list with counts (cached)
 let _subCache=null;
 function getSubList(){
+  if(canonicalMarketEnabled())return (marketResolveScope({})?.data?.suburbs||[]).map(s=>({name:s.suburb,state:s.state,corridor:s.corridor||'Unknown',count:s.inventory_total,sold:s.sold}));
   if(_subCache)return _subCache;
   const map={};
   (R.lots||[]).forEach(l=>{
@@ -2808,6 +2862,7 @@ const CL_EXT=['#513561','#486456','#61323a','#7c4951','#6a4c7a','#314c3f','#583b
 // ──── PAGE RENDERERS ────
 
 function renderOverview(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('overview');
   const d=D(),t=d.totals;
   // Global Fix 2 (Apr 2026): swap the build-time blended corridors list for a
   // viewMode-aware recompute. Every chart on this page that used `c` for lot
@@ -3127,8 +3182,8 @@ function renderOverview(){
   // the three most notable prices — cheapest, middle, premium.
   const priceDensityChart = () => {
     const currentLots = (R.scatterLots || R.lots || []).filter(l => isCurrentLot(l) && (!cState || l.state === cState));
-    const listedLots = currentLots.filter(isPricedCurrentLot);
-    const unpricedCount = currentLots.filter(l=>!hasUsablePrice(l)).length;
+    const listedLots = currentLots.filter(hasUsablePrice);
+    const unpricedCount = currentLots.length - listedLots.length;
     if (listedLots.length < 10) return '';
     const prices = listedLots.map(l => l.price).sort((a,b)=>a-b);
     const range = focusedNumericRange(prices,{low:0.01,high:0.95});
@@ -3735,7 +3790,494 @@ function pricingModeToggle(){
   return `<div class="flex gap-1.5 shrink-0">${btn('listing','Listed')}${btn('sold','Sold')}${btn('both','Listed + 90d')}</div>`;
 }
 
+// __CANONICAL_MARKET_UI_START__
+// Public charts consume exact, privacy-screened aggregate scopes. Legacy row
+// renderers below remain a compatibility path only for older, unmigrated builds.
+const marketDimensions=['state','suburb','corridor','lga','estate','source','bandMin','bandMax'];
+const marketUi={corridor:null,lga:null,estate:null,source:null,period:'quarter',history:'8',sort:'listings',showAll:false,regional:true,benchmarkBand:'all',benchmarkCap:1000,portalDetails:false,registryGroup:'suburb',detailSearch:'',neighbour:null,compare:[null,null,null,null]};
+function canonicalMarketEnabled(){return R.publicMarket!=null;}
+function marketContract(){const p=R.publicMarket;return p&&p.schemaVersion===1&&p.scopes&&typeof p.scopes==='object'?p:null;}
+function marketKey(filters){return JSON.stringify(marketDimensions.map(k=>filters[k]??null));}
+function marketFilters(){return {state:cState||null,suburb:activeSub||null,corridor:marketUi.corridor,lga:marketUi.lga,estate:marketUi.estate,source:marketUi.source};}
+function marketEmptyData(){return {totals:{},corridors:[],lgas:[],suburbs:[],estates:[],priceDist:[],sizeDist:[],rateDist:[],topRate:[],bottomRate:[],titledStats:{},netPricing:{}};}
+function marketEmptyTS(){return {quarters:[],sold:[],listed:[],months:[],soldMonthly:[],listedMonthly:[],corridorSeries:{},suburbSeries:{}};}
+function marketResolveScope(requested){
+  const contract=marketContract();if(!contract)return null;
+  const filters=Object.fromEntries(marketDimensions.map(k=>[k,requested[k]??null]));
+  const exact=contract.scopes[marketKey(filters)];if(exact)return exact;
+  // A geographic parent can be omitted from a key only when the exact child
+  // proves that ALL its inventory and events belong to that parent. Conflicting
+  // or multi-parent requests stay empty; medians are never recombined.
+  const groups={state:'states',suburb:'suburbs',corridor:'corridors',lga:'lgas',estate:'estates'};
+  const candidates=Object.values(contract.scopes).filter(cell=>cell&&cell.filters&&marketDimensions.every(k=>cell.filters[k]==null||cell.filters[k]===filters[k]))
+    .sort((a,b)=>marketDimensions.filter(k=>b.filters[k]!=null).length-marketDimensions.filter(k=>a.filters[k]!=null).length);
+  return candidates.find(cell=>marketDimensions.every(k=>{
+    if(filters[k]==null||cell.filters[k]===filters[k])return true;
+    if(k==='state')return cell.data?.suburbs?.length>0&&cell.data.suburbs.every(s=>s.state===filters[k]);
+    if(!groups[k])return false;
+    const rows=cell.data&&cell.data[groups[k]];return Array.isArray(rows)&&rows.length===1&&rows[0][k]===filters[k];
+  }))||null;
+}
+function marketCurrentScope(){return marketResolveScope(marketFilters());}
+function marketData(cell,mode){return cell?.views?.[mode||viewMode]||marketEmptyData();}
+function marketNumber(value,prefix,suffix){return typeof value==='number'&&Number.isFinite(value)?(prefix||'')+value.toLocaleString('en-AU',{maximumFractionDigits:2})+(suffix||''):'—';}
+function marketModeLabel(){return viewMode==='sold'?'Actual achieved sale events':viewMode==='both'?'Current asking + trailing 90-day achieved events · unadjusted':'Current asking · net of recorded incentives';}
+function marketValue(point,key){const value=point&&point[key];return typeof value==='number'&&Number.isFinite(value)?value:null;}
+function marketAsOf(){return askingSoldDate(marketContract()?.builtAt)||null;}
+function marketIsComplete(key){const today=marketAsOf();if(!today)return false;return key.length===7&&key.includes('-Q')?key<today.slice(0,4)+'-Q'+Math.ceil(Number(today.slice(5,7))/3):key<today.slice(0,7);}
+function marketPoints(cell,side,period){
+  const ts=cell&&cell.ts||marketEmptyTS(),monthly=(period||marketUi.period)==='month';
+  const rows=(monthly?(side==='asking'?ts.listedMonthly:ts.soldMonthly):(side==='asking'?ts.listed:ts.sold))||[];
+  const completed=rows.filter(p=>marketIsComplete(p.m||p.q));
+  return marketUi.history==='all'?completed:completed.slice(-Number(marketUi.history));
+}
+function marketSetFilter(field,value,focusId){
+  if(field==='suburb'){selectSuburb(value||null,cState);}
+  else if(['corridor','lga','estate','source'].includes(field)){marketUi[field]=value||null;render();}
+  else if(field==='period'&&['month','quarter'].includes(value)){marketUi.period=value;healthTimeMode=value==='month'?'mom':'qoq';render();}
+  else if(field==='history'&&['8','20','all'].includes(value)){marketUi.history=value;render();}
+  else if(field==='sort'&&['listings','sold_12m','med_rate','med_price','suburb'].includes(value)){marketUi.sort=value;render();}
+  else return;
+  const el=focusId&&document.getElementById(focusId);if(el)el.focus({preventScroll:true});
+}
+function marketControls(page){
+  const E=askingSoldEscape,contract=marketContract(),cells=Object.values(contract?.scopes||{}),filters=marketFilters();
+  const base=marketResolveScope({state:cState||null}),data=base&&base.data||marketEmptyData();
+  const options=(field,rows,current,caption)=>{
+    const values=[...new Set([...(rows||[]).map(r=>typeof r==='string'?r:r&&r[field]),current].filter(v=>v!=null&&v!==''))].sort();
+    return '<label>'+E(caption)+'<select id="market-'+field+'"'+(page==='registry'&&marketUi.portalDetails&&field==='estate'?' disabled':'')+' onchange="marketSetFilter(\''+field+'\',this.value,this.id)"><option value="">All</option>'+values.map(v=>'<option value="'+E(v)+'"'+(v===current?' selected':'')+'>'+E(v)+'</option>').join('')+'</select></label>';
+  };
+  return '<div class="market-controls">'+(page==='compare'?'':options('suburb',data.suburbs,filters.suburb,'Suburb')+options('corridor',data.corridors,filters.corridor,'Corridor')+options('lga',data.lgas,filters.lga,'LGA')+options('estate',data.estates,filters.estate,'Estate'))+options('source',cells.filter(c=>!cState||c.filters.state===cState).map(c=>c.filters.source),filters.source,'Source')
+    +(['registry','movers'].includes(page)?'':'<label>Time series<select id="market-period" onchange="marketSetFilter(\'period\',this.value,this.id)"><option value="quarter"'+(marketUi.period==='quarter'?' selected':'')+'>Complete quarters</option><option value="month"'+(marketUi.period==='month'?' selected':'')+'>Complete months</option></select></label>'
+    +'<label>History<select id="market-history" onchange="marketSetFilter(\'history\',this.value,this.id)">'+[['8','Last 8 periods'],['20','Last 20 periods'],['all','All complete periods']].map(([v,label])=>'<option value="'+v+'"'+(marketUi.history===v?' selected':'')+'>'+label+'</option>').join('')+'</select></label>')+'</div>'
+    +(!['compare','movers','registry'].includes(page)?'<div class="market-actions"><button onclick="marketUi.showAll=!marketUi.showAll;render()">'+(marketUi.showAll?'Show first cohorts':'Show all cohorts')+'</button><span class="market-basis">Ranking and corridor charts '+(marketUi.showAll?'include all available groups.':'show the first groups; exact values remain in their tables.')+'</span></div>':'');
+}
+function marketMetric(label,value,note){return '<div class="market-stat"><span>'+askingSoldEscape(label)+'</span><strong>'+askingSoldEscape(value)+'</strong><small>'+askingSoldEscape(note||'')+'</small></div>';}
+function marketSummary(cell){
+  const data=marketData(cell),t=data.totals||{},basis=marketModeLabel();
+  const cohort=t.native_general_policy?marketNumber(t.native_source_assessed_sale_events)+' reviewed native source-assessed sale events; '+marketNumber(t.native_unknown_sale_type_events)+' with unreported Sale Type (general only). '+(t.native_qualification_count_reason?'Subgroup counts below five distinct properties are withheld. ':''):marketNumber(t.source_assessed_sale_events)+' source-assessed SA Urban sale events; ';
+  return '<div class="market-stats">'+marketMetric('Physical lots',marketNumber(t.inventory_total),'One current state per physical lot')+marketMetric('Active listings',marketNumber(t.listings),'Includes unpriced current inventory')+marketMetric('Sale events',marketNumber(t.sold),'Includes genuine resales')+marketMetric('Median price',marketNumber(t.med_price,'$'),basis)+marketMetric('Median $/m²',marketNumber(t.med_rate,'$'),basis)+marketMetric('Median lot size',marketNumber(t.med_size,'',' m²'),basis)+'</div><p class="market-basis">'+askingSoldEscape(t.general_market_basis||'General reported market observations; greenfield qualification is separate.')+' '+askingSoldEscape(cohort)+askingSoldEscape(marketNumber(t.native_held_or_excluded_events))+' native events held or excluded in this scope. Reported date bases: '+askingSoldEscape(Object.entries(t.sold_date_basis_counts||{}).map(([key,n])=>key+' '+n).join(' · ')||'none')+'.</p>';
+}
+function marketCard(title,subtitle,body){return '<section class="v5-card market-card" data-market-card="'+askingSoldEscape(title)+'">'+sec(askingSoldEscape(title),askingSoldEscape(subtitle||''))+body+'</section>';}
+function marketChart(title,subtitle,labels,datasets,type,options){
+  const E=askingSoldEscape,id='market-chart-'+(++_chartIdCounter),palette=['#513561','#486456','#8b5e3c','#1b1c17','#a69070','#6a4c7a'];
+  const ds=datasets.map((s,i)=>({...s,label:String(s.label||''),data:s.data.map(v=>typeof v==='number'&&Number.isFinite(v)?v:null),borderColor:s.borderColor||palette[i%palette.length],backgroundColor:s.backgroundColor||palette[i%palette.length]+(type==='line'?'22':'bb'),borderWidth:2,pointRadius:type==='line'?2:0,tension:0,spanGaps:false,fill:false}));
+  const config={type:type||'line',data:{labels,datasets:ds},options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:true,labels:{font:{family:'Geist',size:10}}},tooltip:{callbacks:{label:item=>item.dataset.label+': '+marketNumber(item.raw,item.dataset._currency?'$':'',item.dataset._unit||'')+(item.dataset._counts?' · '+item.dataset._counts[item.dataIndex]+' events / observations':'')}}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:12,font:{size:10}}},y:{beginAtZero:type!=='line',ticks:{font:{size:10}}}},...options}};
+  const hasData=ds.some(s=>s.data.some(v=>v!=null));
+  if(hasData)window._pendingCharts.push({key:id,canvasId:id,config});
+  const table='<details class="market-chart-values"><summary>Read exact chart values</summary><div class="market-table-wrap"><table><thead><tr><th scope="col">Period / group</th>'+ds.map(s=>'<th scope="col">'+E(s.label)+'</th>').join('')+'</tr></thead><tbody>'+labels.map((label,i)=>'<tr><th scope="row">'+E(label)+'</th>'+ds.map(s=>'<td>'+E(marketNumber(s.data[i],s._currency?'$':'',s._unit||''))+(s._counts?'<br>'+E(s._counts[i])+' events / observations':'')+'</td>').join('')+'</tr>').join('')+'</tbody></table></div></details>';
+  return marketCard(title,subtitle,(hasData?'<div class="market-chart" tabindex="0" role="img" aria-label="'+E(title)+'. Exact values in the table below."><canvas id="'+id+'"></canvas></div>':'<p class="market-empty">No eligible values in this exact cohort. Prices, rates and lot-size statistics need at least five distinct usable lots; missing periods stay empty.</p>')+table);
+}
+function marketTrend(cell,title,key,options){
+  const sold=marketPoints(cell,'sold'),asking=marketPoints(cell,'asking'),labels=sold.map(p=>p.m||p.q),currency=key!=='medSize';
+  const lookup=new Map(asking.map(p=>[p.m||p.q,p]));
+  const datasets=[{label:'Achieved',data:sold.map(p=>marketValue(p,key)),_counts:sold.map(p=>p.count),_currency:currency,_unit:key==='medSize'?' m²':''}];
+  if(options&&options.asking)datasets.push({label:'Actual dated asking',data:labels.map(k=>marketValue(lookup.get(k),key)),_counts:labels.map(k=>lookup.get(k)?.count??0),_currency:currency,borderDash:[6,4]});
+  return marketChart(title,'Actual dated '+marketUi.period+' observations · complete periods · five distinct usable lots per priced point',labels,datasets,'line');
+}
+function marketDistribution(data,field,title){
+  const rows=data[field]||[];return marketChart(title,marketModeLabel()+' · suppressed small licensed cells remain blank',rows.map(r=>r.bracket),[{label:'Count',data:rows.map(r=>r.count)}],'bar');
+}
+function marketGroupRows(cell,dimension,mode){
+  const key={suburb:'suburbs',corridor:'corridors',lga:'lgas',estate:'estates'}[dimension],rows=marketData(cell,mode)[key]||[];
+  const sort=marketUi.sort;return [...rows].sort((a,b)=>sort==='suburb'?String(a[dimension]).localeCompare(String(b[dimension])):(b[sort]??-Infinity)-(a[sort]??-Infinity));
+}
+function marketGroupTable(cell,dimension,title,mode){
+  const E=askingSoldEscape,all=marketGroupRows(cell,dimension,mode),rows=marketUi.showAll?all:all.slice(0,30);
+  const table='<div class="market-table-wrap"><table><thead><tr><th scope="col">'+E(dimension)+'</th><th scope="col">Physical lots</th><th scope="col">Active</th><th scope="col">Sale events</th><th scope="col">Sold 12m</th><th scope="col">Median price</th><th scope="col">Median $/m²</th><th scope="col">Median m²</th><th scope="col">Stock months</th></tr></thead><tbody>'+rows.map(r=>'<tr><th scope="row"><button data-dimension="'+E(dimension)+'" data-value="'+E(r[dimension])+'" data-state="'+E(r.state)+'" onclick="marketOpenGroup(this.dataset.dimension,this.dataset.value,this.dataset.state)">'+E(r[dimension]||'Unknown')+(dimension==='suburb'?' · '+E(r.state):'')+'</button></th>'+['inventory_total','listings','sold','sold_12m','med_price','med_rate','med_size','months_stock'].map(k=>'<td>'+E(marketNumber(r[k],['med_price','med_rate'].includes(k)?'$':''))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  return marketCard(title||'Market ledger',marketModeLabel()+' · aggregate cohorts; Unknown geography retained',table+'<p>'+rows.length+' of '+all.length+' groups · <button onclick="marketUi.showAll=!marketUi.showAll;render()">'+(marketUi.showAll?'Show first 30':'Show all')+'</button> · <label>Sort <select aria-label="Sort aggregate ledger" onchange="marketSetFilter(\'sort\',this.value)">'+['listings','sold_12m','med_rate','med_price','suburb'].map(k=>'<option value="'+k+'"'+(marketUi.sort===k?' selected':'')+'>'+E(k.replace(/_/g,' '))+'</option>').join('')+'</select></label></p>');
+}
+function marketOpenGroup(dimension,value,state){
+  if(dimension==='suburb'){openSuburb(value,'suburb',state||cState);return;}
+  marketSetFilter(dimension,value);
+}
+function marketRankChart(cell,dimension,field,title,mode){
+  const direction=title==='Value Index'?-1:1;
+  const rows=marketGroupRows(cell,dimension,mode).sort((a,b)=>a[field]==null?1:b[field]==null?-1:direction*(b[field]-a[field]));
+  const shown=marketUi.showAll?rows:rows.slice(0,30);
+  return marketChart(title,marketModeLabel()+' · exact group values',shown.map(r=>r[dimension]+(dimension==='suburb'?' · '+r.state:'')),[{label:field.replace(/_/g,' '),data:shown.map(r=>r[field]),_currency:['med_price','med_rate'].includes(field)}],'bar');
+}
+function marketDensity(cell){
+  const E=askingSoldEscape,rows=(cell?.scatterDensity||[]).filter(r=>r.distinctLots>=5&&r.count>=5),id='market-density-'+(++_chartIdCounter);
+  if(rows.length)window._pendingCharts.push({key:id,canvasId:id,config:{type:'bubble',data:{datasets:[{label:'Active asking density · ≥5 distinct lots per cell',data:rows.map(r=>({x:(r.bandMin+r.bandMax)/2,y:(r.priceMin+r.priceMax)/2,r:Math.min(24,4+Math.sqrt(r.count)*2),_cell:r})),backgroundColor:'#51356188',borderColor:'#513561'}]},options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{tooltip:{callbacks:{label:item=>{const r=item.raw._cell;return r.count+' active lots · '+r.bandMin+'–'+r.bandMax+' m² · $'+r.priceMin+'–$'+r.priceMax;}}}},scales:{x:{title:{display:true,text:'Lot-size bin (m²)'}},y:{title:{display:true,text:'Asking-price bin ($)'}}}}}});
+  const table='<details class="market-chart-values"><summary>Read density cells</summary><div class="market-table-wrap"><table><thead><tr><th>State / corridor</th><th>Area band</th><th>Asking band</th><th>Active lots</th></tr></thead><tbody>'+rows.map(r=>'<tr><th>'+E(r.state+' · '+r.corridor)+'</th><td>'+r.bandMin+'–'+r.bandMax+' m²</td><td>'+E(marketNumber(r.priceMin,'$')+'–'+marketNumber(r.priceMax,'$'))+'</td><td>'+r.count+'</td></tr>').join('')+'</tbody></table></div></details>';
+  return marketCard('Lot Distribution · aggregated density','Current asking inventory · each bubble is a real 50m² × $100,000 cell with at least five distinct physical lots',rows.length?'<div class="market-chart" tabindex="0" role="img" aria-label="Aggregate asking density, with exact ranges and counts below"><canvas id="'+id+'"></canvas></div>'+table:'<p class="market-empty">No density cell meets the five-lot floor. Individual licensed lots are not exposed.</p>');
+}
+function marketCorridorTrends(cell,key,title){
+  const monthly=marketUi.period==='month',series=(monthly?cell?.ts?.corridorMonthlySeries:cell?.ts?.corridorSeries)||{},labels=marketPoints(cell,'sold').map(p=>p.m||p.q),regional=cell?.regional;
+  const names=Object.keys(series),eligible=marketUi.regional&&regional?names.filter(n=>regional.definition.priority.includes(n)):names,shown=marketUi.showAll?eligible:eligible.slice(0,8);
+  const datasets=shown.map(name=>{const rows=new Map(series[name].map(p=>[p.m||p.q,p]));return {label:name,data:labels.map(q=>marketValue(rows.get(q),key)),_counts:labels.map(q=>rows.get(q)?.count??0),_currency:key!=='medSize'};});
+  let controls='';
+  if(regional){
+    controls='<div class="market-actions"><button data-regional-toggle aria-pressed="'+marketUi.regional+'" onclick="marketUi.regional=!marketUi.regional;render()">Regional</button><span>'+askingSoldEscape(regional.definition.label)+'</span></div>';
+    if(marketUi.regional){
+      const sold=new Map((monthly?regional.ts.soldMonthly:regional.ts.sold).map(p=>[p.m||p.q,p])),asks=new Map((monthly?regional.ts.listedMonthly:regional.ts.listed).map(p=>[p.m||p.q,p]));
+      datasets.push({label:'Regional achieved',data:labels.map(p=>marketValue(sold.get(p),key)),_counts:labels.map(p=>sold.get(p)?.count??0),_currency:key!=='medSize',borderColor:'#8b5e3c'});
+      datasets.push({label:'Regional dated asking',data:labels.map(p=>marketValue(asks.get(p),key)),_counts:labels.map(p=>asks.get(p)?.count??0),_currency:key!=='medSize',borderColor:'#486456',borderDash:[6,4]});
+      const current=regional.currentAsking[{medPrice:'med_price',medRate:'med_rate',medSize:'med_size'}[key]],last=[...labels].reverse().map(p=>marketValue(sold.get(p),key)).find(v=>v!=null),gap=current!=null&&last>0?(current-last)/last*100:null;
+      controls+='<p class="market-basis">Current Regional asking: '+askingSoldEscape(marketNumber(current,key==='medSize'?'':'$',key==='medSize'?' m²':''))+' · asking '+(gap!=null&&gap<0?'discount':'premium')+' to the latest eligible complete achieved period: '+askingSoldEscape(marketNumber(gap,'','%'))+'. Pooled lots, unadjusted for mix and reporting lag; historical asking gaps stay empty.</p>';
+    }
+  }
+  return controls+marketChart(title,'Reported sale events · complete '+marketUi.period+'s · each median uses its original eligible physical-lot samples',labels,datasets,'line');
+}
+function marketStock(cell){return marketRankChart(cell,'corridor',viewMode==='sold'?'sold_12m':viewMode==='listing'?'listings':'months_stock',viewMode==='sold'?'Sold Lots (12m) by Corridor':viewMode==='listing'?'Active Listings by Corridor':'Observed Months of Stock');}
+function marketVolumes(cell){
+  const ts=cell?.ts||marketEmptyTS(),quarters=marketPoints(cell,'sold','quarter'),labels=quarters.map(p=>p.q),names=Object.keys(ts.corridorSeries||{});
+  const regional=cell?.regional,selected=marketUi.regional&&regional?names.filter(n=>regional.definition.priority.includes(n)):names;
+  const datasets=selected.map(name=>{const map=new Map(ts.corridorSeries[name].map(p=>[p.q,p]));return {label:name,data:labels.map(q=>map.get(q)?.count??0)};});
+  if(marketUi.regional&&regional){const map=new Map(regional.ts.sold.map(p=>[p.q,p]));datasets.push({label:'Regional',data:labels.map(q=>map.get(q)?.count??0),backgroundColor:'#8b5e3cbb'});}
+  return marketChart('Quarterly Sold Volume','Separate sale events, including resales · unknown prices count · combined Regional replaces its constituent segments',labels,datasets,'bar',{scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true}}})
+    +marketChart('Monthly Sold Volume','Last twelve complete months · current month excluded',((ts.soldMonthly||[]).filter(p=>marketIsComplete(p.m)).slice(-12)).map(p=>p.m),[{label:'Sale events',data:(ts.soldMonthly||[]).filter(p=>marketIsComplete(p.m)).slice(-12).map(p=>p.count)}],'bar');
+}
+function marketStandardised(cell){
+  const rows=marketGroupRows(cell,'suburb'),state=cState||'ALL',sizes=({VIC:[400,500],SA:[400,500],NSW:[450,600],QLD:[400,600],WA:[350,450]})[state]||[400,500],labels=rows.map(r=>r.suburb+' · '+r.state),base=marketData(cell).totals.med_rate;
+  return marketChart('Suburb Price at Standardised Lot Size','Illustrative median $/m² × fixed footprint; these are modelled asks, not individual lot quotes',labels,sizes.map(size=>({label:size+' m² model',data:rows.map(r=>r.med_rate==null?null:r.med_rate*size),_currency:true})),'bar')
+    +marketChart('Relative Value Position','Unadjusted suburb median $/m² versus this exact parent cohort median · mixes can differ',labels,[{label:'Rate premium / discount',data:rows.map(r=>base>0&&r.med_rate!=null?(r.med_rate/base-1)*100:null),_unit:'%'}],'bar');
+}
+function marketTitleAndIncentives(cell){
+  const data=marketData(cell,'listing'),t=data.titledStats||{},n=data.netPricing||{};
+  return marketChart('Title Status','Active physical inventory · unrecorded title status retained',['Titled','Untitled','Unknown'],[{label:'Active lots',data:[t.titledCount??null,t.untitledCount??null,typeof data.totals.listings==='number'?data.totals.listings-(t.titledCount||0)-(t.untitledCount||0):null]}],'bar')
+    +marketCard('Advertised Incentives','Current asking · gross and recorded net bases remain separate','<div class="market-stats">'+marketMetric('Gross asking median',marketNumber(n.grossMedian,'$'),'Same eligible current asking pool')+marketMetric('Net asking median',marketNumber(n.netAdvertisedMedian,'$'),'Deduct recorded incentive once')+marketMetric('Lots with incentive',marketNumber(n.incentiveCount),'Only explicit advertised reductions')+marketMetric('Median incentive',marketNumber(n.medianIncentiveValue,'$'),'Five distinct eligible lots required')+'</div>');
+}
+function marketCapitalGrowth(cell){
+  const cg=cell?.capitalGrowth||{},years=cg.years||[],rates=cg.psm||[],sizes=cg.lot||[],prices=cg.price||[],counts=cg.n||[];
+  const growth=cg.growth||{},chips='<div class="market-stats">'+[1,2,3,5,10].map(n=>marketMetric(n+'-year annualised rate',marketNumber(growth[n],'','%'),'Precomputed from actual achieved cohorts')).join('')+'</div>';
+  return marketCard('Capital Growth','Actual achieved annual cohorts in this exact scope · no annual median recombination',chips)
+    +'<div class="market-grid">'+marketChart('Escalation · median $/m² by year','Each point is the actual annual median of eligible individual rates',years,[{label:'Median achieved $/m²',data:rates,_counts:counts,_currency:true}],'line')
+    +marketChart('Year-on-year rise & fall','Percentage change between consecutive actual annual medians; missing years remain empty',years,[{label:'Annual rate change',data:rates.map((v,i)=>i>0&&v!=null&&rates[i-1]>0?(v/rates[i-1]-1)*100:null),_unit:'%'}],'bar')
+    +marketChart('Lot-size compression vs NSA rate','Annual achieved median area and rate · separate axes',years,[{label:'Median lot size',data:sizes,_unit:' m²',yAxisID:'y'},{label:'Median $/m²',data:rates,_currency:true,yAxisID:'yRate'}],'line',{scales:{x:{},y:{position:'left'},yRate:{position:'right',grid:{drawOnChartArea:false}}}})
+    +marketChart('Annual Median Lot Price','Actual achieved values, without assumed GST removal',years,[{label:'Median lot price',data:prices,_counts:counts,_currency:true}],'line')+'</div>';
+}
+function marketNeighbours(){
+  const filters=marketFilters(),parent=marketResolveScope({state:filters.state,corridor:filters.corridor,lga:filters.lga,source:filters.source}),rows=marketData(parent,'listing').suburbs||[],E=askingSoldEscape;
+  const target=rows.find(r=>JSON.stringify([r.state,r.suburb])===marketUi.neighbour)||rows.find(r=>r.suburb===activeSub&&(!cState||r.state===cState))||rows[0];
+  const pc=(name,state)=>{const value=(R.suburbsUI||[]).find(s=>s.suburb===name&&s.state===state)?.postcode;return /^\d{4}$/.test(String(value||''))?Number(value):null;};
+  const targetPc=target?pc(target.suburb,target.state):null;
+  const ordered=target?rows.filter(r=>r.state===target.state&&r.med_rate!=null).sort((a,b)=>(a.corridor===target.corridor?0:1)-(b.corridor===target.corridor?0:1)||((pc(a.suburb,a.state)!=null&&targetPc!=null?Math.abs(pc(a.suburb,a.state)-targetPc):Infinity)-(pc(b.suburb,b.state)!=null&&targetPc!=null?Math.abs(pc(b.suburb,b.state)-targetPc):Infinity))):[];
+  const select='<label>Reference suburb <select id="market-neighbour" onchange="marketUi.neighbour=this.value;render()">'+rows.map(r=>'<option value="'+E(JSON.stringify([r.state,r.suburb]))+'"'+(target?.suburb===r.suburb&&target?.state===r.state?' selected':'')+'>'+E(r.suburb+' · '+r.state)+'</option>').join('')+'</select></label>';
+  return marketCard('Neighbour Reference','Same-state current asking cohorts · same corridor first, then postcode proximity when recorded',select+'<p>Postcodes are an approximate ordering, not measured distance. All medians come from the exact individual-record cohort.</p>')
+    +marketChart('Neighbour Comparison','Reference '+(target?target.suburb+' · '+target.state:'unavailable')+' · current asking $/m²; unadjusted lot-size mix',ordered.slice(0,10).map(r=>r.suburb),[{label:'Median current asking $/m²',data:ordered.slice(0,10).map(r=>r.med_rate),_currency:true}],'bar');
+}
+function marketHealth(cell){
+  const data=marketData(cell,'listing'),t=data.totals||{},rows=marketPoints(cell,'sold'),latest=rows.at(-1),prior=rows.at(-2),change=key=>latest?.[key]!=null&&prior?.[key]>0?(latest[key]/prior[key]-1)*100:null;
+  const h={avg_price:t.historical_5y_avg_price,avg_rate:t.historical_5y_avg_rate},dom=t.observed_days_to_sale??t.median_dom??null;
+  return marketCard('Market Cycle Intelligence','Observed market indicators · '+marketUi.period+' changes use complete actual cohorts','<div class="market-stats">'+marketMetric('Rate momentum',marketNumber(change('medRate'),'','%'),'Latest versus prior complete period')+marketMetric('Lot-size change',marketNumber(change('medSize'),'','%'),'Latest versus prior complete period')+marketMetric('Sale-event change',marketNumber(change('count'),'','%'),'Separate events including resales')+marketMetric('Observed months of stock',marketNumber(t.months_stock),'Active lots ÷ (trailing 12m events ÷ 12)')+marketMetric('Observed days to sale',marketNumber(dom),'Observed listing start to achieved event; see date coverage')+'</div><p>'+askingSoldEscape(t.dom_reason||'True list dates and first-seen fallback are tracked separately; no missing durations are estimated.')+'</p><p>'+askingSoldEscape(marketNumber(t.dom_count)+' eligible durations · '+marketNumber(t.dom_basis?.reported_list_date)+' reported list dates · '+marketNumber(t.dom_basis?.first_observed)+' first-observed dates. Achieved dates prefer sale/contract date with labelled settlement fallback.')+'</p>')
+    +marketChart('Historical Context','Current asking compared with the mean of actual eligible achieved events over the labelled historical window; no mean of period medians',['Lot price','$/m²'],[{label:'Current / historical difference',data:[h.avg_price>0&&t.med_price!=null?(t.med_price/h.avg_price-1)*100:null,h.avg_rate>0&&t.med_rate!=null?(t.med_rate/h.avg_rate-1)*100:null],_unit:'%'}],'bar')
+    +marketChart('Pricing Coverage','Active priced and unpriced physical lots',['Priced','Unpriced / unusable'],[{label:'Active lots',data:[t.priced_listings??null,typeof t.listings==='number'&&typeof t.priced_listings==='number'?t.listings-t.priced_listings:null]}],'bar')
+    +marketNeighbours();
+}
+function marketPortalDetails(){
+  const E=askingSoldEscape,filters=marketFilters(),query=marketUi.detailSearch.trim().toLowerCase();
+  if(filters.estate)return marketCard('Portal Source Details','The portal detail payload has no verified estate membership','<p role="status">The selected estate filter is retained. Individual portal details cannot be matched to this estate without verified membership; use the merged estate ledger or clear this filter.</p><button onclick="marketUi.estate=null;render()">Clear estate filter for portal details</button>');
+  const today=marketAsOf(),cutoff=today?new Date(Date.parse(today+'T00:00:00Z')-89*86400000).toISOString().slice(0,10):null;
+  const rows=(R.registryLots||[]).filter(r=>!r.licensed_detail&&!String(r.src||'').toLowerCase().includes('rpdata')&&(!filters.state||r.st===filters.state)&&(!filters.suburb||r.sub===filters.suburb)&&(!filters.corridor||r.cor===filters.corridor)&&(!filters.lga||r.lga===filters.lga)&&(!filters.source||String(r.src||'').toLowerCase().split(/[+,|]/).map(s=>s.trim()).includes(filters.source))&&(!query||[r.addr,r.sub,r.src].some(v=>String(v||'').toLowerCase().includes(query)))&&(viewMode==='sold'?r.sts==='sold':viewMode==='listing'?CURRENT_LOT_STATUSES.has(r.sts):CURRENT_LOT_STATUSES.has(r.sts)||r.sts==='sold'&&cutoff&&askingSoldDate(r.sd)>=cutoff&&askingSoldDate(r.sd)<=today));
+  const pageCount=Math.max(1,Math.ceil(rows.length/50));registryPage=Math.max(1,Math.min(registryPage,pageCount));
+  const page=rows.slice((registryPage-1)*50,registryPage*50);
+  return marketCard('Portal Source Details','Deliberate portal-only source observations. This table is not the merged market total. Licensed transaction details require authenticated access.',
+    '<label>Search source address / suburb <input id="market-detail-search" value="'+E(marketUi.detailSearch)+'" oninput="marketUi.detailSearch=this.value;registryPage=1;render()"></label><p>'+rows.length+' portal observations · page '+registryPage+' of '+pageCount+'</p><div class="market-table-wrap"><table><thead><tr><th>Address</th><th>Suburb / state</th><th>Status</th><th>Portal quote</th><th>Area</th><th>Listed / first observed</th><th>Portal sale date</th><th>Source</th></tr></thead><tbody>'+page.map(r=>{
+      let url=null;try{const parsed=new URL(r.url);if(parsed.protocol==='https:'&&['realestate.com.au','domain.com.au','openlot.com.au'].some(host=>parsed.hostname===host||parsed.hostname.endsWith('.'+host)))url=parsed.href;}catch(_){}
+      return '<tr><th>'+E(r.addr)+'</th><td>'+E(r.sub+' · '+r.st)+'</td><td>'+E(r.sts)+'</td><td>'+E(r.pr>0?marketNumber(r.pr,'$'):'POA / unpriced')+'</td><td>'+E(r.sz>0?marketNumber(r.sz,'',' m²'):'Unknown')+'</td><td>'+E(askingSoldDate(r.ld)||'Unknown')+'</td><td>'+E(askingSoldDate(r.sd)||'Unknown')+'</td><td>'+(url?'<a href="'+E(url)+'" target="_blank" rel="noopener">'+E(r.src)+'</a>':E(r.src))+'</td></tr>';
+    }).join('')+'</tbody></table></div><p>Full reconciled source history is available through authenticated detail. These public rows retain only their portal observation dates and quoted values.</p><button onclick="registryPage=Math.max(1,registryPage-1);render()"'+(registryPage===1?' disabled':'')+'>Previous</button><button onclick="registryPage++;render()"'+(registryPage===pageCount?' disabled':'')+'>Next</button>');
+}
+function marketCompareSeries(selection,state,quarters){
+  const split=selection.indexOf(':'),type=selection.slice(0,split),name=selection.slice(split+1),cell=marketResolveScope({state:state||null,source:marketUi.source,...(type==='sub'?{suburb:name}:type==='cor'?{corridor:name}:{})}),map=new Map((marketUi.period==='month'?cell?.ts?.soldMonthly||[]:cell?.ts?.sold||[]).map(p=>[p.m||p.q,p]));
+  return {quarters,price:quarters.map(q=>marketValue(map.get(q),'medPrice')),rate:quarters.map(q=>marketValue(map.get(q),'medRate')),volume:quarters.map(q=>cell?map.get(q)?.count??0:null),listings:cell?.data?.totals?.listings??null,sold12m:cell?.data?.totals?.sold_12m??null,monthsStock:cell?.data?.totals?.months_stock??null};
+}
+function marketUpdateCompare(side,stateChanged){
+  const state=document.getElementById('cmpState'+side)?.value||null,value=document.getElementById('cmpMarket'+side)?.value||null;
+  marketUi.compare[side]=state?{state,value:stateChanged?null:value}:null;render();
+  document.getElementById((stateChanged?'cmpMarket':'cmpState')+side)?.focus({preventScroll:true});
+}
+function marketCompare(){
+  const E=askingSoldEscape,states=(R.stateList||[]),cards=marketUi.compare.map((selection,i)=>{
+    const base=selection?.state?marketResolveScope({state:selection.state,source:marketUi.source}):null,data=base?.data||marketEmptyData(),options=[{value:'state:'+selection?.state,label:'Entire state'},...data.corridors.map(r=>({value:'cor:'+r.corridor,label:'Corridor · '+r.corridor})),...data.suburbs.map(r=>({value:'sub:'+r.suburb,label:'Suburb · '+r.suburb}))];
+    const value=selection?.value,cell=value?marketResolveScope({state:selection.state,source:marketUi.source,...(value.startsWith('sub:')?{suburb:value.slice(4)}:value.startsWith('cor:')?{corridor:value.slice(4)}:{})}):null;
+    return '<div class="v5-card market-card"><h3>Market '+String.fromCharCode(65+i)+'</h3><label>State<select id="cmpState'+i+'" onchange="updateCompareState('+i+')"><option value="">Select state</option>'+states.map(s=>'<option value="'+E(s)+'"'+(selection?.state===s?' selected':'')+'>'+E(s)+'</option>').join('')+'</select></label><label>Market<select id="cmpMarket'+i+'" onchange="updateCompare('+i+')"'+(!selection?.state?' disabled':'')+'><option value="">Select market</option>'+options.map(o=>'<option value="'+E(o.value)+'"'+(value===o.value?' selected':'')+'>'+E(o.label)+'</option>').join('')+'</select></label>'+(cell?marketSummary(cell):'<p>Select an exact market.</p>')+'</div>';
+  }).join('');
+  const selected=marketUi.compare.filter(s=>s?.value);
+  let labels=[...new Set(selected.flatMap(s=>{const v=s.value,cell=marketResolveScope({state:s.state,source:marketUi.source,...(v.startsWith('sub:')?{suburb:v.slice(4)}:v.startsWith('cor:')?{corridor:v.slice(4)}:{})});return (marketUi.period==='month'?cell?.ts?.soldMonthly||[]:cell?.ts?.sold||[]).map(p=>p.m||p.q).filter(marketIsComplete);}))].sort();
+  if(marketUi.history!=='all')labels=labels.slice(-Number(marketUi.history));
+  const series=selected.map(s=>({label:s.state+' · '+s.value.slice(s.value.indexOf(':')+1),values:marketCompareSeries(s.value,s.state,labels)}));
+  return '<div class="market-compare">'+cards+'</div>'+(series.length>=2?marketChart('Price Convergence','Actual achieved median prices · complete quarters',labels,series.map(s=>({label:s.label,data:s.values.price,_currency:true})),'line')+marketChart('$/m² Trend','Actual achieved median individual lot rates · complete quarters',labels,series.map(s=>({label:s.label,data:s.values.rate,_currency:true})),'line')+marketChart('Sold Volume','Separate achieved events per complete quarter',labels,series.map(s=>({label:s.label,data:s.values.volume})),'bar')+marketChart('Observed Supply Pace','Active physical inventory ÷ trailing 12-month event pace',series.map(s=>s.label),[{label:'Observed months of stock',data:series.map(s=>s.values.monthsStock)}],'bar'):'<p class="market-empty">Select at least two markets to compare exact quarterly prices, rates, event volumes and stock pace.</p>');
+}
+function marketSetBenchmark(field,value){
+  if(field==='band'&&['all','townhouse','standard'].includes(value))marketUi.benchmarkBand=value;
+  else if(field==='cap'&&[800,1000].includes(Number(value)))marketUi.benchmarkCap=Number(value);
+  else return;
+  render();document.getElementById('market-benchmark-'+field)?.focus({preventScroll:true});
+}
+function marketBenchmarkExport(){
+  const cell=marketCurrentScope(),pack=cell?.benchmarks,selected=pack?.variants?.[marketUi.benchmarkBand+'|'+marketUi.benchmarkCap];
+  if(!selected)return null;
+  return {schemaVersion:1,inputFingerprint:marketContract().inputFingerprint,generatedAt:marketContract().builtAt,scope:cell.filters,definition:pack.definition,options:selected.options,summary:selected.summary,comparison800:selected.comparison800,bands:selected.bands,projects:selected.projects,policy:pack.exportPolicy};
+}
+function marketDownloadBenchmark(){
+  const data=marketBenchmarkExport();if(!data)return;
+  const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');
+  a.href=url;a.download='rlp-greenfield-comparable-summary.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function marketBenchmarkStatus(cell){
+  const E=askingSoldEscape,pack=cell?.benchmarks,selected=pack?.variants?.[marketUi.benchmarkBand+'|'+marketUi.benchmarkCap];
+  if(!selected)return marketCard('Greenfield Comparable Qualification','Current advertised research context and a qualified benchmark are separate measures','<p role="status">No qualified-comparable aggregate is available for this exact scope. Generic asking medians are not substituted.</p>');
+  const s=selected.summary,context=pack.currentContext;
+  const stats=b=>'<div class="market-stats">'+marketMetric('Average lot price',marketNumber(b.meanPrice,'$'),'Same eligible lots')+marketMetric('Average lot area',marketNumber(b.meanSize,'',' m²'),'Same eligible lots')+marketMetric('Aggregate $/m²',marketNumber(b.aggregateRate,'$'),'Total asking prices ÷ total eligible area')+'</div>';
+  const table=(headers,rows)=>'<div class="market-table-wrap"><table><thead><tr>'+headers.map(h=>'<th scope="col">'+E(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map((v,i)=>'<'+(i?'td':'th')+'>'+E(v)+'</'+(i?'td':'th')+'>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  const summaryRow=(name,b)=>[name,marketNumber(b.sampleCount),marketNumber(b.meanPrice,'$'),marketNumber(b.meanSize,'',' m²'),marketNumber(b.aggregateRate,'$')];
+  const headers=['Lot mix / project','Priced lots','Average ask','Average area','Aggregate $/m²'];
+  const controls='<div class="market-controls"><label>Lot mix<select id="market-benchmark-band" aria-label="Comparable lot mix" onchange="marketSetBenchmark(\'band\',this.value)">'+[['all','All sizes'],['townhouse','Townhouse'],['standard','Standard density']].map(([v,label])=>'<option value="'+v+'"'+(marketUi.benchmarkBand===v?' selected':'')+'>'+label+'</option>').join('')+'</select></label><label>Upper limit<select id="market-benchmark-cap" aria-label="Comparable upper area limit" onchange="marketSetBenchmark(\'cap\',this.value)">'+[1000,800].map(v=>'<option value="'+v+'"'+(marketUi.benchmarkCap===v?' selected':'')+'>'+v.toLocaleString('en-AU')+' m²</option>').join('')+'</select></label><button data-benchmark-export onclick="marketDownloadBenchmark()">Export comparable summary</button></div>';
+  return marketCard('Current Advertised Research Context','All usable current advertisements in this exact scope; independent of greenfield qualification',stats(context))
+    +marketCard('Greenfield Comparable Qualification','Benchmark definition '+pack.definition.version+' · checked asking evidence, not verified achieved sales',controls+'<p>'+E(marketNumber(s.sampleCount))+' qualifying priced lots from '+E(marketNumber(s.selectedCount))+' identified candidates in this band. '+E(marketNumber(s.assessmentCount))+' of '+E(marketNumber(s.assessmentScopeCount))+' assessed; '+E(marketNumber(s.pendingCount))+' awaiting checks; '+E(marketNumber(s.reviewCount))+' require stronger project evidence.</p>'
+      +(!s.benchmarkReady?'<p role="status">'+E(s.pendingCount||s.reviewCount?'Benchmark withheld until pending assessments and evidence reviews are resolved.':'Insufficient comparable evidence: five distinct qualifying physical lots are required.')+'</p>':'')+stats(s)
+      +'<p>Exact or range asking quotes observed within 30 days; ranges use midpoints and retain aggregate bounds. Explicit cash rebates are deducted once. Under-contract lots are excluded. '+E(marketNumber(s.rangeCount))+' range quotes. Source-assessed reported sales do not certify greenfield qualification.</p>'
+      +table(headers,selected.bands.map(b=>summaryRow(b.label+' m²',b.summary)))
+      +'<p>Townhouse 180–300m² and standard 280–700m² overlap at 280–300m²; do not add the bands. The 800m² cap comparison uses the same qualification rules: '+E(marketNumber(selected.comparison800.meanPrice,'$'))+' average ask, '+E(marketNumber(selected.comparison800.aggregateRate,'$'))+'/m².</p>'
+      +(selected.projects.length?'<h3>Checked lots by project</h3>'+table(headers,selected.projects.map(p=>summaryRow(p.project,p.summary))):'<p>No checked project cohort is available for this exact scope.</p>')
+      +'<p>'+E(pack.exportPolicy)+' <a href="https://intelligence.grangedevelopment.com/" target="_blank" rel="noopener">Open Grange Intelligence</a>. Advertising can omit slope, site costs or incentives; these samples do not establish complete project inventory.</p>');
+}
+function marketComparisonContext(filters){
+  const exact=marketResolveScope(filters);
+  return exact?{...exact.filters}:{...filters,unavailableReason:'No asking/achieved comparison aggregate is available for this exact source or geographic intersection. The page filters remain selected; broader rates are not substituted.'};
+}
+function renderCanonicalMarketPage(page){
+  if(['movers','insights'].includes(page)&&typeof PROT!=='undefined'&&PROT&&!protUnlocked)return protLockScreen();
+  if(page==='suburb'&&!activeSub){
+    const first=[...(marketData(marketCurrentScope(),'listing').suburbs||[])].sort((a,b)=>(b.inventory_total||0)-(a.inventory_total||0))[0];
+    if(first){setActiveSuburbName(first.suburb,first.state);if(typeof syncNavigationChrome==='function')syncNavigationChrome();}
+  }
+  const E=askingSoldEscape,titles={overview:'Market Overview',pricing:'Price Analysis',velocity:'Sales Velocity & Supply',corridors:'Growth Corridor Index',suburb:'Suburb Profile',registry:'Parcel Ledger',health:'Market Health',insights:'Market Insights',movers:'Market Movers',compare:'Market Comparison Tool'};
+  const cell=marketCurrentScope(),data=marketData(cell),asking=marketData(cell,'listing'),ts=cell?.ts||marketEmptyTS(),filters=marketFilters();
+  const scopeLabel=page==='compare'?'Each card selects its own state and market · source '+(filters.source||'all providers'):[filters.estate,filters.suburb,filters.corridor,filters.lga,filters.state||'All tracked states',filters.source].filter(Boolean).join(' · ');
+  let body='';
+  if(page==='compare')body=marketCompare();
+  else if(!cell)body='<div class="market-empty" role="status">No exact aggregate matches these filters. Clear a conflicting geography or source filter; broader medians and portal-only rows are not substituted.</div>';
+  else if(page==='registry')body='<div class="market-actions"><button onclick="marketUi.portalDetails=false;render()">Merged aggregate ledger</button><button onclick="marketUi.portalDetails=true;render()">Portal source details</button><a href="https://intelligence.grangedevelopment.com/" target="_blank" rel="noopener">Grange Intelligence · authenticated detail</a></div>'+marketSummary(cell)+(marketUi.portalDetails?marketPortalDetails():'<div class="market-actions">'+['suburb','lga','estate'].map(d=>'<button data-dimension="'+d+'" onclick="marketUi.registryGroup=this.dataset.dimension;render()">By '+d+'</button>').join('')+'</div>'+marketGroupTable(cell,marketUi.registryGroup,'Merged Parcel Ledger'));
+  else if(page==='movers'){
+    const movers=cell.movers||{},entries=[...(movers.rocketships||[]),...(movers.fallenAngels||[])].filter((e,i,a)=>a.findIndex(x=>x.suburb===e.suburb&&x.state===e.state)===i);
+    body=marketCard('Market Movers','Actual achieved rates and lot sizes · trailing annual windows with five distinct usable lots per price point',entries.map(e=>marketChart(e.suburb+' · '+e.state,'Observed annual achieved medians',['24–36 months ago','12–24 months ago','Last 12 months'],[{label:'Median $/m²',data:[...(e.w||[])].reverse().map(w=>w.psm),_counts:[...(e.w||[])].reverse().map(w=>w.n),_currency:true}],'line')).join('')||'<p class="market-empty">No market has enough comparable achieved history for this exact scope.</p>');
+  }else{
+    body=marketSummary(cell);
+    if(['pricing','suburb','overview'].includes(page))body+=renderAskingSoldComparison(page==='suburb'?'suburb':'pricing',marketComparisonContext(filters));
+    if(page==='overview')body+='<div class="market-grid">'+marketTrend(cell,'Median Price Trend','medPrice',{asking:true})+marketChart('Market Composition','Selected view · physical current inventory and achieved events are explicitly separated',data.corridors.map(r=>r.corridor),[{label:viewMode==='sold'?'Sale events':viewMode==='both'?'Current listings + 90d events':'Active listings',data:data.corridors.map(r=>viewMode==='sold'?r.sold:viewMode==='both'?r.listings+r.sold_90d:r.listings)}],'bar')+marketDistribution(data,'priceDist','Price Distribution')+marketDensity(cell)+'</div>'+marketGroupTable(cell,'corridor','Corridor Snapshot')+marketGroupTable(cell,'suburb','Cross-Market Snapshot')+marketCapitalGrowth(cell);
+    if(page==='pricing'){
+      const points=marketPoints(cell,'sold');
+      body+='<div class="market-grid">'+marketDistribution(data,'priceDist','Price Distribution')+marketDistribution(data,'sizeDist','Lot Size Distribution')+marketDistribution(data,'rateDist','$/m² Rate Distribution')+marketChart('The Affordability Squeeze','Actual achieved median price and area · complete periods',points.map(p=>p.m||p.q),[{label:'Median lot price',data:points.map(p=>p.medPrice),_currency:true,yAxisID:'y'},{label:'Median lot size',data:points.map(p=>p.medSize),_unit:' m²',yAxisID:'ySize'}],'line',{scales:{x:{},y:{position:'left'},ySize:{position:'right',grid:{drawOnChartArea:false}}}})+marketCorridorTrends(cell,'medRate','Corridor $/m² Trend')+marketStandardised(cell)+marketRankChart(cell,'suburb','med_rate','Premium Index')+marketRankChart(cell,'suburb','med_rate','Value Index')+'</div>'+marketTitleAndIncentives(cell);
+    }
+    if(page==='velocity')body+='<div class="market-grid">'+marketVolumes(cell)+marketCorridorTrends(cell,'medRate','$/m² Trend by Corridor')+marketStock(cell)+marketTrend(cell,'Median Lot Size Trend','medSize')+marketRankChart(cell,'corridor','listings','Current Supply Concentration','listing')+'</div>'+marketGroupTable(cell,'corridor','Supply and Sales Ledger');
+    if(page==='corridors')body+=marketGroupTable(cell,'corridor','Growth Corridor Index')+'<div class="market-grid">'+marketCorridorTrends(cell,'medPrice','Corridor Achieved Price Trend')+marketCorridorTrends(cell,'medRate','Corridor $/m² Trend')+marketStock(cell)+'</div>';
+    if(page==='health')body+='<div class="market-grid">'+marketHealth(cell)+marketTrend(cell,'Lot Size Trend','medSize')+marketTrend(cell,'Rate Momentum History','medRate')+'</div>';
+    if(page==='suburb')body+=marketBenchmarkStatus(cell)+'<div class="market-grid">'+marketDensity(cell)+marketNeighbours()+marketTrend(cell,'Price Trend','medPrice',{asking:true})+marketDistribution(data,'priceDist','Price Distribution')+marketDistribution(data,'sizeDist','Size Distribution')+'</div>'+marketGroupTable(cell,'estate','Inventory by Estate')+marketTitleAndIncentives(cell)+marketCapitalGrowth(cell);
+    if(page==='insights'){
+      const t=asking.totals,n=asking.netPricing||{},fingerprint=marketContract()?.inputFingerprint,insight=R.insights||{},cacheMatches=insight.inputFingerprint===fingerprint||R.insightInputFingerprint===fingerprint;
+      const narrativeScopeSupported=!filters.suburb&&!filters.corridor&&!filters.lga&&!filters.estate&&!filters.source;
+      const feed=cacheMatches&&narrativeScopeSupported?(filters.state?insight.states?.[filters.state]:insight.national)||[]:[];
+      body+=marketCard('Current Market Read','Facts calculated from this exact canonical input','<p>'+E(marketNumber(t.listings))+' active lots; '+E(marketNumber(t.priced_listings))+' have a usable asking quote. Current asking median is '+E(marketNumber(t.med_price,'$'))+' and '+E(marketNumber(t.med_rate,'$'))+'/m². '+E(marketNumber(t.sold_90d))+' achieved events were observed in the trailing 90-day window.</p><p>'+E(marketNumber(n.incentiveCount))+' current lots advertise an explicit incentive. Asking and achieved price bases remain separate.</p>')
+        +marketCard('Published Commentary',cacheMatches?'Commentary matches the current canonical input fingerprint':'Cached commentary withheld because its canonical input fingerprint is missing or stale',feed.map(item=>'<article><h3>'+E(item.title)+'</h3><p>'+E(item.narrative)+'</p></article>').join('')||'<p>No current commentary for this exact scope.</p>')+'<div class="market-grid">'+marketTrend(cell,'Market Price History','medPrice',{asking:true})+marketRankChart(cell,'suburb','med_rate','Current Asking by Suburb','listing')+'</div>'+marketTitleAndIncentives(cell)+marketCapitalGrowth(cell);
+    }
+  }
+  return '<div class="fi canonical-market-page" data-canonical-page="'+E(page)+'">'+sec(E(titles[page]||page),E(scopeLabel))+'<p class="market-basis">'+E(marketModeLabel())+' · as of '+E(marketAsOf()||'not recorded')+'. Achieved series count transactions; availability counts physical lots. Five distinct eligible lots are required for price, area and rate statistics.</p>'+marketControls(page)+body+'</div>';
+}
+// __CANONICAL_MARKET_UI_END__
+
+// __ASKING_SOLD_COMPONENT_START__
+// R.askingSold is a versioned aggregate contract. Never reconstruct a broader
+// median from its cells, or use R.lots to fill licensed/historical observations.
+const askingSoldSelection={estate:null,bandMin:451,periodDays:90,scopeKey:null};
+function askingSoldEscape(value){
+  return String(value==null?'':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function askingSoldDate(value){
+  if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}(?:T[\d:.]+(?:Z|[+-]\d{2}:\d{2}))?$/.test(value))return null;
+  const day=value.slice(0,10),parsed=new Date(day+'T00:00:00Z');
+  return Number.isFinite(parsed.getTime())&&parsed.toISOString().slice(0,10)===day&&Number.isFinite(Date.parse(value))?day:null;
+}
+function askingSoldCount(value){return Number.isInteger(value)&&value>=0?value:null;}
+function askingSoldReason(code){
+  const labels={
+    'insufficient-sample':'Insufficient sample: at least 5 distinct priced lots required.',
+    'below-minimum-distinct-lots':'Insufficient sample: at least 5 distinct priced lots required.',
+    'insufficient-comparable-evidence':'Insufficient comparable evidence: both sides need at least 5 distinct priced lots.',
+    'missing-price':'No usable priced observations.',
+    'missing-history':'No dated asking observations for this period.',
+    'no-data':'No eligible observations in this cohort.',
+    'conflict':'Conflicting observations; a comparable rate is unavailable.',
+    'not-comparable':'These observations do not share a comparable price basis.',
+    'zero-denominator':'Achieved rate is zero; a percentage cannot be calculated.',
+    'missing-date':'The observation date or achieved window is missing or invalid.',
+    'unsupported-basis':'The asking, achieved or date basis is not recorded in a supported form.',
+    'invalid-rate':'The rate is missing, zero or invalid.',
+    'invalid-count':'The distinct priced-lot sample count is missing or invalid.',
+    'duplicate-cohort':'More than one aggregate matches this exact cohort; comparison withheld.',
+    'duplicate-period':'More than one aggregate matches this date; point withheld.'
+  };
+  return labels[code]||'The source marked this cohort unavailable.';
+}
+function askingSoldPayload(){
+  const payload=R.askingSold;
+  return payload&&payload.schemaVersion===1&&Array.isArray(payload.cells)?payload:null;
+}
+function askingSoldCells(payload){
+  return (payload?payload.cells:[]).filter(c=>c&&[c.state,c.suburb,c.estate,c.corridor,c.lga,c.source].every(v=>v==null||typeof v==='string')
+    &&Number.isInteger(c.bandMin)&&c.bandMin>=1&&c.bandMin<=1951&&(c.bandMin-1)%50===0&&c.bandMax===c.bandMin+49
+    &&Number.isInteger(c.periodDays)&&c.periodDays>0&&c.periodDays<=3660);
+}
+function askingSoldScope(context){
+  return {state:context&&Object.hasOwn(context,'state')?context.state:cState||null,suburb:context&&Object.hasOwn(context,'suburb')?context.suburb:activeSub||null,corridor:context?.corridor||null,lga:context?.lga||null,source:context?.source||null};
+}
+function askingSoldSame(a,b){return (a==null?'':String(a).trim().toLowerCase())===(b==null?'':String(b).trim().toLowerCase());}
+function askingSoldBasis(cell,payload){
+  const policy=payload&&payload.policy||{};
+  const asking=cell.askingBasis||policy.askingBasis,sold=cell.soldBasis||policy.soldBasis,date=cell.dateBasis||policy.dateBasis;
+  const dateFallback=cell.dateFallback||policy.dateFallback;
+  return {asking,sold,date,valid:['gross-advertised','net-incentive'].includes(asking)&&sold==='actual-achieved'&&['sale','settlement'].includes(date),
+    askingLabel:asking==='gross-advertised'?'Gross advertised asking':asking==='net-incentive'?'Asking after recorded incentives':'Asking basis not recorded',
+    soldLabel:'Actual achieved · no assumed GST removal',dateLabel:date==='settlement'?'settlement date':date==='sale'?'sale date'+(dateFallback?' with settlement fallback where sale date is unavailable':''):'date basis not recorded',monthly:policy.seriesPeriod==='calendar-month'};
+}
+function askingSoldRate(row,side,minSamples,blocked){
+  const count=askingSoldCount(row[side+'Count']);
+  const declared=row.reason&&typeof row.reason==='object'&&row.reason[side];
+  let reason=blocked||declared||null;
+  if(!reason&&count==null)reason='invalid-count';
+  if(!reason&&count<minSamples)reason='insufficient-sample';
+  const raw=row[side+'Rate'];
+  if(!reason&&(typeof raw!=='number'||!Number.isFinite(raw)||raw<=0))reason=side==='sold'&&raw===0?'zero-denominator':'invalid-rate';
+  return {count,rate:reason?null:raw,reason};
+}
+function askingSoldCohort(cell,payload){
+  const basis=askingSoldBasis(cell,payload),asOf=askingSoldDate(cell.asOf),from=askingSoldDate(cell.from),to=askingSoldDate(cell.to);
+  const minSamples=Math.max(5,Number.isInteger(payload.policy&&payload.policy.minSamples)?payload.policy.minSamples:5);
+  const windowValid=asOf&&from&&to&&from<=to&&to===asOf&&(Date.parse(to)-Date.parse(from))/86400000===cell.periodDays-1;
+  const declared=typeof cell.reason==='string'?cell.reason:cell.reason&&cell.reason.comparison;
+  const blocked=declared||(!basis.valid?'unsupported-basis':!windowValid?'missing-date':null);
+  const asking=askingSoldRate(cell,'asking',minSamples,blocked),sold=askingSoldRate(cell,'sold',minSamples,blocked);
+  const premiumPct=asking.rate!=null&&sold.rate!=null?(asking.rate-sold.rate)/sold.rate*100:null;
+  return {basis,asOf,from,to,minSamples,asking,sold,premiumPct,reason:blocked||asking.reason||sold.reason};
+}
+function askingSoldSeries(cell,payload,cohort){
+  const points=(Array.isArray(cell.series)?cell.series:[]).map(row=>({row,day:askingSoldDate(row&&row.period)}))
+    .filter(p=>p.day&&cohort.asOf&&p.day<=cohort.asOf).sort((a,b)=>a.day.localeCompare(b.day));
+  const dates=new Map();
+  points.forEach(p=>dates.set(p.day,(dates.get(p.day)||0)+1));
+  return points.filter((p,i)=>i===0||p.day!==points[i-1].day).map(p=>{
+    const blocked=dates.get(p.day)>1?'duplicate-period':!cohort.basis.valid?'unsupported-basis':null;
+    return {period:p.day,asking:askingSoldRate(p.row,'asking',cohort.minSamples,blocked),sold:askingSoldRate(p.row,'sold',cohort.minSamples,blocked)};
+  });
+}
+function askingSoldMoney(rate){return rate==null?'—':'$'+rate.toLocaleString('en-AU',{minimumFractionDigits:0,maximumFractionDigits:2});}
+function askingSoldChart(points,id,monthly){
+  const E=askingSoldEscape,values=points.flatMap(p=>[p.asking.rate,p.sold.rate]).filter(v=>v!=null);
+  if(!values.length)return '<div class="asking-sold-empty">No eligible dated series. Historical asking stays unavailable until real dated observations meet the sample floor.</div>';
+  const W=640,H=250,L=60,T=22,PW=560,PH=184;
+  const min=Math.min(...values),max=Math.max(...values),pad=Math.max((max-min)*.15,max*.04,1),lo=Math.max(0,min-pad),hi=max+pad;
+  const times=points.map(p=>Date.parse(p.period+'T00:00:00Z')),first=times[0],last=times[times.length-1];
+  const x=i=>L+(last===first?PW/2:(times[i]-first)/(last-first)*PW),y=v=>T+PH-(v-lo)/(hi-lo)*PH;
+  let marks='';
+  for(let i=0;i<3;i++){
+    const v=lo+(hi-lo)*i/2,yy=y(v);
+    marks+='<line class="chart-rule" x1="'+L+'" y1="'+yy+'" x2="'+(L+PW)+'" y2="'+yy+'"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end">'+E(askingSoldMoney(v))+'</text>';
+  }
+  ['asking','sold'].forEach(side=>{
+    let path='';
+    points.forEach((p,i)=>{
+      const v=p[side].rate;
+      if(v==null){path='';return;}
+      const xy=x(i).toFixed(2)+' '+y(v).toFixed(2);
+      if(path)marks+='<path class="'+side+'-line" d="M '+path+' L '+xy+'"/>';
+      path=xy;
+      marks+='<circle class="'+side+'-dot" cx="'+x(i).toFixed(2)+'" cy="'+y(v).toFixed(2)+'" r="3.5"><title>'+E(p.period+' · '+(side==='asking'?'Asking':'Achieved')+' '+askingSoldMoney(v)+'/m² · '+p[side].count+' distinct priced lots')+'</title></circle>';
+    });
+  });
+  [0,...(points.length>2?[Math.floor((points.length-1)/2)]:[]),...(points.length>1?[points.length-1]:[])].forEach(i=>{
+    marks+='<text'+(i>0&&i<points.length-1?' class="middle-period-label"':'')+' x="'+x(i)+'" y="'+(H-12)+'" text-anchor="'+(i===0&&points.length>1?'start':i===points.length-1&&points.length>1?'end':'middle')+'">'+E(monthly?points[i].period.slice(0,7):points[i].period)+'</text>';
+  });
+  const rows=points.map(p=>'<tr><th scope="row">'+E(monthly?p.period.slice(0,7):p.period)+'</th>'+['asking','sold'].map(side=>'<td>'+E(askingSoldMoney(p[side].rate))+(p[side].rate!=null?'/m²':'')+'<br>'+E(p[side].count==null?'Count unavailable':p[side].count+' lots')+(p[side].reason?'<br>'+E(askingSoldReason(p[side].reason)):'')+'</td>').join('')+'</tr>').join('');
+  return '<div class="asking-sold-legend"><span><i></i>Asking</span><span><i></i>Achieved</span></div>'
+    +(monthly?'<p>Monthly medians inside the selected achieved window; partial first and current months may have fewer observations.</p>':'')
+    +'<svg class="asking-sold-chart" viewBox="0 0 '+W+' '+H+'" role="img" tabindex="0" aria-labelledby="'+id+'-chart-title '+id+'-chart-desc"><title id="'+id+'-chart-title">Asking and achieved median dollars per square metre</title><desc id="'+id+'-chart-desc">Same selected geography and lot-size band. '+(monthly?'Each point is a calendar-month cohort inside the selected achieved window.':'Each point is a dated aggregate observation.')+' Missing and undersampled observations leave gaps. Exact values and sample counts are in the table below.</desc>'+marks+'</svg>'
+    +'<details><summary>Read chart values and sample counts</summary><div class="asking-sold-table-wrap"><table><caption>Dated cohort medians · dollars per square metre</caption><thead><tr><th scope="col">'+(monthly?'Month':'As of')+'</th><th scope="col">Asking</th><th scope="col">Achieved</th></tr></thead><tbody>'+rows+'</tbody></table></div></details>';
+}
+function askingSoldSources(cell){
+  const labels={rea:'REA',domain:'Domain',openlot:'Openlot',rpdata:'RP Data','rp data':'RP Data','rp-data':'RP Data',cotality:'RP Data'};
+  const rows=(Array.isArray(cell.sources)?cell.sources:[]).filter(s=>s&&typeof s.source==='string');
+  return rows.length?rows.map(s=>{
+    const name=labels[s.source.toLowerCase()]||'Other source',a=askingSoldCount(s.askingCount),b=askingSoldCount(s.soldCount);
+    return name+': '+(a==null?'unrecorded':a)+' asking / '+(b==null?'unrecorded':b)+' achieved';
+  }).join(' · '):'Source coverage not recorded';
+}
+function setAskingSoldFilter(field,value,focusId){
+  const payload=askingSoldPayload(),cells=askingSoldCells(payload);
+  const control=document.getElementById(focusId),panel=control&&control.closest('[data-asking-sold]');
+  const selectedState=panel?panel.dataset.scopeState||null:cState,selectedSuburb=panel?panel.dataset.scopeSuburb||null:activeSub;
+  if(field==='state'){
+    if(value&&!cells.some(c=>c.state===value))return;
+    askingSoldSelection.estate=null;
+    setActiveSuburbName(null);
+    setStateFilter(value||null);
+  }else if(field==='suburb'){
+    if(value&&!cells.some(c=>askingSoldSame(c.state,cState)&&askingSoldSame(c.suburb,value)))return;
+    askingSoldSelection.estate=null;
+    selectSuburb(value||null,cState);
+  }else if(field==='estate'){
+    if(value&&!cells.some(c=>askingSoldSame(c.state,selectedState)&&askingSoldSame(c.suburb,selectedSuburb)&&c.estate===value))return;
+    askingSoldSelection.estate=value||null;
+    if(typeof canonicalMarketEnabled==='function'&&canonicalMarketEnabled())marketUi.estate=value||null;
+    render();
+  }else if(field==='bandMin'){
+    const n=Number(value);if(!Number.isInteger(n)||n<1||n>1951||(n-1)%50!==0)return;
+    askingSoldSelection.bandMin=n;render();
+  }else if(field==='periodDays'){
+    const n=Number(value);if(!Number.isInteger(n)||n<=0||n>3660)return;
+    askingSoldSelection.periodDays=n;render();
+  }else return;
+  const el=document.getElementById(focusId);if(el)el.focus({preventScroll:true});
+}
+function renderAskingSoldComparison(surface,context){
+  const E=askingSoldEscape,id='asking-sold-'+(surface==='suburb'?'suburb':'pricing'),payload=askingSoldPayload(),cells=askingSoldCells(payload),scope=askingSoldScope(context);
+  const scopeKey=JSON.stringify([scope.state,scope.suburb,scope.corridor,scope.lga,scope.source]);
+  if(askingSoldSelection.scopeKey!==scopeKey){askingSoldSelection.estate=null;askingSoldSelection.scopeKey=scopeKey;}
+  const sameScope=cells.filter(c=>['state','suburb','corridor','lga','source'].every(k=>askingSoldSame(c[k],scope[k])));
+  const estate=typeof canonicalMarketEnabled==='function'&&canonicalMarketEnabled()?marketUi.estate:askingSoldSelection.estate;
+  const chosen=sameScope.filter(c=>askingSoldSame(c.estate,estate)&&c.bandMin===askingSoldSelection.bandMin&&c.periodDays===askingSoldSelection.periodDays);
+  const cell=chosen.length===1&&!context?.unavailableReason?chosen[0]:null,cohort=cell?askingSoldCohort(cell,payload):null;
+  const unique=values=>[...new Set(values.filter(v=>v!=null&&v!==''))].sort((a,b)=>String(a).localeCompare(String(b)));
+  const select=(field,label,options,value)=>'<label for="'+id+'-'+field+'">'+E(label)+'<select id="'+id+'-'+field+'" onchange="setAskingSoldFilter(\''+field+'\',this.value,this.id)">'+options.map(o=>'<option value="'+E(o.value)+'"'+(String(o.value)===String(value==null?'':value)?' selected':'')+'>'+E(o.label)+'</option>').join('')+'</select></label>';
+  let filters='';
+  if(surface!=='suburb'){
+    const states=unique([...cells.map(c=>c.state),scope.state]);
+    filters+=select('state','State',[{value:'',label:'All tracked states'},...states.map(s=>({value:s,label:s}))],scope.state);
+    const suburbs=unique([...cells.filter(c=>askingSoldSame(c.state,scope.state)).map(c=>c.suburb),scope.suburb]);
+    filters+=select('suburb','Suburb',[{value:'',label:'All tracked suburbs'},...suburbs.map(s=>({value:s,label:s}))],scope.suburb);
+  }
+  const estates=unique([...sameScope.map(c=>c.estate),estate]);
+  filters+=select('estate','Estate',[{value:'',label:'All tracked estates'},...estates.map(s=>({value:s,label:s}))],estate);
+  const bands=[...new Set([451,askingSoldSelection.bandMin,...sameScope.filter(c=>askingSoldSame(c.estate,estate)).map(c=>c.bandMin)])].sort((a,b)=>a-b);
+  filters+=select('bandMin','Lot size',bands.map(n=>({value:n,label:n+'–'+(n+49)+' m²'})),askingSoldSelection.bandMin);
+  const periods=[...new Set([90,askingSoldSelection.periodDays,...sameScope.filter(c=>askingSoldSame(c.estate,estate)).map(c=>c.periodDays)])].sort((a,b)=>a-b);
+  filters+=select('periodDays','Achieved window',periods.map(n=>({value:n,label:'Trailing '+n+' days'})),askingSoldSelection.periodDays);
+  const scopeLabel=[estate,scope.suburb||'All tracked suburbs',scope.corridor,scope.lga,scope.state||'All tracked states',scope.source].filter(Boolean).join(' · ');
+  let body='';
+  if(!cell){
+    const reason=context?.unavailableReason||(chosen.length>1?askingSoldReason('duplicate-cohort'):!payload?'Comparison data has not been built for this dashboard.':'No aggregate is available for this exact geography, lot-size band and achieved window. Broader cohort medians are not substituted.');
+    body='<div class="asking-sold-empty" role="status">'+E(reason)+'</div>';
+  }else{
+    const pct=cohort.premiumPct,gapLabel=pct==null?'Comparison unavailable':pct>0?'Asking premium':pct<0?'Asking discount':'Asking matches achieved';
+    const pctLabel=pct==null?'—':(pct>0?'+':'')+pct.toLocaleString('en-AU',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+    const maxRate=Math.max(cohort.asking.rate||0,cohort.sold.rate||0,1),dotX=rate=>24+(rate/maxRate)*232;
+    const gapVisual=pct==null?'':'<svg class="asking-sold-chart" viewBox="0 0 280 38" role="img" aria-label="'+E(gapLabel+' '+pctLabel+' relative to achieved rate')+'"><line class="chart-rule" x1="24" y1="18" x2="256" y2="18"/><line class="asking-line" x1="'+dotX(cohort.asking.rate)+'" y1="18" x2="'+dotX(cohort.sold.rate)+'" y2="18"/><circle class="sold-dot" cx="'+dotX(cohort.sold.rate)+'" cy="18" r="5"/><circle class="asking-dot" cx="'+dotX(cohort.asking.rate)+'" cy="18" r="5"/></svg>';
+    const rateCard=(side,label)=>'<div><span>'+label+'</span><strong data-comparison-rate="'+side+'">'+E(askingSoldMoney(cohort[side].rate))+'</strong><span>per m² · '+E(cohort[side].count==null?'count unavailable':cohort[side].count+' distinct priced lots')+'</span>'+(cohort[side].reason?'<p>'+E(askingSoldReason(cohort[side].reason))+'</p>':'')+'</div>';
+    body='<div class="asking-sold-layout"><div class="asking-sold-gap" aria-live="polite"><strong data-comparison-gap>'+E(pctLabel)+'</strong><div class="asking-sold-gap-label">'+gapLabel+'</div>'+gapVisual
+      +'<p>Percentage measured against achieved $/m².</p>'+(pct==null?'<p role="status">'+E(askingSoldReason(cohort.reason))+'</p>':'')
+      +'<div class="asking-sold-rates">'+rateCard('asking','Current asking')+rateCard('sold','Achieved')+'</div></div><div>'+askingSoldChart(askingSoldSeries(cell,payload,cohort),id,cohort.basis.monthly)+'</div></div>'
+      +'<div class="asking-sold-method"><p><strong>'+E(cohort.basis.askingLabel)+'</strong> · '+E(cohort.basis.soldLabel)+'.</p>'
+      +'<p>Current asking as of '+E(cohort.asOf||'not recorded')+' · achieved '+E(cohort.from||'not recorded')+' to '+E(cohort.to||'not recorded')+' inclusive · '+E(cohort.basis.dateLabel)+' · trailing '+cell.periodDays+' days.</p>'
+      +'<p>'+E(askingSoldSources(cell))+'. Source counts can overlap after matching.</p>'
+      +'<p>Median of each eligible lot’s price ÷ area; '+cohort.minSamples+' distinct priced lots required on each side. Gap = (asking − achieved) ÷ achieved × 100. Full precision is retained until display.</p></div>';
+  }
+  return '<section class="asking-sold" aria-labelledby="'+id+'-title" data-asking-sold="'+E(surface)+'" data-scope-state="'+E(scope.state)+'" data-scope-suburb="'+E(scope.suburb)+'"><h2 id="'+id+'-title">Asking vs achieved $/m²</h2><p>'+E(scopeLabel)+' · '+askingSoldSelection.bandMin+'–'+(askingSoldSelection.bandMin+49)+' m² · size-matched cohort</p><div class="asking-sold-filters">'+filters+'</div>'+body+'<p>Different lots and the lag between asking and sale can change this gap. It is a comparison of cohorts, not a measured discount on the same lots.</p></section>';
+}
+// __ASKING_SOLD_COMPONENT_END__
+
 function renderPricing(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('pricing');
   // Fix 1, 4, 6 (Apr 2026): all distributions / rankings now use the
   // pricingMode-filtered pool (defaults to current listings) instead of the
   // SQL-aggregated d.priceDist / d.topRate / etc. that blended 17 years of
@@ -3751,6 +4293,7 @@ function renderPricing(){
       </div>
       ${pricingModeToggle()}
     </div>
+    ${renderAskingSoldComparison('pricing')}
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
       ${panelBg(sec('Price Distribution','Lot count by $50K bands',{t:'Price Distribution',w:'Shows how lot prices are spread across $50K price brackets. Defaults to current listings so the picture is what the market is asking today, not a 17-year sold blend (which is dominated by old off-the-plan releases).',m:'Each lot in the active view is placed into its price bracket. Listed mode includes verified current listing statuses and price > 0. Sold mode is status == sold. Listed + 90d combines live listings with sold comparables from the last 90 days only.'})+'<div class="mt-4">'+vBars(pd.priceDist,'#513561',170)+'</div>')}
       ${panelBg(sec('Lot Size Distribution','50m² bands',{t:'Lot Size Distribution',w:'Shows the most common lot sizes for the current view. When listing-side lot sizes skew smaller over time, developers are cutting lots to maintain price points.',m:'Each lot in the active view is grouped into a 50m² band. Switch the Listed/Sold/Both toggle to compare the listing-side and sold-side composition.'})+'<div class="mt-4">'+vBars(pd.sizeDist,'#486456',170)+'</div>')}
@@ -4246,6 +4789,7 @@ function velocityComputeData(){
 }
 
 function renderVelocity(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('velocity');
   // ts is still needed for the sold-only Monthly Sold Volume bar chart at the
   // bottom of the page; everything else flows through velocityComputeData().
   const ts=TS();
@@ -4317,7 +4861,7 @@ function renderVelocity(){
         ${metric('Active Listings',fN(currentLots.length),'current supply')}
         ${metric('Priced Listings',fN(pricedLots.length),currentLots.length?Math.round(pricedLots.length/currentLots.length*100)+'% priced':'coverage')}
         ${metric('POA / Contact Agent',fN(unpricedLots),'tracked but excluded from price medians')}
-        ${metric('Median Asking',RlpBenchmark.summarize(currentLots).medianPrice?fK(RlpBenchmark.summarize(currentLots).medianPrice):'-','paired current sample')}
+        ${metric('Median Asking',pricedLots.length?fK(Math.round(medOf(pricedLots.map(l=>l.price)))):'-','priced current listings')}
       </div>
       <div class="grid grid-cols-2 gap-8">
         <div class="v5-card">
@@ -4621,6 +5165,7 @@ function corridorRankList(rows, mode){
 }
 
 function renderCorridors(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('corridors');
   const d=D();
   // Fix (Apr 2026): corridor cards now show CURRENT asking medians from active
   // listings, not the 17-year SQL average that blended stale off-the-plan
@@ -4728,6 +5273,7 @@ function renderCorridors(){
 
 // Registry — entry point. Two modes: Lot Detail (default) or LGA Summary.
 function renderRegistry(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('registry');
   return registryView==='lga'?renderRegistryLgaMode():renderRegistryLotMode();
 }
 
@@ -5050,6 +5596,7 @@ function submitReqModal(){
 }
 
 function renderHealth(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('health');
   // Pre-compute all six indicators in one pass so each card is a pure render.
   // Zones are fixed per metric so the bar position is comparable over time.
   const ts=TS(), d=D();
@@ -5094,7 +5641,7 @@ function renderHealth(){
         ${metric('Active Listings',fN(currentLots.length),'current supply')}
         ${metric('Priced Coverage',currentLots.length?Math.round(pricedLots.length/currentLots.length*100)+'%':'-','usable public prices')}
         ${metric('POA / Contact Agent',fN(unpricedLots),'tracked separately')}
-        ${metric('Median Asking',RlpBenchmark.summarize(currentLots).medianPrice?fK(RlpBenchmark.summarize(currentLots).medianPrice):'-','paired current sample')}
+        ${metric('Median Asking',pricedLots.length?fK(Math.round(medOf(pricedLots.map(l=>l.price)))):'-','priced current listings')}
         ${metric('Median $/m2',rateLots.length?'$'+Math.round(medOf(rateLots.map(l=>l.rate))):'-','priced current listings')}
       </div>
       <div class="grid grid-cols-2 gap-8">
@@ -5603,6 +6150,7 @@ function cgPanel(cg, scopeLabel){
 }
 
 function renderSuburb(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('suburb');
   const d=D();
   // Fix 3 (Apr 2026): prefer exact-match against activeSub. Previously this
   // used `searchTerm.includes(...)` over a >=3-lots filtered list, which
@@ -5632,7 +6180,7 @@ function renderSuburb(){
   const subUnpricedLots=subLots.filter(l=>isCurrentLot(l)&&!hasUsablePrice(l));
   // Neighbour comparison uses CURRENT listed $/m² per suburb, not the stale
   // SQL s.avg_rate that blended 17 years of sold history (Fix — Apr 2026).
-  const stateFilterCur=subStateScope;
+  const stateFilterCur=cState||(R.stateList&&R.stateList.length===1?R.stateList[0]:null);
   const listedRateForSub=name=>listedMedianRateBy(l=>(l.suburb||'').toLowerCase().trim()===(name||'').toLowerCase().trim()&&(!stateFilterCur||l.state===stateFilterCur));
   const currentListedRate=listedRateForSub(current.suburb);
   // Fix 2 (Apr 2026): neighbour selection is now geographic-ish instead of
@@ -5751,8 +6299,6 @@ function renderSuburb(){
       <span class="text-[9px] text-[#1b1c17]/30 uppercase tracking-wider">${current.corridor||''} · ${current.lga||''} · ${current.state||''}</span>
     </div>
 
-    ${retailBenchmarkPanel((R.lots||[]).filter(subFilterAll),current.suburb,subStateScope)}
-    <p style="font-size:11px;margin-bottom:8px">All captured land · broader market context · ${RlpBenchmark.summarize((R.lots||[]).filter(subFilterAll)).sampleCount} priced lots in the paired median sample. Pipeline freshness does not certify complete listing coverage.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(156px,1fr));gap:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:24px 0;margin-bottom:var(--gap-xl)">
       ${metric('Listed Median',heroListedMedPrice>0?fK(heroListedMedPrice):'—','current asking')}
       ${metric('Listed $/m²',heroListedMedRate>0?'$'+heroListedMedRate:'—','current asking')}
@@ -5760,6 +6306,7 @@ function renderSuburb(){
       ${metric('Sold',fN(heroSold90),'last 90 days · re-check cycle ≈10 days')}
       ${metric('Median Size',heroListedMedSize>0?heroListedMedSize+'m²':'—','listed lots')}
     </div>
+    ${renderAskingSoldComparison('suburb',{state:subStateScope,suburb:current.suburb})}
 
     <div class="grid grid-cols-2 gap-8 mb-8">
       <div class="v5-card">
@@ -5880,7 +6427,7 @@ function renderSuburb(){
 
     ${(()=>{
       // Fix 9: independent inventory toggle (separate from header toggle)
-      const allInvLots=inventoryLots().filter(l=>(l.suburb||'').toLowerCase().trim()===curName&&(!subStateScope||l.state===subStateScope));
+      const allInvLots=inventoryLots().filter(l=>(l.suburb||'').toLowerCase().trim()===curName&&(!cState||l.state===cState));
       const invLots=suburbInventoryFilter==='sold'?allInvLots.filter(l=>l.status==='sold')
         :suburbInventoryFilter==='listing'?allInvLots.filter(isCurrentLot):allInvLots.filter(l=>isCurrentLot(l)||isRecentSoldLot(l,90));
       const invLabel=suburbInventoryFilter==='sold'?'sold transactions only':suburbInventoryFilter==='listing'?'active listings only':'active + sold last 90d';
@@ -5896,15 +6443,15 @@ function renderSuburb(){
       const invSorted=[...invLots].sort((a,b)=>invDate(b).localeCompare(invDate(a)));
       const invRows=invSorted.map(l=>{
         const isSold=l.status==='sold';
-        const badgeLabel=isSold?'Sold':l.status==='under_contract'?'Under contract':'Listing';
+        const badgeLabel=isSold?'Sold':'Listing';
         const badgeCls=isSold?'text-[#486456] bg-[#486456]/10 border-[#486456]/25':'text-[#61323a] bg-[#61323a]/10 border-[#61323a]/25';
         const url=l.source_url||'';
         const linkCell=url?('<a href="'+attrEscape(url)+'" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6a4c7a] hover:text-[#513561] hover:underline" title="Open source listing in new tab"><span class="material-symbols-outlined" style="font-size:13px">open_in_new</span>View</a>'):'<span class="text-[10px] text-[#1b1c17]/25">—</span>';
         const addrText=l.address||titleCase(l.suburb||'');
         return '<tr class="dr border-b border-[var(--rule)]/40 hover:bg-[var(--rule-soft)]/60">'
-          +'<td class="py-2.5 px-3 text-[11px] font-medium text-[#1b1c17]">'+attrEscape(addrText)+'<div style="font-size:10px;opacity:.65">'+attrEscape((l.comparability?.category||'unclassified').replace(/_/g,' '))+' · quote '+attrEscape((l.quote_observed_at||'date unknown').slice(0,10))+'</div></td>'
+          +'<td class="py-2.5 px-3 text-[11px] font-medium text-[#1b1c17]">'+addrText+'</td>'
           +'<td class="py-2.5 px-3 text-[11px] text-[#1b1c17]/70 tabular-nums whitespace-nowrap" title="'+(isSold?'sold date':'listed date')+'">'+invDateLabel(invDate(l))+'</td>'
-          +'<td class="py-2.5 px-3 text-[11px] text-right tabular-nums">'+quoteLabel(l)+'</td>'
+          +'<td class="py-2.5 px-3 text-[11px] text-right tabular-nums">'+fmt(l.price)+'</td>'
           +'<td class="py-2.5 px-3 text-[11px] text-right tabular-nums">'+fN(l.lot_size)+'</td>'
 	          +'<td class="py-2.5 px-3 text-[11px] text-right font-semibold text-[#513561] tabular-nums">'+(hasUsableRate(l)?'$'+Math.round(l.rate||0).toLocaleString():'—')+'</td>'
           +'<td class="py-2.5 px-3 text-center"><span class="inline-block px-2 py-0.5 text-[9px] uppercase tracking-wider font-bold border rounded '+badgeCls+'">'+badgeLabel+'</span></td>'
@@ -6034,9 +6581,9 @@ function moverCard(e,kind,rank){
     <div>${charts}</div>
   </div>`;
 }
-// ──── Protected sections: Market Movers + Insights (Aug 2026) ────
-// Data arrives encrypted (AES-256-GCM); nothing renders until the password
-// decrypts it. sessionStorage keeps the tab unlocked; closing the tab re-locks.
+// __PROTECTED_SECTIONS_START__
+// Existing optional encrypted public sections. The private application keeps
+// its independent server authentication; this never carries private rows.
 const PROT=R.protectedSections||null;
 let protUnlocked=!PROT;
 let protError='';
@@ -6062,6 +6609,7 @@ async function protTryUnlock(pw){
     const payload=JSON.parse(new TextDecoder().decode(pt));
     if(payload.insights)R.insights=payload.insights;
     if(payload.movers)R.movers=payload.movers;
+    for(const [key,movers]of Object.entries(payload.scopedMovers||{}))if(R.publicMarket?.scopes?.[key])R.publicMarket.scopes[key].movers=movers;
     protUnlocked=true;
     try{sessionStorage.setItem('rlpSectionsPw',pw);}catch(e){}
     return true;
@@ -6078,8 +6626,9 @@ if(PROT){(async()=>{try{
   const pw=sessionStorage.getItem('rlpSectionsPw');
   if(pw&&await protTryUnlock(pw)&&typeof render==='function')render();
 }catch(e){}})();}
-
+// __PROTECTED_SECTIONS_END__
 function renderMovers(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('movers');
   if(PROT&&!protUnlocked)return protLockScreen();
   const M=R.movers||null;
   if(!M||(!M.rocketships&&!M.fallenAngels))return `<div style="padding:40px;opacity:.6">Movers data will appear after the next nightly build.</div>`;
@@ -6108,6 +6657,7 @@ function renderMovers(){
   </div>`;
 }
 function renderInsights(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('insights');
   if(PROT&&!protUnlocked)return protLockScreen();
   const d=D();
   const ts=TS();
@@ -6383,6 +6933,7 @@ function renderInsights(){
 }
 
 function renderCompare(){
+  if(canonicalMarketEnabled())return renderCanonicalMarketPage('compare');
   const sl=R.stateList;
   const labels=['Market A','Market B','Market C','Market D'];
   // Card template — i is a 0-based card index. IDs follow the cmpState{i} /
@@ -6424,6 +6975,7 @@ function renderCompare(){
 // so state-vs-state comparison is still possible, but only when the user
 // explicitly chooses it.
 function updateCompareState(side){
+  if(canonicalMarketEnabled())return marketUpdateCompare(side,true);
   const stateSel = document.getElementById('cmpState' + side);
   const mktSel   = document.getElementById('cmpMarket' + side);
   const dataDiv  = document.getElementById('cmpData' + side);
@@ -6479,6 +7031,7 @@ function updateCompareState(side){
 }
 
 function updateCompare(side) {
+  if(canonicalMarketEnabled())return marketUpdateCompare(side,false);
   const select = document.getElementById('cmpMarket' + side);
   const stateSel = document.getElementById('cmpState' + side);
   const dataDiv = document.getElementById('cmpData' + side);
@@ -6629,6 +7182,7 @@ function updateCompare(side) {
 // directly (the pre-built R.ts.corridorSeries / suburbSeries only cover the
 // top-12/top-20 markets — Compare needs to work for any selected market).
 function computeCompareMarketTS(sel, stateCtx, xQuarters) {
+  if(canonicalMarketEnabled())return marketCompareSeries(sel,stateCtx,xQuarters);
   const idx = sel.indexOf(':');
   if (idx < 0) return null;
   const type = sel.slice(0, idx);
@@ -6686,6 +7240,7 @@ function computeCompareMarketTS(sel, stateCtx, xQuarters) {
 //   • from updateCompare(side) whenever a card's market dropdown changes
 //   • from updateCompareState(side) when a card is cleared
 function renderCompareCharts() {
+  if(canonicalMarketEnabled())return;
   const host = document.getElementById('compareCharts');
   if (!host) return;
 
@@ -6845,11 +7400,11 @@ function render(){
     }
   }
 
-  if(pg==='overview') setTimeout(()=>{renderScatter();attachChartExpand();initTrendChart();},50);
-  if(pg==='velocity') setTimeout(()=>{initVelRateChart();attachChartExpand();},50);
+  if(pg==='overview'&&!canonicalMarketEnabled()) setTimeout(()=>{renderScatter();attachChartExpand();initTrendChart();},50);
+  if(pg==='velocity'&&!canonicalMarketEnabled()) setTimeout(()=>{initVelRateChart();attachChartExpand();},50);
   // Compare tab — populate the bottom charts once #compareCharts is in the DOM.
   // The initial pass shows buildingMsg until the user picks ≥2 markets.
-  if(pg==='compare') setTimeout(()=>{renderCompareCharts();attachChartExpand();},50);
+  if(pg==='compare'&&!canonicalMarketEnabled()) setTimeout(()=>{renderCompareCharts();attachChartExpand();},50);
   // Fix 7: after navigating from a scatter-dot click, scroll the highlighted lot row into view
   if(pg==='registry'&&highlightLot){
     setTimeout(()=>{
