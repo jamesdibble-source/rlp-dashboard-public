@@ -141,6 +141,14 @@ body:not([class*="theme-"]){--bg:#f7f7f5;--canvas:#f7f7f5;--card:#fff;--card-rai
 .prod-status-metric{min-width:0;overflow-wrap:anywhere}
 .prod-status-value{font-size:12px;font-weight:650;line-height:1.42}
 .prod-status-detail{font-size:10px;opacity:.62;margin-top:2px;line-height:1.42}
+.prod-status-card.prod-status-compact{display:block;padding:10px 14px}
+.prod-status-compact>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;min-height:30px;font-size:12px;line-height:1.5}
+.prod-status-compact>summary::-webkit-details-marker{display:none}
+.prod-status-compact>summary strong{font-size:12px;font-weight:700;white-space:nowrap}
+.prod-status-compact>summary .prod-audit-action{margin-left:auto;white-space:nowrap;text-decoration:underline;font-weight:600}
+.prod-status-compact[open] .prod-status-summary{margin:12px 0;padding:10px 0;border-top:1px solid var(--prod-status-border)}
+.prod-status-compact .prod-status-metrics{padding-bottom:4px}.prod-status-compact:focus-within{outline:2px solid var(--prod-status-border);outline-offset:2px}
+@media(max-width:620px){.prod-status-card.prod-status-compact{padding:9px 12px}.prod-status-compact>summary{display:grid;grid-template-columns:9px minmax(0,1fr);gap:3px 8px;font-size:12px}.prod-status-compact>summary .prod-analysis-asof{grid-column:2}.prod-status-compact>summary .prod-audit-action{grid-column:2;margin-left:0}.prod-status-compact>summary strong{white-space:normal}.prod-status-compact .prod-status-detail{font-size:12px}.prod-status-compact .prod-status-value{font-size:13px}}
 @media (max-width:1100px){
   .prod-status-card{grid-template-columns:minmax(0,1fr)}
 }
@@ -457,6 +465,43 @@ th{cursor:pointer;user-select:none}
 .asking-sold-method{margin-top:18px;padding-top:12px;border-top:1px solid var(--rule)}
 @media(max-width:820px){.asking-sold-layout{grid-template-columns:1fr}.asking-sold-gap strong{font-size:36px}}
 @media(max-width:520px){.asking-sold{padding:16px}.asking-sold h2{font-size:21px}.asking-sold-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.asking-sold-rates strong{font-size:20px}.asking-sold-chart text{font-size:19px}.asking-sold-chart .middle-period-label{display:none}}
+/* __MACRO_FIRST_UI_START__ */
+.macro-overview #sPills{display:none!important}.macro-overview #topHeader{justify-content:space-between}.macro-overview #content{padding-top:16px!important}.macro-overview .macro-head{margin:0 0 12px}.macro-overview .macro-head h1{font-size:30px;line-height:1.15;margin:5px 0 10px}.macro-overview .macro-scope-chips{margin-top:8px;gap:6px}.macro-overview .macro-scope-chips button{min-height:38px;padding:7px 12px}.macro-overview .macro-summary{margin:12px 0;gap:12px}.macro-overview .macro-summary .market-stat{padding:12px 16px}.macro-overview .macro-summary .market-stat strong{margin:5px 0;font-size:30px}.macro-coverage-detail{font-size:12px;line-height:1.6;margin:4px 0 0;color:var(--ink-soft)}.macro-coverage-detail>summary{cursor:pointer;min-height:28px;display:list-item;list-style:disclosure-closed inside;font-size:12px;font-weight:550}.macro-coverage-detail[open]>summary{list-style-type:disclosure-open}.macro-coverage-detail p{margin:4px 0;font-size:12px!important}.macro-overview .macro-coverage{margin:7px 0 0}
+.macro-trend-limitation{font-size:12px;line-height:1.5;color:var(--ink-soft);margin:8px 0 12px;padding-left:10px;border-left:2px solid var(--rust)}
+.macro-head{margin:8px 0 24px}.macro-head h1{font:500 clamp(28px,3vw,42px)/1.15 'Fraunces',Georgia,serif;margin:10px 0}.macro-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:650}.macro-head p{font-size:14px;line-height:1.6;max-width:78ch;color:var(--ink-soft)}
+.macro-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px}.macro-breadcrumb button,.macro-scope-chips button,.macro-drill button,.macro-links button{min-height:42px;padding:9px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:13px;color:var(--ink);cursor:pointer}.macro-scope-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.macro-scope-chips button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.macro-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0}.macro-summary .market-stat{background:var(--card);padding:18px;border:1px solid var(--rule);border-radius:10px}.macro-summary .market-stat strong{font-family:Geist,Arial,sans-serif;font-size:clamp(24px,2.4vw,34px)}.macro-summary .market-stat span{font-size:13px;color:var(--ink)}.macro-summary .market-stat small{font-size:12px}
+.macro-trend-card .market-chart{height:330px}.macro-direction{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.macro-direction span{padding:10px 12px;border-radius:8px;background:var(--rule-soft);font-size:13px;line-height:1.5}.macro-note{padding:13px 16px;border-left:3px solid var(--accent);background:var(--rule-soft);font-size:13px;line-height:1.65;color:var(--ink-soft);margin:16px 0}.macro-details{margin:18px 0;border:1px solid var(--rule);border-radius:10px;padding:16px;background:var(--card)}.macro-details>summary{font-size:14px;font-weight:600;cursor:pointer;padding:6px 0}.macro-details[open]>summary{margin-bottom:12px}.macro-coverage{font-size:12px!important;line-height:1.65!important;max-width:none!important}.macro-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.macro-links button{text-align:left;padding:18px;background:var(--card);font-size:15px;font-weight:650}.macro-links small{display:block;font-size:12px;font-weight:400;color:var(--ink-soft);line-height:1.6;margin-top:6px}.macro-drill{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.macro-drill button{text-align:left}.macro-drill strong{display:block;font-size:16px;margin-bottom:8px}.macro-drill small{display:block;font-size:12px;line-height:1.6;color:var(--ink-soft)}
+.macro-cohort-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}.macro-cohort-controls label{display:flex;flex-direction:column;gap:6px;font-size:13px}.macro-cohort-controls select{min-height:44px;width:100%;font-size:14px}.macro-cohort-table td,.macro-cohort-table th{font-size:13px!important;padding:12px!important}.macro-empty{font-size:14px;line-height:1.6;padding:18px;background:var(--rule-soft);border-radius:8px}.macro-price-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.macro-price-context .market-stats{margin:8px 0}.macro-price-context h3{font-size:17px}
+.canonical-market-page .market-basis,.canonical-market-page .market-card p{font-size:13px}.canonical-market-page .market-card button{min-height:40px;font-size:13px}.canonical-market-page .market-chart-values summary{min-height:40px;font-size:13px}.canonical-market-page select{font-size:14px;min-height:44px}.canonical-market-page .market-card table{font-size:13px}.canonical-market-page .market-stat span,.canonical-market-page .market-stat small{font-size:12px}.macro-details .market-controls{margin-bottom:12px}
+@media(max-width:900px){.macro-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.macro-price-context{grid-template-columns:1fr}.macro-cohort-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.macro-trend-card .market-chart{height:300px}}
+@media(max-width:620px){.macro-head h1{font-size:30px}.macro-summary{gap:10px}.macro-summary .market-stat{padding:14px}.macro-summary .market-stat strong{font-size:25px}.macro-links{grid-template-columns:1fr}.macro-cohort-controls{grid-template-columns:1fr}.macro-trend-card .market-chart{height:290px}.macro-direction{display:grid;grid-template-columns:1fr}.macro-details{padding:12px}.macro-drill{grid-template-columns:1fr}.macro-scope-chips button{padding:8px 12px}.canonical-market-page .market-card{padding:16px}.canonical-market-page .market-chart{height:290px}.canonical-market-page .market-card table{font-size:13px}.macro-head p{font-size:14px}.macro-price-context .market-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.macro-overview{--pad-main:12px}.macro-overview #topHeader{padding-top:8px!important;padding-bottom:8px!important;gap:8px}.macro-overview #topActions{gap:6px}.macro-overview .macro-head h1{font-size:27px}.macro-overview .macro-summary{gap:8px}.macro-overview .macro-summary .market-stat{padding:10px}.macro-overview .macro-summary .market-stat strong{font-size:24px}.macro-overview .macro-summary .market-stat span,.macro-overview .macro-summary .market-stat small{font-size:11px}.macro-overview .macro-summary .market-stat small{line-height:1.45}.macro-overview .macro-scope-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:5px;scrollbar-width:thin}.macro-overview .macro-scope-chips button{flex:0 0 auto;min-height:40px}.macro-overview .macro-trend-card .market-card{padding:12px}.macro-overview .macro-trend-card .market-card>div:first-child{margin-bottom:12px!important}.macro-overview .macro-trend-card .market-card .display-md{font-size:15px!important}.macro-overview .macro-trend-card .market-chart{height:265px}}
+@media(max-width:620px){.macro-overview .macro-pulse{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.macro-overview .macro-pulse>.macro-summary{display:contents}.macro-overview .macro-pulse .market-stat:nth-child(n+3){order:3}.macro-overview .macro-pulse>.macro-trend-card{grid-column:1/-1;order:2}.macro-overview .macro-pulse>.macro-trend-limitation{grid-column:1/-1;order:1;margin:4px 0 6px}.macro-overview .macro-pulse .market-card{margin-bottom:0}}
+/* Phone navigation frees the plot width. All routes remain in the native
+   horizontally scrollable, labelled strip; request actions stay visible. */
+@media(max-width:620px){
+  #rail{top:auto!important;bottom:0!important;left:0!important;width:100%!important;height:calc(72px + env(safe-area-inset-bottom,0px))!important;padding-bottom:env(safe-area-inset-bottom,0px);display:flex!important;flex-direction:row!important;overflow:visible!important;border-right:0!important;border-top:1px solid var(--rule);box-shadow:0 -3px 16px #0000000a;z-index:50}
+  #rail>div:first-child{display:none!important}
+  #rail #nav{display:flex!important;flex-direction:row!important;align-items:stretch;flex:1 1 auto;min-width:0;overflow-x:auto;overflow-y:hidden;padding:3px 5px!important;scrollbar-width:thin;scroll-snap-type:x proximity}
+  #rail #nav>div{display:none!important}
+  #rail #nav .text-nav-i{flex:0 0 86px;min-height:60px;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:3px!important;padding:5px 4px!important;margin:0 2px!important;text-align:center;scroll-snap-align:start}
+  #rail #nav .text-nav-i span:not(.material-symbols-outlined){display:block!important;font-size:12px!important;line-height:1.2;letter-spacing:0;white-space:normal}
+  #rail #nav .text-nav-i .material-symbols-outlined{font-size:18px!important}
+  #rail>div:last-child{display:flex!important;flex-direction:column;justify-content:center;flex:0 0 96px;padding:3px 7px!important;border-top:0!important;border-left:1px solid var(--rule);background:var(--canvas)}
+  #rail>div:last-child button{min-height:30px!important;padding:3px!important;font-size:12px!important;line-height:1.2}
+  #main{margin-left:0!important;padding-bottom:calc(86px + env(safe-area-inset-bottom,0px));--pad-main:12px}
+  #topHeader{padding-left:12px!important;padding-right:12px!important;gap:8px!important}
+  #topActions{width:100%!important;min-width:0!important;gap:6px!important;overflow:visible!important;flex-wrap:nowrap!important}
+  #viewToggle{flex:0 0 auto!important}
+  #viewToggle .vt{padding:7px 8px!important;font-size:10px!important;letter-spacing:.06em!important;min-height:32px}
+  #searchWrap{flex:1 1 100px!important;min-width:88px!important;padding:6px 8px!important;gap:4px!important}
+  #srcIn{width:100%!important;min-width:0!important;font-size:13px!important}
+  #tweaksBtn{flex:0 0 34px!important;width:34px;min-height:34px;padding:8px!important;justify-content:center}
+  #acDrop{position:fixed!important;left:12px!important;right:12px!important;top:104px!important;width:auto!important;max-width:calc(100vw - 24px);z-index:60}
+  #tweaksPanel{max-width:calc(100vw - 24px);right:12px!important}
+}
+/* __MACRO_FIRST_UI_END__ */
 .market-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:20px 0 26px}
 .market-controls label,.market-compare label{display:flex;flex-direction:column;gap:6px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
 .market-controls select,.market-card select,.market-card input{max-width:100%;min-width:0;padding:9px;border:1px solid var(--rule);border-radius:5px;background:var(--card);color:var(--ink);font-size:12px;letter-spacing:0;text-transform:none}
@@ -850,7 +895,13 @@ function renderProductionStatus(){
         ?('Showing last verified data as of '+asOf+'. A newer update has not published yet — treat pricing as historical until this banner returns to green.')
         :'Do not rely on current pricing as fully fresh until the current analysis/reconcile completes.');
   el.innerHTML=`
-    <div class="prod-status-card" style="--prod-status-border:${palette.bd};--prod-status-bg:${palette.bg};--prod-status-fg:${palette.fg};--prod-status-dot:${palette.dot}">
+    <details class="prod-status-card prod-status-compact" style="--prod-status-border:${palette.bd};--prod-status-bg:${palette.bg};--prod-status-fg:${palette.fg};--prod-status-dot:${palette.dot}">
+      <summary aria-label="Retail lot pricing ${palette.label}. Expand production audit and coverage.">
+        <span class="prod-status-dot" aria-hidden="true"></span>
+        <strong>Retail lot pricing · ${palette.label}</strong>
+        <span class="prod-analysis-asof">Analysis ${asOf} · ${hours}${status==='red'?' · treat pricing as historical':status==='amber'?' · coverage needs attention':''}</span>
+        <span class="prod-audit-action">Audit & coverage</span>
+      </summary>
       <div class="prod-status-summary">
         <span class="prod-status-dot" aria-hidden="true"></span>
         <div>
@@ -866,7 +917,7 @@ function renderProductionStatus(){
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Suburb coverage</div><div class="prod-status-value">${fmtPct(s.freshSuburbPct)} fresh · ${fmtPct(s.currentOkPct)} complete · ${suburbTotal.toLocaleString()} suburbs${staleCount?` · ${staleCount} stale`:''}</div></div>
         <div class="prod-status-metric"><div class="sc-label" style="color:inherit;opacity:.58">Portal sold-source audit</div><div class="prod-status-value">${soldStatus.certifiedSuburbs.toLocaleString()}/${soldStatus.totalSuburbs.toLocaleString()} portal scopes certified · ${soldStatus.visibleRows.toLocaleString()} portal rows</div><div class="prod-status-detail">${soldStatus.uncertifiedSuburbs.toLocaleString()} portal gaps withheld · last sweep ${fmtDateTime(s.lastSoldTransition)}. This source audit does not certify complete RP Data or combined market coverage.</div></div>
       </div>
-    </div>`;
+    </details>`;
 }
 // Keep an open tab honest: re-evaluate the banner's live data age every 5
 // minutes so overnight-open dashboards downgrade themselves without a reload.
@@ -876,7 +927,7 @@ setInterval(function(){try{renderProductionStatus();}catch(e){}},5*60*1000);
 // current listings, matching the "current asking" methodology Overview already
 // uses for its hero metrics. Users can flip to Sold/Both via header toggle or
 // the in-page Pricing toggle (both call setView and stay in sync).
-let pg='insights',cState=null,viewMode='listing',searchTerm='',sortCol=null,sortDir='desc',scatterSub='',highlightLot=null,scatterOutliers=false;
+let pg='overview',cState=null,viewMode='listing',searchTerm='',sortCol=null,sortDir='desc',scatterSub='',highlightLot=null,scatterOutliers=false;
 let corridorOverlays=new Set(); // active corridor lines on Median Price Trend chart (single-state view)
 let trendFilter='all'; // 'all' | 'metro' | 'regional' | 'NSW' | 'QLD' | 'SA' | 'VIC'
 let trendPinned=new Set(); // corridors pinned at full opacity in spotlight mode
@@ -1111,7 +1162,7 @@ let activeSub=null; // currently selected suburb name (null = show all)
 let navBackStack=[],navForwardStack=[];
 
 function navSnapshot(){
-  return {pg,cState,viewMode,activeSub,searchTerm};
+  return {pg,cState,viewMode,activeSub,searchTerm,market:typeof marketUi==='undefined'?null:Object.fromEntries(['corridor','lga','estate','source','period','history','macroBand','macroWindow','macroPeer','macroMetric'].map(k=>[k,marketUi[k]]))};
 }
 const PUBLIC_BUILD_REFRESH_STATE_KEY='grange.rlp.buildRefreshState.v1';
 const PUBLIC_BUILD_REFRESH_TARGET_KEY='grange.rlp.buildRefreshTarget.v1';
@@ -1219,7 +1270,7 @@ function startPublicBuildMonitor(){
   });
 }
 function sameNavState(a,b){
-  return !!a&&!!b&&a.pg===b.pg&&a.cState===b.cState&&a.viewMode===b.viewMode&&a.activeSub===b.activeSub&&a.searchTerm===b.searchTerm;
+  return !!a&&!!b&&a.pg===b.pg&&a.cState===b.cState&&a.viewMode===b.viewMode&&a.activeSub===b.activeSub&&a.searchTerm===b.searchTerm&&JSON.stringify(a.market)===JSON.stringify(b.market);
 }
 function commitNavChange(before){
   const after=navSnapshot();
@@ -1266,11 +1317,12 @@ function syncNavigationChrome(){
 }
 function restoreNavSnapshot(s){
   if(!s)return;
-  pg=s.pg||'insights';
+  pg=s.pg||'overview';
   cState=s.cState||null;
   viewMode=s.viewMode||'listing';
   activeSub=s.activeSub||null;
   searchTerm=s.searchTerm||'';
+  if(s.market&&typeof marketUi!=='undefined')Object.assign(marketUi,s.market);
   renderPills();
   syncNavigationChrome();
   render();
@@ -1292,17 +1344,16 @@ function navForward(){
 function setStateFilter(state){
   const before=navSnapshot();
   cState=state||null;
+  setActiveSuburbName(null);
+  if(typeof marketUi!=='undefined')Object.assign(marketUi,{corridor:null,lga:null,estate:null,source:null});
   renderPills();
   commitNavChange(before);
+  syncNavigationChrome();
   render();
 }
 function setStateFromOverview(state){
-  const before=navSnapshot();
-  cState=state||null;
   overviewDistMode='single';
-  renderPills();
-  commitNavChange(before);
-  render();
+  setStateFilter(state);
 }
 
 function D(){
@@ -1427,6 +1478,7 @@ function setActiveSuburbName(name,state){
 
 function selectSuburb(name,state){
   const before=navSnapshot();
+  if(typeof marketUi!=='undefined')marketUi.estate=null;
   setActiveSuburbName(name,state);
   commitNavChange(before);
   renderSubBadge();
@@ -1435,6 +1487,7 @@ function selectSuburb(name,state){
 
 function openSuburb(name,page,state){
   const before=navSnapshot();
+  if(typeof marketUi!=='undefined')marketUi.estate=null;
   setActiveSuburbName(name,state);
   pg=page||'suburb';
   commitNavChange(before);
@@ -3804,7 +3857,7 @@ function pricingModeToggle(){
 // Public charts consume exact, privacy-screened aggregate scopes. Legacy row
 // renderers below remain a compatibility path only for older, unmigrated builds.
 const marketDimensions=['state','suburb','corridor','lga','estate','source','bandMin','bandMax'];
-const marketUi={corridor:null,lga:null,estate:null,source:null,period:'quarter',history:'8',sort:'listings',showAll:false,regional:true,benchmarkBand:'all',benchmarkCap:1000,portalDetails:false,registryGroup:'suburb',detailSearch:'',neighbour:null,compare:[null,null,null,null]};
+const marketUi={corridor:null,lga:null,estate:null,source:null,period:'quarter',history:'8',sort:'listings',showAll:false,regional:true,benchmarkBand:'all',benchmarkCap:1000,portalDetails:false,registryGroup:'suburb',detailSearch:'',neighbour:null,compare:[null,null,null,null],macroPeer:null,macroBand:451,macroWindow:90,macroMetric:'price'};
 function canonicalMarketEnabled(){return R.publicMarket!=null;}
 function marketContract(){const p=R.publicMarket;return p&&p.schemaVersion===1&&p.scopes&&typeof p.scopes==='object'?p:null;}
 function marketKey(filters){return JSON.stringify(marketDimensions.map(k=>filters[k]??null));}
@@ -3843,9 +3896,15 @@ function marketPoints(cell,side,period){
 }
 function marketSetFilter(field,value,focusId){
   if(field==='suburb'){selectSuburb(value||null,cState);}
-  else if(['corridor','lga','estate','source'].includes(field)){marketUi[field]=value||null;render();}
-  else if(field==='period'&&['month','quarter'].includes(value)){marketUi.period=value;healthTimeMode=value==='month'?'mom':'qoq';render();}
-  else if(field==='history'&&['8','20','all'].includes(value)){marketUi.history=value;render();}
+  else if(['corridor','lga','estate','source'].includes(field)){
+    const before=navSnapshot();
+    if(field==='corridor'||field==='lga'){
+      setActiveSuburbName(null);marketUi.estate=null;marketUi[field==='corridor'?'lga':'corridor']=null;
+    }
+    marketUi[field]=value||null;commitNavChange(before);syncNavigationChrome();render();
+  }
+  else if(field==='period'&&['month','quarter'].includes(value)){const before=navSnapshot();marketUi.period=value;healthTimeMode=value==='month'?'mom':'qoq';commitNavChange(before);render();}
+  else if(field==='history'&&['8','20','all'].includes(value)){const before=navSnapshot();marketUi.history=value;commitNavChange(before);render();}
   else if(field==='sort'&&['listings','sold_12m','med_rate','med_price','suburb'].includes(value)){marketUi.sort=value;render();}
   else return;
   const el=focusId&&document.getElementById(focusId);if(el)el.focus({preventScroll:true});
@@ -3855,9 +3914,10 @@ function marketControls(page){
   const base=marketResolveScope({state:cState||null}),data=base&&base.data||marketEmptyData();
   const options=(field,rows,current,caption)=>{
     const values=[...new Set([...(rows||[]).map(r=>typeof r==='string'?r:r&&r[field]),current].filter(v=>v!=null&&v!==''))].sort();
-    return '<label>'+E(caption)+'<select id="market-'+field+'"'+(page==='registry'&&marketUi.portalDetails&&field==='estate'?' disabled':'')+' onchange="marketSetFilter(\''+field+'\',this.value,this.id)"><option value="">All</option>'+values.map(v=>'<option value="'+E(v)+'"'+(v===current?' selected':'')+'>'+E(v)+'</option>').join('')+'</select></label>';
+    return '<label>'+E(caption)+'<select id="market-'+field+'"'+(field==='estate'&&(!activeSub||page==='registry'&&marketUi.portalDetails)?' disabled':'')+' onchange="marketSetFilter(\''+field+'\',this.value,this.id)"><option value="">'+(field==='estate'&&!activeSub?'Choose suburb first':'All')+'</option>'+values.map(v=>'<option value="'+E(v)+'"'+(v===current?' selected':'')+'>'+E(v)+'</option>').join('')+'</select></label>';
   };
-  return '<div class="market-controls">'+(page==='compare'?'':options('suburb',data.suburbs,filters.suburb,'Suburb')+options('corridor',data.corridors,filters.corridor,'Corridor')+options('lga',data.lgas,filters.lga,'LGA')+options('estate',data.estates,filters.estate,'Estate'))+options('source',cells.filter(c=>!cState||c.filters.state===cState).map(c=>c.filters.source),filters.source,'Source')
+  const estateRows=activeSub?marketData(marketResolveScope({state:cState,suburb:activeSub}),'listing').estates:[];
+  return '<div class="market-controls">'+(page==='compare'?'':options('suburb',data.suburbs,filters.suburb,'Suburb')+options('corridor',data.corridors,filters.corridor,'Growth area')+options('lga',data.lgas,filters.lga,'LGA')+options('estate',estateRows,filters.estate,'Estate'))+options('source',cells.filter(c=>!cState||c.filters.state===cState).map(c=>c.filters.source),filters.source,'Source')
     +(['registry','movers'].includes(page)?'':'<label>Time series<select id="market-period" onchange="marketSetFilter(\'period\',this.value,this.id)"><option value="quarter"'+(marketUi.period==='quarter'?' selected':'')+'>Complete quarters</option><option value="month"'+(marketUi.period==='month'?' selected':'')+'>Complete months</option></select></label>'
     +'<label>History<select id="market-history" onchange="marketSetFilter(\'history\',this.value,this.id)">'+[['8','Last 8 periods'],['20','Last 20 periods'],['all','All complete periods']].map(([v,label])=>'<option value="'+v+'"'+(marketUi.history===v?' selected':'')+'>'+label+'</option>').join('')+'</select></label>')+'</div>'
     +(!['compare','movers','registry'].includes(page)?'<div class="market-actions"><button onclick="marketUi.showAll=!marketUi.showAll;render()">'+(marketUi.showAll?'Show first cohorts':'Show all cohorts')+'</button><span class="market-basis">Ranking and corridor charts '+(marketUi.showAll?'include all available groups.':'show the first groups; exact values remain in their tables.')+'</span></div>':'');
@@ -4093,6 +4153,136 @@ function marketRenderMovers(cell){
 }
 // __CANONICAL_MOVERS_RICH_END__
 
+// __MACRO_MARKET_HELPERS_START__
+// Presentation consumes the supplied exact pooled scopes. No licensed rows,
+// averaged medians, new ranking model, or inferred development yield.
+function marketMacroLabel(filters){
+  const f=filters||marketFilters();return [f.estate,f.suburb,f.corridor,f.lga,f.state||'Australia'].filter(Boolean).join(' · ');
+}
+function marketMacroReset(level){
+  const before=navSnapshot(),state=cState,suburb=activeSub;
+  if(level==='national'){cState=null;setActiveSuburbName(null);Object.assign(marketUi,{corridor:null,lga:null,estate:null,source:null});}
+  else if(level==='state'){setActiveSuburbName(null);Object.assign(marketUi,{corridor:null,lga:null,estate:null,source:null});}
+  else if(level==='area'){setActiveSuburbName(null);marketUi.estate=null;}
+  else if(level==='suburb'){marketUi.estate=null;setActiveSuburbName(suburb,state);}
+  pg='overview';commitNavChange(before);syncNavigationChrome();render();
+}
+function marketMacroHeader(){
+  const E=askingSoldEscape,f=marketFilters(),states=(R.stateList||[]).filter(s=>s&&s!=='Unknown');
+  const coverage=marketContract()?.inputFingerprint==='62b0090c5c10c9fba9af6f7eccadf4806c97e1e9867e80feed87586b070ff1d9'?'The current publication includes the first 14 RP Data imports; two additional assessed files are awaiting publication.':'See the published source and cohort coverage below; import status is not inferred from a build date.';
+  const crumb='<nav class="macro-breadcrumb" aria-label="Market breadcrumb"><button onclick="marketMacroReset(\'national\')">Australia</button>'+(cState?'<span aria-hidden="true">›</span><button onclick="marketMacroReset(\'state\')">'+E(cState)+'</button>':'')+(f.corridor||f.lga?'<span aria-hidden="true">›</span><button onclick="marketMacroReset(\'area\')">'+E(f.corridor||f.lga)+'</button>':'')+(activeSub?'<span aria-hidden="true">›</span><button onclick="marketMacroReset(\'suburb\')">'+E(activeSub)+'</button>':'')+(f.estate?'<span aria-hidden="true">›</span><span>'+E(f.estate)+'</span>':'')+'</nav>';
+  const chips='<div class="macro-scope-chips" aria-label="Select market"><button aria-pressed="'+(!cState&&!activeSub)+'" onclick="setStateFilter(null)">Australia</button>'+states.map(s=>'<button data-macro-state="'+E(s)+'" aria-pressed="'+(cState===s&&!activeSub&&!f.corridor&&!f.lga&&!f.estate)+'" onclick="setStateFilter(this.dataset.macroState)">'+E(s)+'</button>').join('')+'</div>';
+  const hasParent=cState||activeSub||f.corridor||f.lga||f.estate;
+  return '<header class="macro-head">'+(hasParent?crumb:'')+'<h1>'+E(marketMacroLabel())+' <span style="font-family:Geist,Arial,sans-serif;font-size:13px;font-weight:450;color:var(--ink-soft)">land market</span></h1>'+chips+'<p class="macro-coverage">As of '+E(marketAsOf()||'not recorded')+' · '+E(f.source||'all supplied sources')+' · incomplete observed coverage</p><details class="macro-coverage-detail"><summary>Coverage and RP Data status</summary><p>'+E(coverage)+' Annual coverage is not complete. Missing and undersampled cohorts remain unavailable.</p></details></header>';
+}
+function marketMacroAdjacent(a,b){
+  if(!a||!b)return false;
+  const key=p=>p.m||p.q||'',period=key(a),previous=key(b);
+  const index=k=>/^\d{4}-Q[1-4]$/.test(k)?Number(k.slice(0,4))*4+Number(k.slice(-1)):/^\d{4}-\d{2}$/.test(k)?Number(k.slice(0,4))*12+Number(k.slice(5,7)):null;
+  return period.length===previous.length&&index(period)!=null&&index(period)-index(previous)===1;
+}
+function marketMacroChange(latest,prior,key){
+  const a=marketValue(latest,key),b=marketValue(prior,key);return marketMacroAdjacent(latest,prior)&&a!=null&&b>0?(a/b-1)*100:null;
+}
+function marketMacroPct(value){return value==null?'Unavailable':(value>0?'+':'')+marketNumber(value)+'%';}
+function marketMacroMetric(value){
+  if(!['price','rate'].includes(value))return;
+  const before=navSnapshot();marketUi.macroMetric=value;commitNavChange(before);render();
+}
+function marketMacroPulse(cell){
+  const E=askingSoldEscape,rows=marketPoints(cell,'sold'),latest=rows.at(-1),prior=rows.at(-2),period=latest?.m||latest?.q||'No complete period',t=marketData(cell,'listing').totals||{},rate=marketUi.macroMetric==='rate',key=rate?'medRate':'medPrice',metric=rate?'Achieved rate':'Achieved lot price',lineLabel=rate?'Median achieved $/m²':'Median achieved lot price',axisLabel=rate?'Achieved $/m²':'Achieved lot price ($)',price=marketMacroChange(latest,prior,key),pace=marketMacroChange(latest,prior,'count');
+  const direction=price==null||pace==null?'Observed joint direction unavailable':price<0&&pace<0?'Observed '+metric.toLowerCase()+' and sales both fell':price>0&&pace>0?'Observed '+metric.toLowerCase()+' and sales both rose':'Mixed observed '+(rate?'rate':'price')+' and sales direction';
+  const controls='<div class="market-controls"><label>Price measure<select aria-label="Macro price measure" onchange="marketMacroMetric(this.value)"><option value="price"'+(!rate?' selected':'')+'>Median achieved lot price</option><option value="rate"'+(rate?' selected':'')+'>Median achieved $/m²</option></select></label><label>Trend period<select aria-label="Macro trend period" onchange="marketSetFilter(\'period\',this.value)"><option value="quarter"'+(marketUi.period==='quarter'?' selected':'')+'>Complete quarters</option><option value="month"'+(marketUi.period==='month'?' selected':'')+'>Complete months</option></select></label><label>History<select aria-label="Macro trend history" onchange="marketSetFilter(\'history\',this.value)">'+[['8','Last 8 periods'],['20','Last 20 periods'],['all','All complete periods']].map(([v,l])=>'<option value="'+v+'"'+(marketUi.history===v?' selected':'')+'>'+l+'</option>').join('')+'</select></label></div>';
+  const metrics='<div class="macro-summary">'+marketMetric('Observed sales in '+period,marketNumber(latest?.count),'Source-observed sale events, including resales')+marketMetric('Observed sales change',marketMacroPct(pace),'Versus adjacent complete '+marketUi.period)+marketMetric(metric+' change',marketMacroPct(price),'Same periods · unadjusted lot mix')+marketMetric('Active land listings',marketNumber(t.listings),'Physical lots · '+marketNumber(t.months_stock)+' observed months of stock')+'</div>';
+  const chart=marketChart('Observed sales and '+(rate?'achieved land rate':'achieved lot price'),'Bars: source-observed sale events · line: '+lineLabel.toLowerCase()+' · complete '+marketUi.period+'s',rows.map(p=>p.m||p.q),[{type:'bar',label:'Source-observed sale events',data:rows.map(p=>marketValue(p,'count')),backgroundColor:'#48645699',borderColor:'#486456',yAxisID:'y'},{type:'line',label:lineLabel,data:rows.map(p=>marketValue(p,key)),_currency:true,_unit:rate?' /m²':'',_counts:rows.map(p=>p.distinctLots??'Unavailable'),_countLabel:'distinct properties in event cohort',borderColor:'#513561',yAxisID:'yRate'}],'bar',{scales:{x:{grid:{display:false},ticks:{font:{size:12},maxTicksLimit:8}},y:{beginAtZero:true,title:{display:true,text:'Observed sale events'},ticks:{precision:0,font:{size:12}}},yRate:{position:'right',title:{display:true,text:axisLabel},grid:{drawOnChartArea:false},ticks:{font:{size:12}}}}});
+  const knownIncomplete=marketContract()?.inputFingerprint==='62b0090c5c10c9fba9af6f7eccadf4806c97e1e9867e80feed87586b070ff1d9',limitation=knownIncomplete?'June–September supplemental files are not yet live. Changes may reflect missing source coverage; this is not a complete-market velocity estimate.':'Coverage varies across sources and periods. Changes may reflect missing observations; this is not a complete-market velocity estimate.';
+  return '<div class="macro-pulse">'+metrics+'<p class="macro-trend-limitation">'+E(limitation)+'</p><section class="macro-trend-card">'+chart+'</section></div><div class="macro-direction"><span><strong>'+E(direction)+'</strong><br>'+E(period)+' versus '+E(prior?.m||prior?.q||'unavailable prior period')+'</span><span>Price and velocity describe observed cohorts. A changing lot mix or source coverage can affect both. This is not a forecast or a distress classification.</span></div>'+controls;
+}
+function marketMacroPriceContext(cell){
+  const E=askingSoldEscape,t=marketData(cell,'listing').totals||{},asOf=marketAsOf(),from=asOf?new Date(Date.parse(asOf+'T00:00:00Z')-89*86400000).toISOString().slice(0,10):'not recorded';
+  return marketCard('Broad market pricing','Current asking and trailing 90-day achieved context · pooled exact scope, unadjusted mix',
+    '<div class="macro-price-context"><div><h3>Current asking</h3><div class="market-stats">'+marketMetric('Median lot price',marketNumber(t.med_price,'$'),'As of '+asOf)+marketMetric('Median $/m²',marketNumber(t.med_rate,'$'),'Reported positive lot area up to 2,000 m²')+'</div><p>'+E(marketNumber(t.priced_distinct_lots))+' distinct priced lots; '+E(marketNumber(t.listings))+' active listings.</p></div><div><h3>Achieved in the last 90 days</h3><div class="market-stats">'+marketMetric('Median lot price',marketNumber(t.sold_90d_median,'$'),from+' to '+asOf)+marketMetric('Median $/m²',marketNumber(t.sold_90d_median_rate,'$'),'Reported achieved; no assumed GST removal')+'</div><p>'+E(marketNumber(t.sold_90d))+' observed sale events, including resales; priced medians require five distinct usable properties.</p></div></div><p class="macro-note">Broad prices use different lot mixes and dates. No comparable price gap is calculated here. Unknown-size inventory is retained; area and rate statistics require usable areas up to 2,000 m². Use the matched size comparison below for a specific cohort.</p>');
+}
+function marketMacroDemandSelection(field,value){
+  const before=navSnapshot();
+  if(field==='band'&&Number.isInteger(Number(value))&&Number(value)>=1&&Number(value)<=1951&&(Number(value)-1)%50===0)marketUi.macroBand=Number(value);
+  else if(field==='window'&&[30,90,180,365].includes(Number(value)))marketUi.macroWindow=Number(value);
+  else if(field==='peer')marketUi.macroPeer=value||null;
+  else return;commitNavChange(before);render();
+}
+function marketMacroCohort(cells,payload,filters,band,windowDays){
+  const dimensions=['state','suburb','estate','corridor','lga','source'];
+  const found=cells.filter(c=>dimensions.every(k=>(c[k]??null)===(filters[k]??null))&&c.bandMin===band&&c.periodDays===windowDays);
+  if(found.length!==1)return {cell:null,cohort:null,reason:found.length>1?'Duplicate exact cohorts; comparison withheld.':'No exact cohort for this geography, source, size and window.'};
+  const cell=found[0],cohort=askingSoldCohort(cell,payload);
+  return {cell,cohort,reason:cohort.reason?askingSoldReason(cohort.reason):null};
+}
+function marketMacroCohortCompatible(a,b,payload){
+  if(!a?.cell||!b?.cell)return false;
+  const ca=a.cell,cb=b.cell,ba=askingSoldBasis(ca,payload),bb=askingSoldBasis(cb,payload);
+  return ba.valid&&bb.valid&&['asOf','from','to','bandMin','bandMax','periodDays','source'].every(k=>String(ca[k]??'')===String(cb[k]??''))&&['asking','sold','date','dateLabel'].every(k=>ba[k]===bb[k]);
+}
+function marketMacroDemand(cell){
+  const E=askingSoldEscape,payload=askingSoldPayload(),cells=askingSoldCells(payload),f=cell.filters||{},windowDays=marketUi.macroWindow,minSamples=Math.max(5,Number.isInteger(payload?.policy?.minSamples)?payload.policy.minSamples:5);
+  const scopeCells=cells.filter(c=>['state','suburb','estate','corridor','lga','source'].every(k=>(c[k]??null)===(f[k]??null))&&c.periodDays===windowDays),bands=[...new Set(scopeCells.map(c=>c.bandMin))].sort((a,b)=>a-b);
+  const band=marketUi.macroBand,selected=marketMacroCohort(scopeCells,payload,f,band,windowDays);
+  const state=f.state||cState||null,parent=state?marketMacroCohort(cells,payload,{state,source:f.source||null},band,windowDays):null;
+  const peerNames=[...new Set(cells.filter(c=>c.state===state&&c.corridor&&c.suburb==null&&c.estate==null&&c.lga==null&&(c.source??null)===(f.source??null)&&c.bandMin===band&&c.periodDays===windowDays&&c.corridor!==f.corridor).map(c=>c.corridor))].sort();
+  const peerName=peerNames.includes(marketUi.macroPeer)?marketUi.macroPeer:null;
+  const peer=peerName?marketMacroCohort(cells,payload,{state,corridor:peerName,source:f.source||null},band,windowDays):null;
+  const chartRows=bands.map(n=>({band:n,...marketMacroCohort(scopeCells,payload,f,n,windowDays)}));
+  const validDate=r=>r.cohort?.asOf&&r.cohort?.from&&r.cohort?.to&&r.cohort.to===r.cohort.asOf&&r.cell&&askingSoldBasis(r.cell,payload).valid&&((Date.parse(r.cohort.to)-Date.parse(r.cohort.from))/86400000===windowDays-1);
+  const reference=chartRows.find(validDate),sameDate=r=>validDate(r)&&reference&&['asOf','from','to'].every(k=>r.cohort[k]===reference.cohort[k])&&['asking','sold','date','dateLabel'].every(k=>r.cohort.basis[k]===reference.cohort.basis[k]);
+  const options=[...new Set([band,...bands])].sort((a,b)=>a-b),controls='<div class="macro-cohort-controls"><label>Matched lot size<select aria-label="Demand lot-size band" onchange="marketMacroDemandSelection(\'band\',this.value)">'+options.map(n=>'<option value="'+n+'"'+(n===band?' selected':'')+'>'+n+'–'+(n+49)+' m²</option>').join('')+'</select></label><label>Achieved window<select aria-label="Demand achieved window" onchange="marketMacroDemandSelection(\'window\',this.value)">'+[30,90,180,365].map(n=>'<option value="'+n+'"'+(n===windowDays?' selected':'')+'>Trailing '+n+' days</option>').join('')+'</select></label><label>Compare growth area'+(state?' · '+E(state):'')+'<select aria-label="Demand peer growth area" onchange="marketMacroDemandSelection(\'peer\',this.value)"'+(!state?' disabled':'')+'><option value="">'+(state?'Choose a supplied area':'Choose a state first')+'</option>'+peerNames.map(n=>'<option value="'+E(n)+'"'+(n===peerName?' selected':'')+'>'+E(n)+'</option>').join('')+'</select></label></div>';
+  const chart=marketChart('Lot-size pricing and observed demand','Exact selected scope · '+windowDays+'-day window · bars: distinct priced properties sold; line: achieved $/m²',chartRows.map(r=>r.band+'–'+(r.band+49)+' m²'),[{type:'bar',label:'Distinct priced properties sold',data:chartRows.map(r=>sameDate(r)?askingSoldCount(r.cell.soldCount):null),backgroundColor:'#48645699',borderColor:'#486456',yAxisID:'y'},{type:'line',label:'Median achieved $/m²',data:chartRows.map(r=>sameDate(r)?r.cohort.sold.rate:null),_currency:true,_unit:' /m²',borderColor:'#513561',yAxisID:'yRate'}],'bar',{scales:{x:{grid:{display:false},ticks:{font:{size:12},maxRotation:45,maxTicksLimit:12}},y:{beginAtZero:true,title:{display:true,text:'Distinct properties'},ticks:{precision:0,font:{size:12}}},yRate:{position:'right',title:{display:true,text:'Achieved $/m²'},grid:{drawOnChartArea:false},ticks:{font:{size:12}}}}});
+  const comparison=[{label:'Selected market · '+marketMacroLabel(f),result:selected},{label:state?'Parent state · '+state:'Parent state · choose a state',result:parent},{label:'Peer area · '+(peerName||'choose an area'),result:peer}];
+  const rows=comparison.map((item,i)=>{
+    const r=item.result,compatible=i===0?validDate(r||{}):marketMacroCohortCompatible(selected,r,payload),cohort=compatible?r?.cohort:null,count=cohort?askingSoldCount(r.cell.soldCount):null;
+    const low=count==null?'Unknown demand':count<minSamples?'Low evidence · fewer than '+minSamples+' priced properties':cohort?.sold.rate==null?'Rate unavailable':'Observed cohort; not an optimal-mix recommendation';
+    const reason=!r?'Select a supplied market.':!compatible?'Window, date, basis or exact cohort unavailable.':r.reason||low;
+    return '<tr data-demand-comparison="'+i+'"><th scope="row">'+E(item.label)+'</th><td>'+E(cohort?askingSoldMoney(cohort.asking.rate):'—')+'</td><td>'+E(cohort?askingSoldMoney(cohort.sold.rate):'—')+'</td><td>'+E(marketNumber(count))+'</td><td>'+E(reason)+'<br>'+E(low)+'</td></tr>';
+  }).join('');
+  return marketCard('Lot size, land rate and demand','High $/m² alone does not establish demand for smaller lots',controls+chart+'<h3>Same size and window: selected market, state and peer</h3><p>'+band+'–'+(band+49)+' m² · '+windowDays+' days · '+E(selected.cohort?.from||'unavailable start')+' to '+E(selected.cohort?.to||'unavailable end')+' · '+E(f.source||'all supplied sources')+'</p><div class="market-table-wrap"><table class="macro-cohort-table"><thead><tr><th>Exact cohort</th><th>Current asking $/m²</th><th>Achieved $/m²</th><th>Distinct priced properties sold</th><th>Evidence</th></tr></thead><tbody>'+rows+'</tbody></table></div><p class="macro-note">The denominator is reported individual lot area, not net saleable estate area. Counts are distinct priced properties sold in the selected window, not monthly sale events or absorption. At least '+minSamples+' distinct usable properties are required for rates. Sparse or missing evidence stays unavailable; observed source coverage is incomplete. No best lot mix or development yield is inferred.</p>');
+}
+function marketMacroDrill(dimension,value,state){
+  const before=navSnapshot();
+  if(dimension==='state'){setStateFilter(value);return;}
+  if(dimension==='corridor'){setActiveSuburbName(null);Object.assign(marketUi,{corridor:value||null,lga:null,estate:null});}
+  if(dimension==='suburb'){marketUi.estate=null;setActiveSuburbName(value,state||cState);}
+  if(dimension==='estate'){if(!activeSub)return;marketUi.estate=value||null;}
+  pg='overview';commitNavChange(before);syncNavigationChrome();render();
+}
+function marketMacroAreas(cell){
+  const E=askingSoldEscape,f=cell.filters||{},dimension=!cState?'state':activeSub?'estate':f.corridor||f.lga?'suburb':'corridor';
+  const parentPeriods=marketPoints(cell,'sold'),parentLatest=parentPeriods.at(-1),parentPrior=parentPeriods.at(-2),periodKey=p=>p?.m||p?.q||null,comparisonPeriod=periodKey(parentLatest),previousPeriod=periodKey(parentPrior);
+  let children=[];
+  if(dimension==='state')children=(R.stateList||[]).filter(s=>s&&s!=='Unknown').map(state=>({label:state,value:state,state,cell:marketResolveScope({state,source:f.source||null})}));
+  else{
+    const rows=marketData(cell,'listing')[{corridor:'corridors',suburb:'suburbs',estate:'estates'}[dimension]]||[];
+    children=rows.filter(r=>r[dimension]&&r[dimension]!=='Unknown').map(r=>{
+      const filters=dimension==='corridor'?{state:cState,corridor:r.corridor,source:f.source||null}:dimension==='suburb'?{state:r.state||cState,suburb:r.suburb,source:f.source||null}:{state:cState,suburb:activeSub,estate:r.estate,source:f.source||null};
+      return {label:r[dimension],value:r[dimension],state:r.state||cState,cell:marketResolveScope(filters)};
+    });
+  }
+  const cards=children.map(item=>{
+    const rows=marketPoints(item.cell,'sold'),latest=rows.find(p=>periodKey(p)===comparisonPeriod),prior=rows.find(p=>periodKey(p)===previousPeriod),t=marketData(item.cell,'listing').totals||{};
+    return {...item,latest,prior,t,pace:marketMacroChange(latest,prior,'count'),rate:marketMacroChange(latest,prior,'medRate')};
+  }).filter(r=>r.cell).sort((a,b)=>(b.latest?.count??-1)-(a.latest?.count??-1));
+  const title={state:'Choose a state',corridor:'Growth areas · compare sales pace',suburb:'Suburbs in this area',estate:'Estates in this suburb'}[dimension];
+  const shown=marketUi.showAll?cards:cards.slice(0,12);
+  return marketCard(title,'Common '+(comparisonPeriod||'unavailable period')+' · ordered by observed sale events','<div class="macro-drill">'+(shown.length?shown.map(r=>'<button data-macro-dimension="'+dimension+'" data-macro-value="'+E(r.value)+'" data-macro-state="'+E(r.state)+'" onclick="marketMacroDrill(this.dataset.macroDimension,this.dataset.macroValue,this.dataset.macroState)"><strong>'+E(r.label)+'</strong><small>'+E(marketNumber(r.latest?.count))+' sales · '+E(r.latest?.m||r.latest?.q||'period unavailable')+'</small><small>Sales '+E(marketMacroPct(r.pace))+' · achieved rate '+E(marketMacroPct(r.rate))+'</small><small>'+E(marketNumber(r.t.listings))+' active listings · asking '+E(marketNumber(r.t.med_rate,'$'))+'/m²</small></button>').join(''):'<p class="macro-empty">No supplied '+E(dimension)+' cohorts at this level. Use the detail filters for another exact scope.</p>')+'</div>'+(cards.length>12?'<div class="market-actions"><button onclick="marketUi.showAll=!marketUi.showAll;render()">'+(marketUi.showAll?'Show first 12':'Show all '+cards.length)+'</button></div>':'')+'<p>All areas use the displayed common period. Observed coverage and changing lot mix can affect price and volume. A missing period is unavailable, not zero sales or zero growth.</p>');
+}
+function marketMacroLinks(){
+  return '<div class="macro-links"><button onclick="go(\'movers\')">Rocket Ships & Fallen Angels<small>Open the existing protected Movers view. Rankings use supplied achieved-rate history; read sales demand alongside price.</small></button><button onclick="go(\'compare\')">Compare markets and nearby areas<small>Compare exact supplied markets. Neighbour references use approximate postcode ordering, not measured geographic distance.</small></button></div>';
+}
+function marketMacroOverview(cell){
+  return marketMacroPulse(cell)+marketMacroPriceContext(cell)+marketMacroAreas(cell)+marketMacroDemand(cell)+marketMacroLinks()
+    +'<details class="macro-details"><summary>Source, suburb, estate and detailed chart controls</summary>'+marketControls('overview')+'</details>'
+    +'<details class="macro-details"><summary>Matched asking / achieved comparison and sample detail</summary>'+renderAskingSoldComparison('pricing',marketComparisonContext(marketFilters()))+'</details>'
+    +'<details class="macro-details"><summary>Supply, incentives and observed time to sell</summary>'+marketHealth(cell)+marketTitleAndIncentives(cell)+'<p class="macro-note">Explicit advertised incentives are measured here. A historical same-property price-cut series is not supplied; asking-versus-achieved gaps are not measured discounts.</p></details>'
+    +'<details class="macro-details"><summary>Longer-term history, distribution and complete market ledger</summary><div class="market-grid">'+marketTrend(cell,'Median Price Trend','medPrice',{asking:true})+marketDistribution(marketData(cell),'priceDist','Price Distribution')+marketDensity(cell)+'</div>'+marketSummary(cell)+marketGroupTable(cell,'corridor','Corridor Snapshot')+marketGroupTable(cell,'suburb','Cross-Market Snapshot')+marketCapitalGrowth(cell)+'</details>';
+}
+// __MACRO_MARKET_HELPERS_END__
 function renderCanonicalMarketPage(page){
   if(['movers','insights'].includes(page)&&typeof PROT!=='undefined'&&PROT&&!protUnlocked)return protLockScreen();
   if(page==='suburb'&&!activeSub){
@@ -4105,6 +4295,7 @@ function renderCanonicalMarketPage(page){
   let body='';
   if(page==='compare')body=marketCompare();
   else if(!cell)body='<div class="market-empty" role="status">No exact aggregate matches these filters. Clear a conflicting geography or source filter; broader medians and portal-only rows are not substituted.</div>';
+  else if(page==='overview')body=marketMacroOverview(cell);
   else if(page==='registry')body='<div class="market-actions"><button onclick="marketUi.portalDetails=false;render()">Merged aggregate ledger</button><button onclick="marketUi.portalDetails=true;render()">Portal source details</button><a href="https://intelligence.grangedevelopment.com/" target="_blank" rel="noopener">Grange Intelligence · authenticated detail</a></div>'+marketSummary(cell)+(marketUi.portalDetails?marketPortalDetails():'<div class="market-actions">'+['suburb','lga','estate'].map(d=>'<button data-dimension="'+d+'" onclick="marketUi.registryGroup=this.dataset.dimension;render()">By '+d+'</button>').join('')+'</div>'+marketGroupTable(cell,marketUi.registryGroup,'Merged Parcel Ledger'));
   else if(page==='movers'){
     body=marketRenderMovers(cell);
@@ -4128,7 +4319,7 @@ function renderCanonicalMarketPage(page){
         +marketCard('Published Commentary',cacheMatches?'Commentary matches the current canonical input fingerprint':'Cached commentary withheld because its canonical input fingerprint is missing or stale',feed.map(item=>'<article><h3>'+E(item.title)+'</h3><p>'+E(item.narrative)+'</p></article>').join('')||'<p>No current commentary for this exact scope.</p>')+'<div class="market-grid">'+marketTrend(cell,'Market Price History','medPrice',{asking:true})+marketRankChart(cell,'suburb','med_rate','Current Asking by Suburb','listing')+'</div>'+marketTitleAndIncentives(cell)+marketCapitalGrowth(cell);
     }
   }
-  return '<div class="fi canonical-market-page" data-canonical-page="'+E(page)+'">'+sec(E(titles[page]||page),E(scopeLabel))+'<p class="market-basis">'+E((page==='movers'?'Actual achieved sale events':marketModeLabel()))+' · as of '+E(marketAsOf()||'not recorded')+'. Achieved series count transactions; availability counts physical lots. Five distinct eligible lots are required for price, area and rate statistics.</p>'+marketControls(page)+body+'</div>';
+  return '<div class="fi canonical-market-page" data-canonical-page="'+E(page)+'">'+(page==='overview'?marketMacroHeader():sec(E(titles[page]||page),E(scopeLabel))+'<p class="market-basis">'+E((page==='movers'?'Actual achieved sale events':marketModeLabel()))+' · as of '+E(marketAsOf()||'not recorded')+'. Achieved series count transactions; availability counts physical lots. Five distinct eligible lots are required for price, area and rate statistics.</p>'+marketControls(page))+body+'</div>';
 }
 // __CANONICAL_MARKET_UI_END__
 
@@ -7412,6 +7603,7 @@ function renderCompareCharts() {
 
 // ──── RENDER ────
 function render(){
+  document.getElementById('main').classList.toggle('macro-overview',pg==='overview'&&canonicalMarketEnabled());
   // Destroy ALL Chart.js instances before wiping innerHTML to prevent memory leaks
   cjsDestroyAll();
   // Also null legacy refs so initTrendChart / initVelRateChart don't try to destroy stale handles

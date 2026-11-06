@@ -5,8 +5,8 @@
     "version": 1,
     "html": {
       "name": "index.html",
-      "bytes": 796005,
-      "sha256": "756abc8f35682ac9c4bdabae811aa6a51a48ab04e00747440d839c34ac7d7b5a"
+      "bytes": 831660,
+      "sha256": "65659fb0731b51c945de0a18ef0da052dea80ba4ccfe63b1eaa389e30abfe680"
     },
     "snapshot": {
       "name": "rlp-snapshot.json",
