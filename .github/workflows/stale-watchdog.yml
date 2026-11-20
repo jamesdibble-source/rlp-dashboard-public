@@ -25,6 +25,9 @@ jobs:
             const stale = error !== null || ageHours >= 30;
             core.info(error ? ('fetch failed: ' + error) : ('snapshot age: ' + ageHours.toFixed(1) + 'h'));
             if (!stale) return;
+            core.setFailed(error
+              ? ('Live snapshot fetch failed: ' + error)
+              : ('Live snapshot is stale: ' + ageHours.toFixed(1) + ' hours old (threshold 30h).'));
             const open = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'rlp-watchdog' });
             if (open.data.length) { core.info('watchdog issue already open'); return; }
             const title = error
