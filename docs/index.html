@@ -7050,9 +7050,12 @@ function moverCard(e,kind,rank){
 // Existing optional encrypted public sections. The private application keeps
 // its independent server authentication; this never carries private rows.
 const PROT=R.protectedSections||null;
+const launchedFromWorkroom=location.origin==='https://rlp.grangedevelopment.com'&&new URLSearchParams(location.search).get('embed')==='workroom';
 let protUnlocked=!PROT;
 let protError='';
+let protConnecting=Boolean(PROT&&launchedFromWorkroom);
 function protLockScreen(){
+  if(protConnecting)return '<p role="status" style="padding:40px">Opening with your Workroom sign-in…</p>';
   return `<div style="max-width:440px;margin:80px auto;text-align:center;padding:36px 30px;border:1px solid #d8d2c6;border-radius:14px;background:rgba(255,255,255,.55)">
     <span class="material-symbols-outlined" style="font-size:42px;opacity:.55">lock</span>
     <h2 style="margin:12px 0 6px">Restricted section</h2>
@@ -7064,18 +7067,39 @@ function protLockScreen(){
     ${protError?`<p style="color:#9f3c35;font-size:12.5px;margin:12px 0 0">${protError}</p>`:``}
   </div>`;
 }
+async function protUnlockWithKey(key){
+  const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b(PROT.iv)},key,b(PROT.data));
+  const payload=JSON.parse(new TextDecoder().decode(pt));
+  if(payload.insights)R.insights=payload.insights;
+  if(payload.movers)R.movers=payload.movers;
+  for(const [key,movers]of Object.entries(payload.scopedMovers||{}))if(R.publicMarket?.scopes?.[key])R.publicMarket.scopes[key].movers=movers;
+  protUnlocked=true;
+}
+async function protUnlockFromWorkroom(){
+  const publishedWorkroomSnapshot={"salt":"uwfzyM4Ofu+xcD5eXQ+u9A==","iv":"uuKFpGXMA71/q7fo","wrapped":{"v":1,"iv":"00esexjHUgGewiRY","data":"bdOc/UGMTGztEbIcAU2yhOdvnU9xYRQWg3JoQafDv8ZQ0iDZdJKTilRvafaUG6np"}};
+  const wrapped=PROT.workroom||(publishedWorkroomSnapshot.salt===PROT.salt&&publishedWorkroomSnapshot.iv===PROT.iv?publishedWorkroomSnapshot.wrapped:null);
+  if(!wrapped||!launchedFromWorkroom)return false;
+  try {
+    const response=await fetch('https://workroom.grangedevelopment.com/sso/retail-snapshot',{
+      method:'POST',credentials:'include',redirect:'error',cache:'no-store',
+      headers:{'Content-Type':'text/plain;charset=UTF-8'},
+      body:JSON.stringify({salt:PROT.salt,iv:PROT.iv,wrapped}),signal:AbortSignal.timeout(8000)
+    });
+    if(!response.ok)return false;
+    const {key}=await response.json();
+    const bytes=Uint8Array.from(atob(key),character=>character.charCodeAt(0));
+    await protUnlockWithKey(await crypto.subtle.importKey('raw',bytes,'AES-GCM',false,['decrypt']));
+    return true;
+  } catch (_) { return false; }
+}
 async function protTryUnlock(pw){
   if(!PROT||!pw)return false;
   try{
     const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
     const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
     const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b(PROT.salt),iterations:PROT.iter||310000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
-    const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b(PROT.iv)},key,b(PROT.data));
-    const payload=JSON.parse(new TextDecoder().decode(pt));
-    if(payload.insights)R.insights=payload.insights;
-    if(payload.movers)R.movers=payload.movers;
-    for(const [key,movers]of Object.entries(payload.scopedMovers||{}))if(R.publicMarket?.scopes?.[key])R.publicMarket.scopes[key].movers=movers;
-    protUnlocked=true;
+    await protUnlockWithKey(key);
     try{sessionStorage.setItem('rlpSectionsPw',pw);}catch(e){}
     return true;
   }catch(e){return false;}
@@ -7087,10 +7111,19 @@ async function protSubmit(ev){
   render();
   return false;
 }
-if(PROT){(async()=>{try{
-  const pw=sessionStorage.getItem('rlpSectionsPw');
-  if(pw&&await protTryUnlock(pw)&&typeof render==='function')render();
-}catch(e){}})();}
+if(PROT){(async()=>{
+  try {
+    if(await protUnlockFromWorkroom())return;
+    const pw=sessionStorage.getItem('rlpSectionsPw');
+    if(pw)await protTryUnlock(pw);
+  } catch (_) {
+    // The ordinary password form remains available if storage or Workroom fails.
+  } finally {
+    const redraw=protConnecting||protUnlocked;
+    protConnecting=false;
+    if(redraw&&typeof render==='function')render();
+  }
+})();}
 // __PROTECTED_SECTIONS_END__
 function renderMovers(){
   if(canonicalMarketEnabled())return renderCanonicalMarketPage('movers');
